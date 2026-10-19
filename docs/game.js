@@ -111,9 +111,32 @@ window.VIEWER_GAME = {
   ],
   // what Hunter Slots' New makes (its tooltip)
   hunterNewTitle: 'A new hunter: no armor, the first face and hairstyle, every Hunter option on its default',
-  // GUILD INFO: NOT read for MHFU (its Guild Card's titles, Hunter Rank bands and plate). Without it the base shows no
-  // plate and no title rows.
-  guildInfo: null,
+  // GUILD INFO: THE NAME TAG over the hunter (READ 2026-10-19; the draw is 0x08835470, seen in a save state's village
+  // frame). The name in the text palette's colour for the hunter's rank band -- the case byte is player +0x44BC, which
+  // 0x0884FCB0 sets from the key quests cleared (0-8, shown as 1-9: Hunter Rank), and the cases pick text palette entries
+  // 5, 6, 7, 2, 24, 23 (the palette 0x08931C5C, stored B G R) -- with a black copy 1 px down-right as its shadow, and the
+  // weapon class's glyph 14 px to its left (docs/ui/plate-icons.png, scripts/build_viewer.py plate_icons). MHFU's Guild
+  // Card has no title words, so no title rows.
+  //   The glyph is drawn UNTINTED in game (white vertex colour): iconTint false; the name's edge is the black copy at
+  // (+1, +1): shadow 'offset' (the base's options, 2026-10-19).
+  guildInfo: {
+    hrBands: [
+      { hr: 1, max: 1, color: '#ffff50', label: 'HR 1' },
+      { hr: 2, max: 2, color: '#ffa461', label: 'HR 2' },
+      { hr: 3, max: 4, color: '#ff84ff', label: 'HR 3–4' },
+      { hr: 5, max: 6, color: '#ff435d', label: 'HR 5–6' },
+      { hr: 7, max: 8, color: '#ffc600', label: 'HR 7–8' },
+      { hr: 9, max: 9, color: '#be84ff', label: 'HR 9' },
+    ],
+    titles: null,
+    icons: 'ui/plate-icons.png?v=1',
+    iconTint: false,
+    shadow: 'offset',
+    iconCell: 16,
+    iconCells: { 'Great Sword': 0, 'Heavy Bowgun': 1, 'Hammer': 2, 'Lance': 3, 'Sword & Shield': 4, 'Light Bowgun': 5,
+                 'Dual Blades': 6, 'Long Sword': 7, 'Hunting Horn': 8, 'Gunlance': 9, 'Bow': 10 },
+    font: "'MHFU', 'Segoe UI', system-ui, sans-serif",
+  },
   // PIGMENT (docs/base/ui/pigment.js): the five armour slots. MHFU colours an armour piece by its record's colour mode
   // (+0x13, READ 2026-10-19: 0x08851DBC -> the draw's 0x088CF094 per slot): 0 none, 1 a fixed grey 0x808080, 2 an
   // S-Series colour, 3 an X/Z-Series colour (the text's "Color: S-Series" / "X/Z-Series", f0019 section 1 414-416).

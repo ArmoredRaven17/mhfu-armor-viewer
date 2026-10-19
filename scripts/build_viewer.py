@@ -178,6 +178,36 @@ def inner_wear(ship):
     return inner, tone
 
 
+PLATE_SHEET_FILE = 5355              # the HUD icon sheet (.TMH, image 0, 256 x 256; f5355-f5359 are identical copies)
+SPRITES = 0x089392C8                 # the HUD sprite records, 12 bytes: u, v, w, h, flags, sheet (0x0882A9DC reads them)
+CLASS_SPRITE = 0x0893AF88            # u16 per weapon class (the game's class order): the sprite of its glyph
+
+
+def plate_icons():
+    """THE NAME TAG'S WEAPON GLYPHS, READ 2026-10-19. The tag over a hunter (0x08835470: the name at the hunter's projected
+    position, its glyph 14 px to the left) draws sprite CLASS_SPRITE[class] of the HUD sprite table, a 12 x 16 cell of
+    sheet 11 -- the HUD icon sheet, loaded from f5355. One 16 x 16 cell per class here, in the game's class order
+    (CLASS_ORDER), the glyph centred, so the shared base's square cells keep its shape. -> docs/ui/plate-icons.png and
+    {class name: cell}."""
+    import allegrex, fu
+    boot = allegrex.boot()
+    at = lambda va: va - allegrex.VBASE + allegrex.FBASE
+    sheet = fu.tmh_images(open(os.path.join(EXTRACT, 'data', 'f%04d.bin' % PLATE_SHEET_FILE), 'rb').read())[0]
+    rgba = sheet.rgba()
+    img = rgba if isinstance(rgba, Image.Image) else Image.fromarray(rgba, 'RGBA')
+    strip = Image.new('RGBA', (16 * len(CLASS_ORDER), 16), (0, 0, 0, 0))
+    cells = {}
+    for k, name in enumerate(CLASS_ORDER):
+        sid = struct.unpack_from('<H', boot, at(CLASS_SPRITE) + 2 * k)[0]
+        u, v, w, h, _flags, sh = struct.unpack_from('<6H', boot, at(SPRITES) + 12 * sid)
+        assert sh == 11 and (w, h) == (12, 16), (name, sid, u, v, w, h, sh)
+        strip.paste(img.crop((u, v, u + w, v + h)), (16 * k + (16 - w) // 2, (16 - h) // 2))
+        cells[name] = k
+    os.makedirs(os.path.join(DOCS, 'ui'), exist_ok=True)
+    strip.save(os.path.join(DOCS, 'ui', 'plate-icons.png'))
+    return cells
+
+
 def weapon_tables():
     boot = open(os.path.join(EXTRACT, 'boot', 'BOOT.BIN'), 'rb').read()
     at = lambda va: va - VBASE + FBASE
@@ -239,6 +269,7 @@ def main():
                  'hair': [piece(g, 'head', i) for i in range(27)]} for g in 'mf'}
     rigs = {g: [{'i': b['i'], 'parent': b['parent'], 'pos': b['pos']} for b in man['rigs'][g]] for g in 'mf'}
     inner, tone = inner_wear(lambda g, slot, n: piece(g, SLOT_FILE[slot], n))
+    plate_cells = plate_icons()
 
     weapons, models = {c: [] for c in CLASSES}, {}
     for w in weapon_tables():

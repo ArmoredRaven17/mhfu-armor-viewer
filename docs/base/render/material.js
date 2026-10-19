@@ -834,6 +834,8 @@ export function setChannelColor(mat, rgb){
 export function setAmbientColor(mat, rgb){
   const u = mat.userData.u;
   if (!u || !u.uAmb) return;
+  // NOT CLAMPED, on purpose: MHFU passes A relative to an undyed 7F7F7F (bytes x 255 / 127, so above 255) and relies on
+  // the sRGB decode carrying values past 1 -- keep it that way
   if (rgb) u.uAmb.value.setRGB(rgb[0] / 255, rgb[1] / 255, rgb[2] / 255, THREE.SRGBColorSpace);
   u.uAmbOn.value = rgb ? 1 : 0;
 }

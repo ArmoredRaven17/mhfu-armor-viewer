@@ -62,11 +62,22 @@ export function colourSeries(slot){
 // share one), valued by the first record's id (a record id is what a slot holds; its colour mode is the record's own).
 // Grouped by the rarity of the item's first record (armor.json `rar`, record +5 + 1). `type` is the Type filter: 'all',
 // 'b' (Blademaster) or 'g' (Gunner), armor.json `wear` (record +4 bits 4 / 8).
+// AN ITEM'S LABEL: every name that draws the model, joined -- up to four (a piece's base / S / U / X names and its
+// Blademaster / Gunner pair). More would make the list as wide as all of them (the 22 Piercings did, before they were
+// hidden): the first name and how many more share it.
+const LABEL_NAMES = 4;
+const itemLabel = names => (names.length <= LABEL_NAMES ? names.join(' / ')
+  : names[0] + ' (+' + (names.length - 1) + ' more)');
 export function armorOptions(slot, type){
   const g = app.state.g;
   const groups = new Map();
+  // HIDDEN FOR NOW (Raven, 2026-10-19: "we can hide Piercings since they all use the same model and I don't see
+  // anything"): a head piece that draws head model 0 -- the "Nothing equipped." model, the bare head -- has nothing of its
+  // own to show (all 22 Piercings)
+  const bare = slot === 'helm' ? (app.DATA.armor.helm.find(x => x.id === 0) || {})[g] : null;
   for (const r of app.DATA.armor[slot]){
     if (r.id === 0 || !r[g] || r.wear.indexOf(g) < 0) continue;
+    if (bare && r[g] === bare) continue;
     if (!groups.has(r[g])) groups.set(r[g], { id: r.id, model: r[g], rare: r.rar, ids: [], names: [] });
     const e = groups.get(r[g]);
     e.ids.push(r.id);
@@ -76,7 +87,7 @@ export function armorOptions(slot, type){
   const out = [];
   for (const e of groups.values()){
     if (!e.names.length) continue;
-    out.push({ value: String(e.id), label: e.names.join(' / '), model: e.model, ids: e.ids, rare: e.rare,
+    out.push({ value: String(e.id), label: itemLabel(e.names), model: e.model, ids: e.ids, rare: e.rare,
                group: 'Rarity ' + e.rare });
   }
   return out.sort((a, b) => a.rare - b.rare);

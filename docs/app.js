@@ -29,7 +29,7 @@ import { PoseDriver } from './base/render/pose.js';
 import { playerBone } from './base/render/skeleton.js';
 import { createFloorGrid } from './base/render/grid.js';
 import { loadPiece, paintPiece, dyeRegs, hairRegs, flatRegs, releasePiece, restoreBind } from './render/piece.js';
-import * as adapter from './adapter.js';
+import * as adapter from './adapter.js?v=3';
 import { createLightingPanel } from './base/ui/lighting-panel.js';
 import { createEffectsPanel } from './base/ui/effects-panel.js';
 import { createGuildPanel } from './base/ui/guild-panel.js';
