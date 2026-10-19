@@ -5,518 +5,20 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>MHFU Armor Viewer</title>
 <link rel="icon" href="assets/MH4G-Binoculars_Icon_White.png?v=1">
-<style>
-/* MHFU game font, as the sibling MHGU apps use */
-@font-face{ font-family:'MHFU'; src:url('fonts/mhfu_font.ttf') format('truetype'); font-display:swap; }
-
-:root{
-  --bg:#3e3e3e; --bg1:#000000; --bg2:#333; --hover:#2f2f2f;
-  --accent:#7a7a7a; --accent-hover:#9a9a9a; --cta:#19e0d2;
-  --text:#f3f3f3; --text-dim:#ffffff; --text-hint:#b9b9b9;
-  --stage:#0e1013;
-  --line:#ffffff1f; --card:#ffffff0d;
-}
-*{box-sizing:border-box}
-/* The standard properties and ::-webkit-scrollbar are mutually exclusive in Chrome: set
-   `scrollbar-color` or `scrollbar-width` on an element and the -webkit pseudo-elements
-   below are IGNORED for it. Having both on `*` is why the width here had no effect --
-   scrollbars measured 15px (the `auto` default) no matter what was asked for. So the
-   standard ones are scoped to engines with no -webkit pseudo-element (Firefox), which
-   get the colours; Chrome takes the rules below and an actual custom width. */
-@supports not selector(::-webkit-scrollbar){
-  *{scrollbar-color:var(--accent) var(--bg2);scrollbar-width:auto}
-}
-::-webkit-scrollbar{width:22px;height:22px}
-/* a touch darker than the panel so the channel itself is visible */
-::-webkit-scrollbar-track{background:var(--bg);border-radius:11px}
-/* min-height matters more than width on these lists: an equipment dropdown holds over a
-   thousand options, so a proportional thumb is a few pixels tall and unusable to drag. */
-/* The thumb sat on a track the same colour as the panel behind it, so it read as part of
-   the background. A lighter fill plus a light inset edge gives it a shape of its own
-   without hard-coding a colour that would fight the theme. */
-::-webkit-scrollbar-thumb{background:var(--accent-hover);border-radius:10px;min-height:56px;
-  border:3px solid transparent;background-clip:padding-box;
-  box-shadow:inset 0 0 0 1px #ffffff55}
-::-webkit-scrollbar-thumb:hover{background:var(--accent-hover);background-clip:padding-box;
-  border:2px solid transparent;box-shadow:inset 0 0 0 1px #ffffff99}
-/* Stated again for the dropdown lists. Whether a native <select> popup honours page CSS
-   is up to the engine -- Chrome on Windows draws that list itself and ignores it. */
-select::-webkit-scrollbar{width:22px}
-select::-webkit-scrollbar-thumb{min-height:56px}
-input,select,button,textarea{font-family:inherit}
-html,body{margin:0;height:100%;overflow:hidden}
-body{font-family:'MHFU',"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--text);
-     font-size:14px;user-select:none;-webkit-user-select:none}
-#app{display:flex;flex-direction:column;height:100vh}
-.hidden{display:none !important}
-
-/* Title bar */
-.titlebar{display:flex;align-items:center;gap:10px;padding:8px 14px}
-.titlebar-header{
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--accent) 90%,transparent),color-mix(in srgb,var(--accent) 90%,transparent)),
-    url('assets/titlebar-background.png');
-  background-size:auto 100%;background-position:left center;background-repeat:repeat;
-}
-.titlebar h1{font-size:15px;font-weight:600;margin:0;flex:1}
-.titlebar .btn.tiny{margin-right:6px;white-space:nowrap}
-.title-icon{width:32px;height:32px;object-fit:contain}
-.icon-btn{background:transparent;border:none;color:var(--text);font-size:18px;
-  cursor:pointer;padding:6px 9px;border-radius:6px;line-height:1}
-.icon-btn:hover{background:#ffffff1a}
-/* an id rule setting display: would outrank the UA [hidden] rule */
-[hidden]{display:none !important}
-
-/* Layout */
-.layout{display:flex;flex:1;min-height:0}
-/* the sidebar's own gap only reaches its direct children, and the panels are now one
-   level down inside a pane -- so each pane carries the same column gap itself */
-#paneMonster{display:flex;flex-direction:column;gap:8px}
-.sidebar{
-  width:300px;flex-shrink:0;padding:12px;overflow-y:scroll;scrollbar-gutter:stable;
-  display:flex;flex-direction:column;gap:8px;
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--accent) 90%,transparent),color-mix(in srgb,var(--accent) 90%,transparent)),
-    url('assets/sidebar-background-texture1.png');
-  background-size:auto 100%;background-position:left center;background-repeat:repeat;
-}
-/* The render area is the Weapon Tree's stage: --stage, the darkest shade in the set. It is
-   the one surface with no backing of its own — the model sits directly on it. */
-.content{
-  flex:1;min-width:0;position:relative;
-  background-color:var(--stage);
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--stage) 78%,transparent),color-mix(in srgb,var(--stage) 78%,transparent)),
-    url('assets/rockyTextureDark2.png');
-  background-repeat:repeat;background-size:auto,200px 200px;
-}
-/* The render area is the Weapon Tree's stage: --stage, the darkest shade in the set — the one
-   surface with no backing of its own, with the model sitting directly on it.
-
-   The texture and its tint are the Hunting Log's .editor (its editorPane), verbatim, so the two
-   apps' main working surfaces match: rockyTextureDark.png under an 84% wash of the surface
-   colour, repeated at 200px. */
-.content{
-  flex:1;min-width:0;position:relative;
-  background-color:var(--stage);
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--stage) 84%,transparent),color-mix(in srgb,var(--stage) 84%,transparent)),
-    url('assets/rockyTextureDark.png');
-  background-repeat:repeat;background-size:auto,200px 200px;
-}
-/* A chroma backdrop has to be a flat, single value for a keyer to pull, so the texture and its
-   tint come off. Nothing else about the app changes — only the surface being keyed. */
-:root.chroma .content{background-image:none}
-#viewport{position:absolute;inset:0}
-/* "Loading..." over the render area until the first framed render (Raven, 2026-09-03) */
-#loading{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-  color:var(--text-hint);font-size:15px;letter-spacing:.06em;pointer-events:none}
-#loading[hidden]{display:none}
-/* Label/value rows. Every readout in this app used to be one sentence joined by middots, which
-   wrapped mid-value in a 300px sidebar -- "Back 20" split across two lines (Raven, 2026-09-05:
-   "the way the info is display is a bit difficult to read ... List the values in a list"). A
-   fixed label column and tabular figures keep the numbers under each other. */
-dl.info{display:grid;grid-template-columns:auto 1fr;gap:2px 10px;margin:0;font-size:11px;
-  color:var(--text-hint);line-height:1.45}
-dl.info dt{color:var(--text-hint);opacity:.8;white-space:nowrap}
-dl.info dd{margin:0;color:var(--text);font-variant-numeric:tabular-nums;
-  overflow-wrap:anywhere}
-/* The hit-zone chart, floating over the render area: parts down, damage types across. It lives
-   here rather than in the sidebar because ten numeric columns do not fit a 300px column. */
-#zonePanel{position:absolute;top:12px;left:12px;z-index:5;max-width:calc(100% - 24px);
-  max-height:calc(100% - 90px);display:flex;flex-direction:column;
-  background:var(--bg2);
-  border:1px solid var(--line);border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,.45);
-  overflow:hidden}
-/* The title bar is the drag handle: the table below it scrolls and its column headers pick the
-   damage type, so neither of those can be one. touch-action:none so a drag on a touch screen
-   moves the window instead of scrolling the page. */
-#zoneHead{display:flex;align-items:center;gap:8px;padding:5px 6px 5px 10px;
-  border-bottom:1px solid var(--line);cursor:move;user-select:none;touch-action:none}
-/* while dragging, the table underneath stops swallowing the pointer */
-#zonePanel.dragging #monZoneWrap{pointer-events:none}
-#zoneTitle{font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--text-hint);flex:1}
-#zoneClose{background:none;border:none;color:var(--text-hint);cursor:pointer;font-size:15px;
-  line-height:1;padding:2px 5px;border-radius:4px}
-#zoneClose:hover{color:var(--text);background:#ffffff1a}
-/* One table at a time. Three stacked in a fixed box made the window a scrolling column of
-   unrelated grids; Raven, 2026-09-06: "can we have the pop up use tabs that switch if they are
-   selected in the drop down" and "this window can be resize with the table, no need to keep the
-   element the same size". The panel has no width of its own, so with a single table showing it
-   shrink-wraps whichever one that is. */
-/* A DROPDOWN PICKS THE TABLE, NOT A STRIP OF TABS. Raven, 2026-09-13: "I would like to have a drop
-   down menu to help keep it compact". The five tabs needed 352px on one row, so the window was 354px
-   whichever table it showed -- measured on Khezu at 1280x800, where the tables themselves run from
-   127px (Stun/Exhaust) to 239px (Elemental). One select is narrower than the title row, so the window
-   now shrink-wraps the title and the table. Styled as the sidebar's dropdowns, at the window's 11px:
-   those read as a lighter box on a darker panel, and this window IS --bg2, so the fill is lifted a
-   step. Opaque on purpose -- Chrome draws the open list in the select's own background colour. */
-#zoneTabRow{padding:3px 6px;border-bottom:1px solid var(--line)}
-#zoneTabSel{background:color-mix(in srgb,var(--bg2) 90%,#fff);color:var(--text);
-  border:1px solid var(--line);border-radius:5px;font-size:11px;line-height:1.4;padding:2px 6px;
-  max-width:100%}
-#monZoneWrap > table{display:none}
-#monZoneWrap > table.shown{display:table}
-#monZoneWrap{overflow:auto;max-width:100%}
-/* The panes share two shapes, so these are classes rather than a growing list of ids:
-   .zchart is a damage grid (parts down, types across), .pchart the narrow part-record table. */
-.zchart,.pchart{border-collapse:collapse;font-size:11px;font-variant-numeric:tabular-nums}
-.pchart{margin:6px}
-.zchart th,.zchart td{padding:2px 5px;text-align:center;white-space:nowrap}
-.pchart th,.pchart td{padding:2px 8px;text-align:center;white-space:nowrap}
-.zchart thead th,.pchart thead th{color:var(--text-hint);font-weight:600;
-  border-bottom:1px solid var(--line);user-select:none}
-.zchart thead th{cursor:pointer}
-.zchart thead th:hover{color:var(--text)}
-.zchart tbody th,.pchart tbody th{text-align:left;font-weight:400;color:var(--text)}
-/* A zone the ROM defines that the heat map never paints -- see zoneSlots(). Listed, but marked. */
-.zchart tbody th.unpainted,.pchart tbody th.unpainted{font-style:italic;color:var(--text-hint)}
-.zchart tbody th{position:sticky;left:0;background:var(--bg2)}
-/* Selecting a type lights the WHOLE COLUMN, not each cell in it. Ported from the Zenny Gauntlet's
-   crosshair, whose comment records why: every single-cell marker there "read as off", while a lit
-   band is visible from anywhere on the board. Outlining each cell separately drew a stack of little
-   boxes rather than one column, which is the same failure.
-   That app spans its band with a single grid-placed overlay; these are <table>s, so the band is
-   drawn instead by giving the column's cells their left and right edges, the header its top and the
-   last row its bottom. border-collapse merges them into one unbroken rectangle.
-   The dark sandwich is the Zenny trick too: these cells carry heat colours from dark blue to red,
-   and a bare accent line cannot separate itself from a cell of similar lightness. A dark hairline
-   inside the accent gives it an edge to read against whatever it lands on. */
-.zchart th.sel,.pchart th.sel{color:var(--cta)}
-.zchart .sel,.pchart .sel{border-left:2px solid var(--cta);border-right:2px solid var(--cta);
-  box-shadow:inset 1px 0 rgba(0,0,0,.55), inset -1px 0 rgba(0,0,0,.55)}
-.zchart thead th.sel,.pchart thead th.sel{border-top:2px solid var(--cta);
-  box-shadow:inset 1px 1px rgba(0,0,0,.55), inset -1px 0 rgba(0,0,0,.55)}
-.zchart tbody tr:last-child td.sel,.pchart tbody tr:last-child td.sel{
-  border-bottom:2px solid var(--cta);
-  box-shadow:inset 1px -1px rgba(0,0,0,.55), inset -1px 0 rgba(0,0,0,.55)}
-/* ROOM FOR THE BAND. Raven, 2026-09-13: "when selecting a column, the table expands, it would be best
-   to have the spacing accomendate the selection highlight". The band's 2px edges used to be ADDED on
-   selection, growing the table 4px each way (Khezu's Raw table 151x94 -> 155x98) and shoving every
-   column to its right. Every cell a band can land on now carries those edges already, transparent, so
-   selecting recolours them and moves nothing. `inset` is deliberate: a collapsed border goes to the
-   wider edge, then to the higher-priority style, and inset is the lowest -- so where a reserved edge
-   meets a band edge, the band's `solid` shows on both sides. With the same style the tie would go to
-   the cell on the left, and the band would lose its left edge. */
-.zchart td,.pchart td,.zchart thead th + th,.pchart thead th + th{
-  border-left:2px inset transparent;border-right:2px inset transparent}
-.zchart thead th + th,.pchart thead th + th{border-top:2px inset transparent}
-.zchart tbody tr:last-child td,.pchart tbody tr:last-child td{border-bottom:2px inset transparent}
-/* A PICKED ZONE lights its row, the column band turned on its side (see pickZone). Drawn with inset
-   shadows rather than borders so picking moves nothing, and with the same dark hairline inside the accent
-   so the edge reads against any heat colour. Where the row crosses a lit column the cell keeps both. */
-.zchart tbody th,.pchart tbody th{cursor:pointer}
-.zchart tbody tr.zpick > *,.pchart tbody tr.zpick > *{
-  box-shadow:inset 0 2px var(--cta),inset 0 3px rgba(0,0,0,.55),inset 0 -2px var(--cta),inset 0 -3px rgba(0,0,0,.55)}
-.zchart tbody tr.zpick > th,.pchart tbody tr.zpick > th{color:var(--cta)}
-.zchart tbody tr.zpick > td.sel,.pchart tbody tr.zpick > td.sel{
-  box-shadow:inset 0 2px var(--cta),inset 0 -2px var(--cta),inset 1px 0 rgba(0,0,0,.55),inset -1px 0 rgba(0,0,0,.55)}
-/* Floating toolbar over the render area, matching the Weapon Tree's #bar.
-   width:max-content is load-bearing: with left:50% the default shrink-to-fit only
-   counts the space from the centre to the right edge, so the bar would cap at half
-   the viewport and wrap into a stack while the left half sat empty. */
-#bar{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);
-  display:flex;gap:8px;align-items:center;flex-wrap:wrap;justify-content:center;
-  width:max-content;max-width:calc(100% - 32px);
-  padding:8px 12px;border:1px solid var(--line);border-radius:8px;
-  background-color:var(--bg2);
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--bg2) 84%,transparent),
-                    color-mix(in srgb,var(--bg2) 84%,transparent)),
-    url('assets/rockyTextureDark2.png');
-  background-repeat:repeat;background-size:auto,200px 200px;
-  box-shadow:0 10px 40px rgba(0,0,0,.5)}
-#bar > *{flex:0 0 auto}
-#bar button{white-space:nowrap}
-#bar .sep{width:1px;height:20px;background:var(--line);margin:0 3px}
-#bar .btn.on{border-color:var(--accent-hover);background:#ffffff26}
-#bar .btn:disabled{opacity:.4;pointer-events:none}
-/* the Animation panel: Loop, frame stepping, the scrubber and a frame readout. Greyed
-   out until an animation is playing, so the panel never has to hide or move. */
-#anim{display:flex;flex-direction:column;gap:6px}
-#anim .row{display:flex;gap:4px;flex-wrap:wrap;justify-content:center}   /* Raven: centred */
-#anim .btn.on{border-color:var(--accent-hover);background:#ffffff26}
-#animPlay{min-width:var(--play-w,58px)}   /* one width for "Play" and "Pause" (Raven) */
-#anim input[type=range]{width:100%;margin:0}
-#anim.idle .transport .btn,#anim.idle .transport input{opacity:.4;pointer-events:none}
-#anim .transport{display:flex;flex-direction:column;gap:6px}
-#anim .chain-head{font-size:13px;font-weight:600;color:var(--text-dim);margin-top:6px}
-#anim .row.pick{justify-content:flex-start;flex-wrap:nowrap}
-#anim .row.pick select{flex:1 1 auto;min-width:0}
-#anim .row.pick .btn{flex:0 0 auto}
-#animFrame{font-size:12px;color:var(--text-hint);text-align:center}   /* under the scrubber, centred (Raven) */
-/* the chain, listed in order under its buttons (Raven); the playing link is lit, the x removes */
-.chain{list-style:none;margin:2px 0 0;padding:0;display:flex;flex-direction:column;gap:2px}
-.chain li{display:flex;align-items:center;gap:6px;font-size:12px;padding:3px 8px;border:1px solid var(--line);border-radius:6px;background:#ffffff14}
-.chain li.on{border-color:var(--accent-hover);background:#ffffff26}
-.chain li.off .lab{opacity:.45}
-/* the hunter slots: click a row to switch to that hunter; the one on screen is lit */
-.chain.hunters li{cursor:pointer}
-.chain.hunters li.on{cursor:default}
-.chain.hunters .tag{font-size:11px;color:var(--text-hint)}
-.chain.hunters input{flex:1 1 auto;min-width:0;font:inherit;font-size:12px;padding:1px 4px;background:#00000033;color:var(--text);border:1px solid var(--line);border-radius:4px}
-.chain li .n{color:var(--text-hint);min-width:1.4em}
-.chain li .lab{flex:1 1 auto}
-.chain li .x{cursor:pointer;color:var(--text-hint);padding:0 4px}
-.chain li .x:hover{color:var(--text)}
-.chain li .grip{cursor:grab;color:var(--text-hint);user-select:none;touch-action:none;padding:0 2px;font-size:13px;line-height:1}
-.chain li .grip:hover{color:var(--text)}
-.chain.dragging,.chain.dragging li,.chain.dragging li .grip{cursor:grabbing}
-.chain li.drag{opacity:.35}
-.chain li.ins-before{box-shadow:0 -3px 0 var(--accent-hover)}
-.chain li.ins-after{box-shadow:0 3px 0 var(--accent-hover)}
-.chain-row{display:flex;gap:4px;flex-wrap:wrap;margin-top:3px}
-/* Toggled off, the toolbar MOVES into the header rather than disappearing, so the
-   controls stay reachable while the render area is left clear. It is the same element,
-   so `#bar .sep` and `#bar .btn.on` keep applying -- which is why the whole bar moves
-   rather than its buttons being reparented one by one. */
-header #bar{position:static;transform:none;width:auto;max-width:none;
-  padding:0;border:none;border-radius:0;background:none;box-shadow:none;flex-wrap:nowrap}
-header #bar .sep{height:16px}
-/* the titlebar adds its own margin to .btn.tiny, which doubles up with #bar's gap */
-header #bar .btn.tiny{margin-right:0}
-/* The camera bar's controls are icons, their labels moved into the tooltip as
-   "Label: what it does" (Raven, 2026-09-04). Equal squares, so a button that the state
-   renames can no longer shunt the ones beside it -- which is what the two width-pinning
-   measurements this app used to run were for. */
-#bar .ico{display:inline-flex;align-items:center;justify-content:center;width:32px;padding:3px 0}
-#bar .ico svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;
-  stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
-/* the Record button is bright red in both states, the dot and the stop square */
-#clipBtn svg{color:#ff2a2a}
-/* The clip countdown, the Armor Viewer's (Raven there, 2026-09-05: "a timer that counts down ... :30 -> :09 format
-   ... remains the same size"; here, 2026-09-19: "I would like to make both apps have the same camera controls bar"):
-   tabular digits in a fixed box, so :30 and :09 take the same room and nothing beside it shifts. Amber through the
-   3 s lead, red while the clip runs, and a flash of :00 when it ends. The Record button blinks in step: fast through
-   the lead, once a second while recording -- opacity only, so the button never changes size. */
-#bar .clip-timer{display:inline-flex;align-items:center;justify-content:center;width:34px;height:22px;
-  font-size:12px;font-variant-numeric:tabular-nums;letter-spacing:.5px;color:var(--text-hint);user-select:none}
-#bar .clip-timer.pre{color:#ffb020}
-#bar .clip-timer.on{color:#ff2a2a}
-#bar .clip-timer.end{color:#ff2a2a;animation:clipEndFlash .45s steps(1,end) 4}
-#clipBtn.pre svg{animation:clipBlink .5s steps(1,end) infinite}
-#clipBtn.on svg{animation:clipBlink 1s steps(1,end) infinite}
-@keyframes clipBlink{50%{opacity:.15}}
-@keyframes clipEndFlash{50%{opacity:.1}}
-@media (prefers-reduced-motion: reduce){#clipBtn.pre svg,#clipBtn.on svg,#bar .clip-timer.end{animation:none}}
-/* the first-person camera's prompt, above the bar; no pointer events, so the click it asks
-   for reaches the canvas */
-#flyHint{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);max-width:calc(100% - 32px);
-  white-space:nowrap;font-size:12px;line-height:1.4;color:var(--text);background:rgba(0,0,0,.55);
-  border:1px solid var(--line);border-radius:8px;padding:6px 12px;pointer-events:none}
-#orbitLock{display:inline-flex;align-items:center;gap:6px}
-#orbitLock img{width:14px;height:14px;display:block}
-/* the monster's own icon, from the set the sibling apps share */
-.mon-icon{width:34px;height:34px;flex:0 0 auto;object-fit:contain;
-  image-rendering:auto;filter:drop-shadow(0 1px 2px rgba(0,0,0,.5))}
-/* the dropdown's row keeps the icon's height when a monster has none, so the dropdown does not jump
-   4px on the way to or from one */
-#monPick{min-height:34px}
-#viewport canvas{display:block;width:100%;height:100%}
-#viewport.fly canvas{cursor:crosshair}   /* the first-person camera; Hide Cursor below still wins */
-/* Scoped to the render area on purpose: #bar and the overlays are SIBLINGS of #viewport,
-   so the toolbar keeps its pointer and stays usable while the cursor is hidden. */
-#viewport.nocursor,#viewport.nocursor canvas{cursor:none}
-
-/* Buttons */
-.btn{background:#ffffff14;color:var(--text);border:1px solid var(--line);
-  border-radius:7px;padding:8px 14px;cursor:pointer;font-size:14px}
-.btn:hover{background:#ffffff24}
-.btn.block{width:100%}
-.btn.tiny{padding:3px 10px;font-size:12px}
-.btn.block,.btn.tiny{
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--bg2) 80%,transparent),color-mix(in srgb,var(--bg2) 80%,transparent)),
-    url('assets/banner-background.png');
-  background-position:right;
-}
-.btn.accent{background:var(--bg1);border-color:#000;color:#fff;font-weight:600}
-/* Reset: the Bingo app's accent button on the theme's complementary colour (--cta) */
-.btn.cta{background:var(--cta);background-image:none;border-color:rgba(0,0,0,.45);color:#fff;font-weight:600;
-  text-shadow:-1px 0 rgba(0,0,0,.55),1px 0 rgba(0,0,0,.55),0 -1px rgba(0,0,0,.55),0 1px rgba(0,0,0,.55)}
-.btn.cta:hover{background:color-mix(in srgb,var(--cta) 84%,#ffffff)}
-/* Selected gender. Was a fixed green (#3d6b45) that ignored the theme entirely; this is the
-   theme's own colour instead — var(--hover) is darken(hex,.30), the family's deep shade.
-
-   The white border does the selecting, not the fill. A lighter fill was the obvious try (the
-   family's .btn.on white wash) and it reads well but costs legibility: white label text drops
-   to 3.67:1 on the pale themes, against 6.5:1 on the green it replaced, so it made the button
-   worse to read in order to look righter. --hover goes the other way and holds white text at
-   14.7:1 everywhere. The fill difference alone is slight, which is why the border is white and
-   the label bold — that pair is unambiguous without asking the fill to carry it. */
-.btn.accent.on{background:var(--hover);border-color:#fff;color:#fff;font-weight:600}
-
-/* Collapsible panels */
-.panel{border:1px solid var(--line);border-radius:8px;overflow:clip;background:var(--bg2)}
-.panel-head{width:100%;text-align:left;background:transparent;border:none;color:var(--text);
-  padding:8px 14px;font-size:16px;font-weight:600;cursor:pointer;
-  display:flex;justify-content:space-between;align-items:center;
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--bg2) 80%,transparent),color-mix(in srgb,var(--bg2) 80%,transparent)),
-    url('assets/banner-background.png');
-  background-size:auto 100%;background-position:left center;background-repeat:repeat;
-}
-.panel-head:hover{background-color:#ffffff0d}
-/* a kept-open panel has nothing to toggle, so its head does not light up or take a pointer */
-/* The panel chevrons are hidden -- the accordion only ever has one panel open, so the
-   open one is obvious from the panel body and the arrows were just noise. The spans stay
-   in the markup so the heads keep their layout. */
-.chev{display:none}
-.panel-body{display:none;padding:8px 12px 12px;flex-direction:column;gap:6px;
-  background-image:
-    linear-gradient(color-mix(in srgb,var(--bg1) 60%,transparent),color-mix(in srgb,var(--bg1) 60%,transparent)),
-    url('assets/panel-body-bg.png');
-  background-size:contain 100%;background-position:left center;background-repeat:repeat;
-}
-.panel[data-open="true"] .panel-body{display:flex}
-
-/* Controls */
-.chk{display:flex;align-items:center;gap:8px;padding:3px 0;cursor:pointer;line-height:1.3}
-.chk input{accent-color:var(--accent);width:16px;height:16px;cursor:pointer;flex-shrink:0}
-.chk:hover{color:var(--accent-hover)}
-.hint{color:var(--text-hint);font-size:12px;margin:2px 0}
-.row{display:flex;align-items:center}
-.row.gap{gap:8px}
-.field{display:flex;flex-direction:column;gap:3px;font-size:12px;color:var(--text-dim)}
-.field .row.gap > select{flex:1;min-width:0}
-/* The Parts panel is a stack of label-over-dropdown pairs, and without room between them a label
-   sits as close to the select ABOVE it as to its own. So each label is pulled nearer its own
-   control and the rows are pushed apart from each other. Scoped to #monGroups, because every other
-   panel in the app is a form where the tighter rhythm is right. */
-#monGroups .field{gap:5px}
-#monGroups .field + .field{margin-top:13px}
-/* THE MHGU VIEWERS' LIGHTING, CAMERA AND EFFECTS PANELS, 2026-10-04: a row of preset buttons, and
-   the small heads between an effects panel's groups. Its rules, verbatim. */
-.light-row{display:flex;gap:4px;flex-wrap:wrap}
-.light-row .btn{flex:1 1 30%}
-.light-row .btn.on{border-color:var(--accent-hover);background:#ffffff26}
-.fx-head{margin:8px 0 2px;font-size:11px;color:var(--text-hint);text-transform:uppercase;letter-spacing:.05em}
-.hexbtn{flex:1;min-width:0;background:transparent;border:1px solid transparent;
-  color:var(--text-hint);font-family:inherit;font-size:12px;letter-spacing:.02em;
-  text-align:left;padding:3px 5px;border-radius:5px;cursor:text}
-.hexbtn:hover{border-color:var(--line);color:var(--text)}
-.hexbtn:focus{border-color:var(--accent-hover);color:var(--text);outline:none;
-  background:var(--bg2)}
-.rgb-input{flex:0 0 auto;width:34px;height:30px;padding:0;cursor:pointer;
-  background:var(--bg2);border:1px solid var(--line);border-radius:7px}
-.rgb-input::-webkit-color-swatch-wrapper{padding:2px}
-/* the colour itself gets the black edge, so a pale pigment still reads as a swatch */
-.rgb-input::-webkit-color-swatch{border:1px solid #000;border-radius:5px}
-.rgb-input::-moz-color-swatch{border:1px solid #000;border-radius:5px}
-.field select,.field input[type=text]{
-  background:var(--bg2);color:var(--text);border:1px solid var(--line);border-radius:7px;
-  padding:6px 8px;font-size:13px;line-height:1.4;
-  /* option names run past 60 chars; without min-width:0 a flex select forces the
-     sidebar far wider than its declared width */
-  width:100%;min-width:0;max-width:100%;text-overflow:ellipsis;
-}
-
-/* no focus ring on selects: a select just picked stays focused, and the ring around it
-   read as a stray highlight (Raven, 2026-09-04: "We don't need the highlight around the
-   box") -- Chrome keeps :focus-visible on after its popup closes, so it goes outright */
-select:focus{outline:none}
-.field input[type=text]::placeholder{color:var(--text-hint);opacity:1}
-input[type=range]{width:100%;accent-color:var(--accent)}
-
-/* Pigment swatches */
-#pig{display:grid;grid-template-columns:repeat(10,1fr);gap:3px;max-height:170px;overflow-y:auto}
-#pig i{display:block;aspect-ratio:1;border-radius:3px;cursor:pointer;border:1px solid #0006}
-#pig i.on{outline:2px solid var(--accent-hover);outline-offset:1px}
-
-/* Viewport overlays */
-
-#err{position:absolute;bottom:12px;left:12px;color:#ff6b6b;white-space:pre;max-width:60ch}
-/* sits over the render area; pointer-events off so it never eats an orbit drag */
-#renderNote{position:absolute;top:10px;left:0;right:0;margin:0;text-align:center;
-  font-size:12px;line-height:1.4;color:var(--text-hint);opacity:.75;
-  pointer-events:none;padding:0 12px}
-#legend{font-size:11px;line-height:1.35}
-
-/* In-game pigment palette. Opens per pigment row and writes into that row's hex field,
-   so it is a way to REACH the game's 125 colours through the existing RGB interface
-   rather than a second interface beside it. */
-.palbtn{flex:0 0 auto;width:26px;height:26px;padding:0;line-height:1;font-size:13px;
-  background:transparent;color:var(--text);border:1px solid var(--line);border-radius:6px;
-  cursor:pointer}
-.palbtn:hover{background:#ffffff1a;border-color:var(--accent-hover)}
-#pigModal .modal-card{width:min(420px,92vw)}
-#pigGrid,.pig-grid{display:grid;grid-template-columns:repeat(10,1fr);gap:5px;margin:12px 0}
-/* black, not --line: a pale swatch against the panel had no edge at all, so light
-   colours ran together and white was invisible */
-#pigGrid button,.pig-grid button{aspect-ratio:1;padding:0;border:1px solid #000;
-  border-radius:4px;cursor:pointer}
-#pigGrid button:hover,.pig-grid button:hover{border-color:#fff}
-#pigGrid button.sel,.pig-grid button.sel{outline:2px solid #fff;outline-offset:1px}
-#pigDeviant .stage-h{margin:14px 0 0}
-#pigDevList .stage-h{margin:14px 0 6px}
-#pigPalettes .stage-h,#pigBaseHead .stage-h{margin:16px 0 0;font-size:13px}
-#pigPalettes .hx,#pigBaseHead .hx{font-weight:400;font-size:11px;opacity:.6}
-#pigPalettes .stage-h:first-child{margin-top:6px}
-#pigModal .stage-h{margin:14px 0 0;font-size:13px}
-#pigModal .stage-h .hx{font-weight:400;font-size:11px;opacity:.6;margin-left:4px}
-.devrow{display:flex;align-items:center;gap:6px;margin:0 0 4px}
-.devpick{display:flex;align-items:center;gap:8px;flex:1;min-width:0;padding:5px 8px;
-  background:transparent;border:1px solid var(--line);border-radius:6px;color:var(--text);
-  cursor:pointer;font:inherit;font-size:12px;text-align:left}
-.devpick:hover{border-color:var(--accent-hover);background:#ffffff12}
-.devanim{flex:0 0 auto;width:76px}
-.devrow .sw{width:16px;height:16px;border-radius:3px;border:1px solid #000;flex:0 0 auto}
-.devrow .nm{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.devrow .hx{opacity:.65;font-size:11px}
-
-/* Modals (About, Settings) — the block is shared verbatim with the sibling apps. */
-.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:flex;
-  align-items:center;justify-content:center;z-index:100;padding:20px}
-.modal-card{background:var(--bg2);border:1px solid var(--line);border-radius:10px;
-  padding:20px;max-width:560px;width:100%;max-height:82vh;overflow-y:auto}
-.modal-card h2{margin:0 0 12px;font-size:22px}
-.modal-card h3{margin:16px 0 6px;font-size:14px;color:var(--text-dim)}
-.modal-card code{font-size:12px;opacity:.85}
-.modal-card p{line-height:1.55;font-size:13px}
-.modal-card a{color:var(--accent-hover)}
-.modal-card .muted{color:var(--text-dim);font-size:13px;opacity:.75}
-/* Backdrop override, above the swatches so it is seen. Chroma chips sit on the two key buttons so
-   the colour is visible on the control that sets it. */
-.stage-h{margin:0 0 4px;font-size:14px}
-.stage-row{margin-bottom:15px}
-.stage-row .btn{position:relative;padding-left:26px}
-.stage-row .btn::before{content:"";position:absolute;left:8px;top:50%;width:10px;height:10px;
-  margin-top:-5px;border-radius:2px;border:1px solid #0006;background:var(--chip,transparent)}
-#stgTheme::before{display:none}
-#stgGreen{--chip:#00FF00}
-#stgBlue{--chip:#0000FF}
-
-/* Settings modal — Theme and Backdrop live here too, because "Theme" on its own was
-   easy to miss when looking for a setting. The swatch grid is copied verbatim from the
-   other apps; the id stays `themeModal` so the shared theme script needs no change. */
-/* A modal card is 560px; the family sizes the THEME card at 460 so a swatch comes out the
-   same size here as in every other app. Scoped so the About card is untouched. */
-#themeModal .modal-card{width:min(460px,90vw)}
-.swatches{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:15px}
-.swatch{aspect-ratio:1;border-radius:8px;border:2px solid transparent;cursor:pointer;position:relative;overflow:hidden;padding:0}
-.swatch.sel{border-color:#fff}
-.swatch-icon{position:absolute;top:7%;left:50%;transform:translateX(-50%);width:60%;pointer-events:none;filter:drop-shadow(0 1px 2px rgba(0,0,0,.45))}
-.swatch span{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:10px;line-height:1.5;color:#fff;background:rgba(0,0,0,.45)}
-.row.end{justify-content:flex-end}
-.app-links{list-style:none;margin:0 0 14px;padding:0;display:flex;flex-direction:column;gap:10px}
-.app-links li{border:1px solid var(--line);border-radius:8px;padding:9px 12px;background:#ffffff08}
-.app-links li.current{opacity:.72}
-.app-links a,.app-name{font-weight:600;font-size:14px}
-.app-here{font-weight:400;font-size:11px;opacity:.7;border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-left:7px}
-.app-desc{display:block;margin-top:3px;font-size:12px;opacity:.8;line-height:1.4}
-/* the MH4U Armor Viewer's (hidden here): a colour chip beside a colour select, and the game's colour board */
-.chip{display:inline-block;flex:0 0 26px;width:26px;height:26px;border-radius:5px;border:1px solid rgba(255,255,255,.55);box-shadow:inset 0 0 0 1px rgba(0,0,0,.35)}
-.board-wrap canvas{display:block;width:100%;height:auto;image-rendering:pixelated;cursor:crosshair;border-radius:4px;border:1px solid rgba(255,255,255,.35)}
-#skinTone{flex:1;min-width:0}
-</style>
+<!-- the shared viewer base's stylesheet (docs/base/ui/base.css; the plan: C:\Coding Repos\VIEWER-BASE-PLAN.md) -->
+<link rel="stylesheet" href="base/ui/base.css?v=1">
 </head>
 <body>
 <div id="app">
   <header class="titlebar titlebar-header">
     <img class="title-icon" src="assets/MonsterIcons/_unknown.png" alt="">
     <h1>MHFU Armor Viewer</h1>
-    <button id="barBtn" class="btn tiny on" title="Show or hide the camera controls">Camera Controls</button>
-    <button id="resetBtn" class="btn tiny cta" title="Restore the defaults for the hunter on screen: no armor, the first face and hair, no weapon; its gender is kept">Reset</button>
+    <button id="barBtn" class="btn tiny on" title="Show or hide the camera controls">Camera controls</button>
+    <button id="saveBtn"   class="btn tiny" title="Save the current set">Save</button>
+    <button id="saveAsBtn" class="btn tiny" title="Save the current set to a new file">Save As&hellip;</button>
+    <button id="openBtn"   class="btn tiny" title="Open a saved set">Open</button>
+    <button id="resetBtn"  class="btn tiny cta" title="Restore the defaults for the hunter on screen: no armor, the first face and hairstyle, the Studio lighting and no effects; its gender is kept">Reset</button>
+    <input type="file" id="importFile" accept=".json" style="display:none">
     <button id="aboutBtn" class="icon-btn" title="About" aria-label="About">&#9432;</button>
     <button id="themeBtn" class="icon-btn" title="Settings" aria-label="Settings">&#9881;</button>
     <button id="linksBtn" class="icon-btn" title="Other MHFU apps" aria-label="Other MHFU apps">&#128279;</button>
@@ -524,107 +26,11 @@ input[type=range]{width:100%;accent-color:var(--accent)}
 
   <main class="layout">
     <aside class="sidebar">
-      <div id="paneMonster">
 
-      <!-- HUNTERS: the MHGU Armor Viewer's hunter slots. Raven, 2026-10-04: "Also, add the Hunter slots of the
-           GU Armor Viewer". Each slot is a named hunter; click a row to switch to it. -->
-      <section class="panel" id="huntersPanel" data-open="false" hidden>
-        <button class="panel-head">Hunters <span class="chev">&#9662;</span></button>
-        <div class="panel-body">
-          <ol id="hunterList" class="chain hunters"></ol>
-          <div class="row">
-            <button id="hunterNew" class="btn tiny" title="A new hunter, starting as a copy of this one">New</button>
-            <button id="hunterRename" class="btn tiny" title="Rename this hunter">Rename</button>
-            <button id="hunterDelete" class="btn tiny" title="Delete this hunter">Delete</button>
-          </div>
-        </div>
-      </section>
+      <div id="paneHunter">
+      <!-- Hunter Slots, Armor Pieces, Pigment, Weapon, Hunter and Guild Info: the shared base builds them (base/ui/hunter-tab.js) -->
+      <div id="hunterTab"></div>
 
-      <section class="panel" data-open="true">
-        <button class="panel-head">Equipment <span class="chev">&#9662;</span></button>
-        <div class="panel-body">
-          <div class="field"><label for="htype">Type</label><select id="htype">
-            <option value="all">Both</option>
-            <option value="b">Blademaster</option>
-            <option value="g">Gunner</option></select></div>
-          <div class="field"><input type="text" id="filter" placeholder="Filter by name&hellip;"></div>
-          <div class="field"><label for="s_helm">Head</label><select id="s_helm" data-slot="helm"></select></div>
-          <div class="field"><label for="s_body">Chest</label><select id="s_body" data-slot="body"></select></div>
-          <div class="field"><label for="s_arm">Arms</label><select id="s_arm" data-slot="arm"></select></div>
-          <div class="field"><label for="s_wst">Waist</label><select id="s_wst" data-slot="wst"></select></div>
-          <div class="field"><label for="s_leg">Legs</label><select id="s_leg" data-slot="leg"></select></div>
-        </div>
-      </section>
-
-      <section class="panel" data-open="false">
-        <button class="panel-head">Hunter <span class="chev">&#9662;</span></button>
-        <div class="panel-body">
-          <div class="field"><label for="genderSel">Gender</label><select id="genderSel">
-            <option value="f">Female</option>
-            <option value="m">Male</option></select></div>
-          <div class="field"><label for="faceStyle">Face</label><select id="faceStyle"></select></div>
-          <div class="field"><label for="hairStyle">Hair</label><select id="hairStyle"></select></div>
-          <div class="field" hidden><label for="clothing">Clothing</label><select id="clothing"></select></div>
-          <div class="field" hidden><label for="features">Features</label><select id="features"></select></div>
-          <div class="field"><label for="huntPose">Pose</label><select id="huntPose"></select></div>
-        </div>
-      </section>
-
-      <!-- WEAPON: the game's own weapon tables (weapons.json) hung on the hunter where the game puts them
-           (stances/wNN.json: the game's own carry rule and weapon pass, run under emulation for every motion of
-           the class -- tools/build_stances.py in the extract). Sheathed: the weapon away, under the Hunter
-           panel's Pose. Drawn: the Stance (the class's own motions) plays, the weapon where the game has it on
-           each frame -- in a hand, or on the back mid-draw. Beside: standing next to the hunter, to look at. -->
-      <section class="panel" id="weaponPanel" data-open="false">
-        <button class="panel-head">Weapon <span class="chev">&#9662;</span></button>
-        <div class="panel-body">
-          <div class="field"><label for="weaponClass">Class</label><select id="weaponClass"></select></div>
-          <div class="field" id="weaponModelField"><label for="weaponModel">Weapon</label><select id="weaponModel"></select></div>
-          <div class="field" id="weaponDrawnField"><label for="weaponDrawn">Carry</label><select id="weaponDrawn"><option value="sheathed">Sheathed</option><option value="drawn">Drawn</option><option value="beside">Beside the hunter</option></select></div>
-          <div class="field" id="weaponStanceField"><label for="weaponStance">Stance</label><select id="weaponStance"></select></div>
-          <div class="field" id="kinsectField" hidden><label for="kinsect">Kinsect</label><select id="kinsect"></select></div>
-        </div>
-      </section>
-
-      <!-- THE CHARACTER COLOURS (CharMake: Skin Tone, Clothing Color, Feature Color, Hair Color). Each colour is
-           written into the albedo colour of the materials of one colour type; see armor.json _about.colors. The
-           game's own presets for these menus are not read yet, so each row offers the viewer's starting colour
-           and Custom, a pixel of the game's own colour board (lyt\lobby\texture\lby_colorscale). -->
-      <section class="panel" data-open="false" hidden>
-        <button class="panel-head">Colors <span class="chev">&#9662;</span></button>
-        <div class="panel-body">
-          <div class="field"><label for="skinColor">Skin Tone</label>
-            <div class="row gap"><select id="skinColor" data-color="skin"></select><span class="chip" id="skinChip"></span></div></div>
-          <div class="field"><label for="hairColor">Hair Color</label>
-            <div class="row gap"><select id="hairColor" data-color="hair"></select><span class="chip" id="hairChip"></span></div></div>
-          <div class="field"><label for="clothColor">Clothing Color</label>
-            <div class="row gap"><select id="clothColor" data-color="cloth"></select><span class="chip" id="clothChip"></span></div></div>
-          <div class="field"><label for="featColor">Feature Color</label>
-            <div class="row gap"><select id="featColor" data-color="feat"></select><span class="chip" id="featChip"></span></div></div>
-          <div class="field board-wrap" id="boardWrap" hidden>
-            <label id="boardLabel" for="board">Color Board</label>
-            <canvas id="board" title="Click or drag to pick a color from the game's own color board"></canvas>
-          </div>
-        </div>
-      </section>
-
-      <!-- ARMOUR PIGMENT: every piece draws its pigment region (colour type 3) in its own default colour,
-           armour record +0x13 into the game's 70-colour table (0x2f854c). The item box's "Change your armor
-           color" can give a piece its own colour; Custom picks one from the colour board. An empty slot shows
-           the clothing, whose pigment is the Clothing Color. The rows are the MHGU Armor Viewer's (Raven,
-           2026-10-08: GU parity): a tick, a hex field, an RGB swatch, and the palette button, which opens the
-           game's 70 pigments and its colour board. -->
-      <section class="panel" data-open="false" hidden>
-        <button class="panel-head">Pigment <span class="chev">&#9662;</span></button>
-        <div class="panel-body">
-          <label class="chk" title="Show which parts of each piece take its pigment: the pigment region in magenta, the rest dimmed"><input type="checkbox" id="maskdbg">Dye mask</label>
-          <div id="slotPig"></div>
-        </div>
-      </section>
-
-      <!-- THE GAME'S OWN MOTIONS: the hunter's motion lists (player\mot\co\co_*, lco_*, pl_make, pl_gc,
-           pl_arena, and player\mot\wNN per weapon class). The clips carry no names in the game data, so they
-           are listed as the game stores them. -->
       <section class="panel" id="animPanel" data-open="false">
         <button class="panel-head">Animation <span class="chev">&#9662;</span></button>
         <div class="panel-body">
@@ -643,29 +49,26 @@ input[type=range]{width:100%;accent-color:var(--accent)}
                 <button id="animLoop" class="btn tiny" title="Repeat the animation instead of holding its last frame">Loop</button>
               </div>
             </div>
-            <div class="chain-head" hidden>Chain</div>
-            <div class="row pick" hidden><select id="chainPoseSel" title="A hunter pose to add"></select><button id="chainPrevPose" class="btn tiny" title="Play this pose now (sheathed)">Preview</button><button id="chainAddPose" class="btn tiny" title="Add this pose to the chain">Add</button></div>
-            <div class="row pick" hidden><select id="chainStanceSel" title="A weapon stance to add"></select><button id="chainPrevStance" class="btn tiny" title="Play this stance now (drawn)">Preview</button><button id="chainAddStance" class="btn tiny" title="Add this stance to the chain">Add</button></div>
-            <div class="row" hidden>
+            <div class="chain-head">Chain</div>
+            <div class="row pick"><select id="chainPoseSel" title="A hunter pose to add"></select><button id="chainPrevPose" class="btn tiny" title="Play this pose now (sheathed)">Preview</button><button id="chainAddPose" class="btn tiny" title="Add this pose to the chain">Add</button></div>
+            <div class="row pick"><select id="chainStanceSel" title="A weapon stance to add"></select><button id="chainPrevStance" class="btn tiny" title="Play this stance now (drawn)">Preview</button><button id="chainAddStance" class="btn tiny" title="Add this stance to the chain">Add</button></div>
+            <div class="row">
               <button id="chainPlay" class="btn tiny" title="Play the chain back to back">Play chain</button>
               <button id="chainLoop" class="btn tiny" title="Repeat the chain when it ends">Loop</button>
               <button id="chainClear" class="btn tiny" title="Empty the chain">Clear</button>
             </div>
-            <ol id="chainList" class="chain" hidden></ol>
+            <ol id="chainList" class="chain"></ol>
           </div>
         </div>
       </section>
 
-      <!-- LIGHTING, CAMERA AND EFFECTS: the MHGU viewers' panels, as the MH3U Armor Viewer has them.
-           The lighting is generic three.js lighting, not the game's (MHFU's shading is undecoded):
-           Default is the rig this app has drawn from the start, the rest are the MHGU Armor Viewer's
-           presets. -->
-      <section class="panel" id="lightPanel" data-open="false" hidden>
+      <!-- LIGHTING, CAMERA AND EFFECTS: the shared base's panels. GENERIC THREE.JS LIGHTING, NOT MHFU's: the game's
+           shading is not decoded, so no preset is the game's light; the presets are GU's (Raven, 2026-10-18). -->
+      <section class="panel" id="lightPanel" data-open="false">
         <button class="panel-head">Lighting <span class="chev">&#9662;</span></button>
         <div class="panel-body">
           <div class="row light-row" id="lightRow">
-            <button class="btn tiny" data-light="default" title="This viewer's own rig: a white key, a blue rim, a soft fill, the hemisphere and ambient lights, the headlight on">Default</button>
-            <button class="btn tiny" data-light="studio" title="The MHGU Armor Viewer's default: a cool key, blue rim, soft fill">Studio</button>
+            <button class="btn tiny" data-light="studio" title="The default rig: a cool key, blue rim, soft fill">Studio</button>
             <button class="btn tiny" data-light="warm" title="Amber key and rim, warm fill">Warm</button>
             <button class="btn tiny" data-light="cool" title="Blue-white key, strong blue rim">Cool</button>
             <button class="btn tiny" data-light="even" title="Flat, near-shadowless light on purpose: for checking dye colours">Even</button>
@@ -684,7 +87,8 @@ input[type=range]{width:100%;accent-color:var(--accent)}
           </div>
         </div>
       </section>
-      <section class="panel" id="camPanel" data-open="false" hidden>
+
+      <section class="panel" id="camPanel" data-open="false">
         <button class="panel-head">Camera <span class="chev">&#9662;</span></button>
         <div class="panel-body">
           <div class="field" id="camModeField"><label for="camMode">Camera</label><select id="camMode" title="Orbit: dragging turns the figure. First person: fly through the scene with WASD and the mouse"><option value="orbit">Orbit</option><option value="fly">First person</option></select></div>
@@ -704,10 +108,11 @@ input[type=range]{width:100%;accent-color:var(--accent)}
             <label class="chk" title="Orbit and pan glide to a stop instead of stopping dead"><input type="checkbox" id="camDamp">Smooth orbit</label>
             <label class="chk" title="The wheel zooms toward the pointer instead of the centre of the view"><input type="checkbox" id="camZoomCursor">Zoom toward the pointer</label>
           </div>
-          <div class="row"><button id="camReset" class="btn tiny" title="Camera settings back to their defaults: Orbit, Standard lens, 35 mm, turntable off, smooth orbit on, zoom at the centre, no face lock, aiming at the head. The view itself stays where it is (Fit to View frames it)">Reset camera settings</button></div>
+          <div class="row"><button id="camReset" class="btn tiny" title="Camera settings back to their defaults: Orbit, Standard lens, 35 mm, turntable off, smooth orbit on, zoom at the centre, no face lock, floor grid on. The view itself stays where it is (Fit to View frames it)">Reset camera settings</button></div>
         </div>
       </section>
-      <section class="panel" id="fxPanel" data-open="false" hidden>
+
+      <section class="panel" id="fxPanel" data-open="false">
         <button class="panel-head">Effects <span class="chev">&#9662;</span></button>
         <div class="panel-body">
           <div class="row light-row" id="fxRow">
@@ -742,6 +147,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
       </section>
 
       </div>
+
     </aside>
 
     <section class="content">
@@ -754,57 +160,31 @@ input[type=range]{width:100%;accent-color:var(--accent)}
         <button id="fitBtn" class="btn tiny ico" aria-label="Fit to View" title="Fit to View: Frame the whole hunter"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V5.5A1.5 1.5 0 0 1 5.5 4H9M15 4h3.5A1.5 1.5 0 0 1 20 5.5V9M20 15v3.5a1.5 1.5 0 0 1-1.5 1.5H15M9 20H5.5A1.5 1.5 0 0 1 4 18.5V15"/></svg></button>
         <button id="spinBtn" class="btn tiny ico" aria-label="Rotate" title="Rotate: Cycle the turntable speed"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 12a8.5 8.5 0 1 1-2.5-6"/><path d="M20.5 4v4.5H16"/></svg></button>
         <button id="orbitLock" class="btn tiny ico" aria-label="Orbit" title="Orbit: Lock the orbit so dragging pans the view instead of rotating it"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.2"/><ellipse cx="12" cy="12" rx="9.6" ry="4.3" transform="rotate(-30 12 12)"/></svg></button>
-        <button id="flyBtn" hidden class="btn tiny ico" aria-label="First person" title="First person: Fly the camera: WASD moves, the mouse looks. Click the view to look around, Esc frees the mouse"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12c2.4-4 5.6-6 9.5-6s7.1 2 9.5 6c-2.4 4-5.6 6-9.5 6s-7.1-2-9.5-6Z"/><circle cx="12" cy="12" r="3"/></svg></button>
+        <button id="flyBtn" class="btn tiny ico" aria-label="First person" title="First person: Fly the camera: WASD moves, the mouse looks. Click the view to look around, Esc frees the mouse"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12c2.4-4 5.6-6 9.5-6s7.1 2 9.5 6c-2.4 4-5.6 6-9.5 6s-7.1-2-9.5-6Z"/><circle cx="12" cy="12" r="3"/></svg></button>
         <button id="wireBtn" class="btn tiny ico" aria-label="Wireframe" title="Wireframe: Draw the meshes as wireframe"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 20.5 8v8L12 21 3.5 16V8L12 3Z"/><path d="M3.5 8 12 12.5 20.5 8M12 12.5V21"/></svg></button>
+        <button id="gridBtn" class="btn tiny ico" aria-label="Floor Grid" title="Floor Grid: Lines on the floor under the figure, a metre apart with a heavier one every ten"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6h10l4 13H3L7 6Z"/><path d="M10.3 6 9 19M13.7 6 15 19M5.8 10h12.4M4.5 14.2h15"/></svg></button>
+        <button id="cursorBtn" class="btn tiny ico" aria-label="Hide Cursor" title="Hide Cursor: Hide the mouse pointer over the model"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3.6 15.8 12l-4.3.5 2.1 5.4-2 .8-2.1-5.4-3.5 2.9V3.6Z"/><path d="M4 20 20 4"/></svg></button>
         <button id="shotBtn" class="btn tiny ico" aria-label="Screenshot" title="Screenshot: Save a PNG of the render area"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3.5 8.6h3.2L8.2 6.5h7.6l1.5 2.1h3.2v10.4H3.5V8.6Z"/><circle cx="12" cy="13.6" r="3.3"/></svg></button>
+        <button id="clipBtn" class="btn tiny ico" aria-label="Record" title="Record: Record a clip of the render area"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5.6" fill="currentColor" stroke="none"/></svg></button><span id="clipTimer" class="clip-timer" title="Seconds of clip left. It counts the 3-second lead first, then the clip; :00 flashes when the clip is done">:30</span>
       </div>
     </section>
   </main>
 </div>
 
-<!-- THE PIGMENT PALETTE, the MHGU Armor Viewer's modal: opened from a pigment row's palette button, it writes
-     into that row. Default = the piece's own colour; the game's 70 pigments; the game's colour board. -->
+<!-- THE PIGMENT SELECTOR, the shared base's (base/ui/pigment.js): opened from a pigment row's palette button, it writes
+     into that row. Default = the piece's own colour; the game's 11 armour colours, its Rainbow; RGB... (MHFU's colour
+     board is not read, so none is shown). -->
 <div id="pigModal" class="modal hidden">
   <div class="modal-card">
     <h2 id="pigTitle">Pigment</h2>
     <button id="pigDefault" class="btn block" title="The piece's own colour, which follows the armor">Default</button>
-    <h3 class="stage-h">Armor pigments <span class="hx" id="pigGameCount"></span></h3>
+    <div id="pigPalettes"></div>
+    <div id="pigDevList"></div>
+    <div id="pigDeviant"></div>
+    <div id="pigBaseHead"></div>
     <div id="pigGrid"></div>
-    <div class="field board-wrap" id="pigBoardWrap">
-      <h3 class="stage-h" id="pigBoardLabel">Color board</h3>
-      <canvas id="pigBoard" title="Click or drag to pick a color from the game's own color board"></canvas>
-    </div>
     <div class="row end gap">
       <button id="pigClose" class="btn">Close</button>
-    </div>
-  </div>
-</div>
-
-<div id="linksModal" class="modal hidden">
-  <div class="modal-card">
-    <h2>Other MHFU Apps</h2>
-    <p class="muted">For Non-MHFU Apps, you can visit the <a href="https://armoredraven17.github.io/" target="_blank" rel="noopener">Home Page</a></p>
-    <ul class="app-links">
-      <!-- every published MHFU app, in the hub's order (apps.js); this app's own row is the "you are here" one -->
-      <li>
-        <a href="https://armoredraven17.github.io/MHFU-LookUp-Test/" target="_blank" rel="noopener">MHFU LookUp</a>
-        <span class="app-desc">A reference for weapons, armor, monsters, quests, items and gathering.</span>
-      </li>
-      <li>
-        <a href="https://armoredraven17.github.io/mhfu-hunting-log/" target="_blank" rel="noopener">Hunting Log</a>
-        <span class="app-desc">Keeps a running record of your hunts — what you were after, what you wore, who came along.</span>
-      </li>
-      <li class="current">
-        <span class="app-name">Armor Viewer <span class="app-here">you are here</span></span>
-        <span class="app-desc">Renders a hunter in 3D with every MHFU armor piece swappable and every weapon worn where the game puts it, so you can mix and match a set.</span>
-      </li>
-      <li>
-        <a href="https://armoredraven17.github.io/mhfu-monster-viewer/" target="_blank" rel="noopener">Monster Viewer</a>
-        <span class="app-desc">Renders every MHFU monster in 3D with its own animations and part breaks, so you can watch what they actually do.</span>
-      </li>
-    </ul>
-    <div class="row end gap">
-      <button id="linksClose" class="btn">Close</button>
     </div>
   </div>
 </div>
@@ -814,13 +194,20 @@ input[type=range]{width:100%;accent-color:var(--accent)}
     <h2>Settings</h2>
     <h3 class="stage-h">Display</h3>
     <label class="chk"><input type="checkbox" id="setNote">Hide rendering notice</label>
+    <h3 class="stage-h">Equipment</h3>
+    <label class="chk"><input type="checkbox" id="setHeadBoth">Treat Head Armors as Blademaster/Gunner</label>
+    <p class="hint">The Head list offers helms and caps together, whichever Type is picked.</p>
     <h3 class="stage-h">Backdrop</h3>
     <p class="hint">Overrides the render background so the model can be keyed out.</p>
     <div class="row gap stage-row">
       <button id="stgTheme" class="btn accent" style="flex:1">Theme</button>
-      <button id="stgGreen" class="btn accent" style="flex:1">Digital Green</button>
-      <button id="stgBlue"  class="btn accent" style="flex:1">Digital Blue</button>
+      <button id="stgGreen" class="btn accent" style="flex:1">D. Green</button>
+      <button id="stgBlue"  class="btn accent" style="flex:1">D. Blue</button>
     </div>
+    <h3 class="stage-h">Capture</h3>
+    <label class="chk"><input type="checkbox" id="setShotBg">Include the backdrop in screenshots</label>
+    <div class="field"><label for="setClipFmt">Clip format</label><select id="setClipFmt" title="A video keeps no transparency; a frame sequence does, and saves as a zip of numbered frames"><option value="mp4">Video</option><option value="webp">Frame sequence, WebP</option><option value="png">Frame sequence, PNG</option></select></div>
+    <p class="hint" id="setClipHint"></p>
     <h3 class="stage-h">Theme</h3>
     <div id="swatches" class="swatches"></div>
     <button id="themeClose" class="btn accent">Done</button>
@@ -836,7 +223,7 @@ input[type=range]{width:100%;accent-color:var(--accent)}
     <p>Monster Hunter Freedom Unite and all of its models, textures, animations and data tables are &copy; CAPCOM CO., LTD. All rights reserved. Every asset here was extracted from a personally owned copy of the game (the US release) and is shown for reference only.</p>
 
     <h3>What you are looking at</h3>
-    <p>A basic version. Each armor piece is its own model in the game, worn over the hunter's skeleton; the names and which model each piece draws for each gender come from the game's own tables, and an empty slot shows the clothing the game draws there. The hunter plays the game's own motions, and each weapon sits where the game puts it, sheathed or drawn, worked out by running the game's own weapon code. Weapon classes are the game's own; weapons that share a model are listed together.</p>
+    <p>Each armor piece is its own model in the game, worn over the hunter's skeleton; the names, which model each piece draws for each gender, and which pieces take a color (S-Series and X/Z-Series) and where come from the game's own tables, and an empty slot shows the clothing the game draws there. The armor colors and the Rainbow are the game's own. The hunter plays the game's own motions, and each weapon sits where the game puts it, sheathed or drawn, worked out by running the game's own weapon code. Weapon classes are the game's own; weapons that share a model are listed together. The lighting is the viewer's, not the game's.</p>
 
     <h3>File formats and tables</h3>
     <ul class="app-links">
@@ -871,282 +258,40 @@ input[type=range]{width:100%;accent-color:var(--accent)}
   </div>
 </div>
 
-<script>
-  // Plain script, not the module below: the modals and the view preferences are independent of the
-  // viewer, and reading them here means a hidden notice or bar never flashes before the module loads.
-  (function () {
-    var am = document.getElementById("aboutModal");
-    document.getElementById("aboutBtn").onclick = function () { am.classList.remove("hidden"); };
-    document.getElementById("aboutClose").onclick = function () { am.classList.add("hidden"); };
-    am.onclick = function (e) { if (e.target === am) am.classList.add("hidden"); };
+<div id="linksModal" class="modal hidden">
+  <div class="modal-card">
+    <h2>Other MHFU Apps</h2>
+    <p class="muted">For Non-MHFU Apps, you can visit the <a href="https://armoredraven17.github.io/" target="_blank" rel="noopener">Home Page</a></p>
+    <ul class="app-links">
+      <!-- every published MHFU app, in the hub's order (apps.js); this app's own row is the "you are here" one -->
+      <li>
+        <a href="https://armoredraven17.github.io/MHFU-LookUp-Test/" target="_blank" rel="noopener">MHFU LookUp</a>
+        <span class="app-desc">A reference for weapons, armor, monsters, quests, items and gathering.</span>
+      </li>
+      <li>
+        <a href="https://armoredraven17.github.io/mhfu-hunting-log/" target="_blank" rel="noopener">Hunting Log</a>
+        <span class="app-desc">Keeps a running record of your hunts — what you were after, what you wore, who came along.</span>
+      </li>
+      <li class="current">
+        <span class="app-name">Armor Viewer <span class="app-here">you are here</span></span>
+        <span class="app-desc">Renders a hunter in 3D with every MHFU armor piece swappable and every weapon worn where the game puts it, so you can mix and match a set.</span>
+      </li>
+      <li>
+        <a href="https://armoredraven17.github.io/mhfu-monster-viewer/" target="_blank" rel="noopener">Monster Viewer</a>
+        <span class="app-desc">Renders every MHFU monster in 3D with its own animations and part breaks, so you can watch what they actually do.</span>
+      </li>
+    </ul>
+    <div class="row end gap">
+      <button id="linksClose" class="btn">Close</button>
+    </div>
+  </div>
+</div>
 
-    // mhfu-armor-: its own keys, so it never reads another viewer's preferences on a shared origin
-    var UI_KEY = "mhfu-armor-viewer-ui";
-    var ui = { note: true, bar: true };
-    try { ui = Object.assign(ui, JSON.parse(localStorage.getItem(UI_KEY) || "{}")); } catch (_) {}
-    var noteEl = document.getElementById("renderNote"),
-        barEl = document.getElementById("bar"),
-        barHome = barEl.parentNode,
-        barBtn = document.getElementById("barBtn"),
-        header = barBtn.parentNode,
-        setNote = document.getElementById("setNote");
-    function paintUi() {
-      noteEl.hidden = !ui.note;
-      if (ui.bar) barHome.appendChild(barEl);
-      else header.insertBefore(barEl, barBtn);
-      barBtn.classList.toggle("on", ui.bar);
-      setNote.checked = !ui.note;
-      try { localStorage.setItem(UI_KEY, JSON.stringify(ui)); } catch (_) {}
-    }
-    paintUi();
-    barBtn.onclick = function () { ui.bar = !ui.bar; paintUi(); };
-    setNote.onchange = function () { ui.note = !setNote.checked; paintUi(); };
-
-    var m = document.getElementById("linksModal");
-    document.getElementById("linksBtn").onclick = function () { m.classList.remove("hidden"); };
-    document.getElementById("linksClose").onclick = function () { m.classList.add("hidden"); };
-    m.onclick = function (e) { if (e.target === m) m.classList.add("hidden"); };
-  })();
-</script>
-
-<script>
-  // Theme system — the MHGU family's, installed from mhgu-fishing/docs/theme.js. Every shade
-  // is derived from ONE chosen colour by moving only its lightness in HSL, so hue and
-  // saturation are preserved and every derived surface stays "in family". That is why the
-  // palette can be a list of bare hexes rather than a set of hand-built themes.
-  //
-  // THE PALETTE HAS ONE INVARIANT: every swatch holds white text and a white checkbox tick.
-  // Both come off one number — the browser picks a checkbox tick itself, white below relative
-  // luminance .1791 and black above, and white body text needs its ground at .1833 or below to
-  // clear 4.5:1 — so the checkbox line is the stricter of the two. Every theme clears it, which
-  // is why this app paints white text unconditionally and has no light-theme branch.
-  //
-  // A NEW COLOUR HAS TO CLEAR THAT. Do not add one without checking it.
-  //
-  // MHFU NAMES ON THE FAMILY'S COLOURS. The hexes are the MHGU apps' own, unchanged (so the
-  // invariant above still holds and LEGACY_HEX still applies); only the names and icons are
-  // MHFU monsters. Keep this list identical to the MHFU Hunting Log's COLORS. A name too long for
-  // a swatch is shortened and its full name kept in `icon`, which names the icon file:
-  // assets/MonsterIcons/<slug of icon or name>.png, the MHFU LookUp app's set (build_viewer.py
-  // copies them).
-  (function () {
-    const THEMES = [
-    { name: "Teostra", hex: "#570B0B" },
-    { name: "Rathalos", hex: "#b51717" },
-    { name: "Cephadrome", hex: "#783E0F" },
-    { name: "D. Hermitaur", hex: "#C7620E", icon: "Daimyo Hermitaur" },
-    { name: "Tigrex", hex: "#74631D" },
-    { name: "Rajang", hex: "#9C8328" },
-    { name: "E. Congalala", hex: "#436713", icon: "Emerald Congalala" },
-    { name: "Gendrome", hex: "#67922E" },
-    { name: "G. Plesioth", hex: "#0B570F", icon: "Green Plesioth" },
-    { name: "Rathian", hex: "#39993E" },
-    { name: "Basarios", hex: "#14503d" },
-    { name: "B. Yian Kut-Ku", hex: "#279773", icon: "Blue Yian Kut-Ku" },
-    { name: "A. Rathalos", hex: "#0C5D68", icon: "Azure Rathalos" },
-    { name: "Kirin", hex: "#118898" },
-    { name: "S. Ceanataur", hex: "#005984", icon: "Shogun Ceanataur" },
-    { name: "Plesioth", hex: "#0080c1" },
-    { name: "Lunastra", hex: "#0B2757" },
-    { name: "Velocidrome", hex: "#0b3f97" },
-    { name: "P. Gypceros", hex: "#1F0B57", icon: "Purple Gypceros" },
-    { name: "Plum D. Hermitaur", hex: "#4e2fa2", icon: "Plum Daimyo Hermitaur" },
-    { name: "Yian Garuga", hex: "#62008f" },
-    { name: "Chameleos", hex: "#8e50ab" },
-    { name: "P. Rathian", hex: "#D4358C", icon: "Pink Rathian" },
-    { name: "Congalala", hex: "#C8679D" },
-    { name: "Akantor", hex: "#5a411f" },
-    { name: "Diablos", hex: "#997c54" },
-    { name: "Gravios", hex: "#835A32" },
-    { name: "Bulldrome", hex: "#B17A47" },
-    { name: "K. Daora", hex: "#505358", icon: "Kushala Daora" },
-    { name: "S. Rathalos", hex: "#7C879B", icon: "Silver Rathalos" },
-    { name: "Forbidden", hex: "#1E2025", icon: "Question Mark" },
-    ];
-    // mhfu-: this app can share an origin with the other viewers and keeps its own theme
-    const KEY = "mhfu-armor-viewer-theme";
-    const DEFAULT_HEX = "#1E2025";           // Forbidden, the family default
-
-    // Backdrop override for the render area. The stage is normally darken(hex,.18) — the
-    // Weapon Tree's factor — but these two are chroma-key colours, so a screenshot of the
-    // model can be keyed out. They deliberately do NOT follow the theme: the whole point is a
-    // flat, known value the keyer can pull. Everything else (sidebar, titlebar, panels) still
-    // follows the theme, so only the surface being composited is overridden.
-    //
-    // Full-gun primaries, #00FF00 and #0000FF, chosen deliberately over the SMPTE-ish digital
-    // greens and blues. Those key more forgivingly on real footage, where the backdrop is lit
-    // cloth, but here the backdrop is a flat framebuffer value with no lighting on it at all,
-    // so the reason to prefer them does not apply and a full channel is the easier pull.
-    const STAGE_KEY = "mhfu-armor-viewer-stage";
-    const STAGES = { theme: null, green: "#00FF00", blue: "#0000FF" };
-    let stageMode = "theme";
-    try { const v = localStorage.getItem(STAGE_KEY); if (v && v in STAGES) stageMode = v; } catch (e) {}
-
-    const FALLBACK_ICON = "assets/MonsterIcons/_unknown.png";
-
-    const byHex = new Map(THEMES.map(t => [t.hex.toUpperCase(), t]));
-    // the MHFU LookUp app's file stems: lowercase, words joined by "_", hyphens kept except in Kut-Ku
-    const monsterIcon = name => name === "Question Mark" ? FALLBACK_ICON
-      : `assets/MonsterIcons/${name.toLowerCase().replace(/[^a-z0-9-]+/g, "_").replace(/^_|_$/g, "").replace("yian_kut-ku", "yian_kut_ku")}.png`;
-
-    // A saved theme is a bare hex, so anyone sitting on a retired one keeps a colour that is no
-    // longer in the list: it never picks up the change, and anything keyed off the hex stops
-    // matching. Remap on read, not on write. Kept identical to the other apps rather than
-    // trimmed to this app's own history, because a per-app map is one more thing to drift.
-    const LEGACY_HEX = {
-      '#C8A319': '#74631D', '#57470B': '#74631D', '#5E4D0C': '#74631D',           // Tigrex
-      '#574916': '#74631D', '#68581A': '#74631D',
-      '#F1D364': '#9C8328', '#B59417': '#9C8328', '#C39F19': '#9C8328',           // Rajang
-      '#BEA031': '#9C8328',
-      '#C65900': '#783E0F', '#FC933E': '#C7620E',                                 // Tetsucabra, Agnaktor
-      '#68360D': '#783E0F', '#B5590D': '#C7620E',
-      '#3A9B3F': '#39993E', '#2DAE85': '#279773',                                 // Rathian, Zinogre
-      '#D84696': '#D4358C', '#CE79A8': '#C8679D',                                 // Mizutsune, Congalala
-      '#B57C45': '#835A32', '#CFAA87': '#B17A47',                                 // Barroth, Bulldrome
-      '#AEB5C1': '#7C879B',                                                       // Valstrax
-
-    };
-    const migrateHex = (h) => (h && LEGACY_HEX[h.toUpperCase()]) || h;
-
-    const hexRgb = h => { h = h.replace("#", ""); return [0, 2, 4].map(i => parseInt(h.substr(i, 2), 16)); };
-    const clamp = n => Math.max(0, Math.min(255, Math.round(n)));
-    const clamp01 = n => Math.max(0, Math.min(1, n));
-    const rgbToHsl = ([r, g, b]) => {
-      r /= 255; g /= 255; b /= 255;
-      const max = Math.max(r, g, b), min = Math.min(r, g, b), d = max - min;
-      const l = (max + min) / 2;
-      if (d === 0) return [0, 0, l];
-      const s = d / (1 - Math.abs(2 * l - 1));
-      const h = max === r ? ((g - b) / d + (g < b ? 6 : 0)) / 6
-        : max === g ? ((b - r) / d + 2) / 6
-          : ((r - g) / d + 4) / 6;
-      return [h, s, l];
-    };
-    const hslToRgb = ([h, s, l]) => {
-      const c = (1 - Math.abs(2 * l - 1)) * s, x = c * (1 - Math.abs((h * 6) % 2 - 1)), m = l - c / 2;
-      const hi = Math.floor(h * 6) % 6;
-      const [r, g, b] = hi === 0 ? [c, x, 0] : hi === 1 ? [x, c, 0] : hi === 2 ? [0, c, x]
-        : hi === 3 ? [0, x, c] : hi === 4 ? [x, 0, c] : [c, 0, x];
-      return [r + m, g + m, b + m].map(v => clamp(v * 255));
-    };
-    // darken/lighten only nudge lightness, so every derived shade keeps the chosen
-    // colour's hue and saturation.
-    const darken = (rgb, f) => { const [h, s, l] = rgbToHsl(rgb); return hslToRgb([h, s, clamp01(l * f)]); };
-    const lighten = (rgb, t) => { const [h, s, l] = rgbToHsl(rgb); return hslToRgb([h, s, clamp01(l + (1 - l) * t)]); };
-    const css = rgb => `rgb(${rgb[0]},${rgb[1]},${rgb[2]})`;
-    // The complementary colour, the Bingo app's rule for its highlight (winColor): the hue
-    // rotated a full 180 deg from the theme, saturation .95, the lightest shade from .60 down
-    // that keeps white text at 4.5:1. The Reset button wears it (Raven, 2026-09-03:
-    // "complementary colored, refer to Bingo App").
-    const lin = v => { v /= 255; return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); };
-    const relLum = ([r, g, b]) => 0.2126 * lin(r) + 0.7152 * lin(g) + 0.0722 * lin(b);
-    const contrast = (a, b) => { const x = relLum(a), y = relLum(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); };
-    const WHITE = [255, 255, 255];
-    function complement(c) {
-      const hue = (rgbToHsl(c)[0] + 0.5) % 1;
-      for (let l = 0.60; l >= 0.20; l -= 0.01) {
-        const cand = hslToRgb([hue, 0.95, l]);
-        if (contrast(cand, WHITE) >= 4.5) return cand;
-      }
-      return hslToRgb([hue, 0.95, 0.20]);
-    }
-
-    let current = DEFAULT_HEX;
-
-    function applyTheme(hex) {
-      const c = hexRgb(hex), r = document.documentElement.style;
-      r.setProperty("--bg", css(darken(c, .70)));
-      r.setProperty("--bg1", css(darken(c, .80)));
-      r.setProperty("--bg2", css(darken(c, .95)));
-      r.setProperty("--hover", css(darken(c, .30)));
-      r.setProperty("--accent", css(darken(c, .70)));
-      r.setProperty("--accent-hover", css(lighten(c, .40)));
-      r.setProperty("--cta", css(complement(c)));
-      // Weapon Trees' factor, verbatim — unless a chroma backdrop is overriding it.
-      r.setProperty("--stage", STAGES[stageMode] || css(darken(c, .18)));
-      r.setProperty("--text", "#ffffff");
-      r.setProperty("--text-dim", "#fffffff5");
-      r.setProperty("--line", "rgba(11, 8, 8, 0.12)");
-      r.setProperty("--card", "rgba(255,255,255,0.05)");
-
-      current = hex;
-      try { localStorage.setItem(KEY, hex); } catch (e) { /* private mode */ }
-
-      document.querySelectorAll(".swatch").forEach(s => s.classList.toggle("sel", s.dataset.hex === hex));
-
-      // Flat for a chroma key, textured for a theme colour. The canvas is transparent, so
-      // .content is what shows and this is the only switch needed.
-      document.documentElement.classList.toggle("chroma", stageMode !== "theme");
-      const icon = document.querySelector(".title-icon");
-      if (icon) {
-        const t = byHex.get(hex.toUpperCase());
-        icon.src = t ? monsterIcon(t.icon || t.name) : FALLBACK_ICON;
-        icon.alt = t ? t.name : "";
-      }
-    }
-
-    function renderSwatches() {
-      const grid = document.getElementById("swatches");
-      if (!grid) return;
-      grid.textContent = "";
-      for (const t of THEMES) {
-        const b = document.createElement("button");
-        b.type = "button";
-        b.className = "swatch" + (t.hex === current ? " sel" : "");
-        b.dataset.hex = t.hex;
-        b.style.background = t.hex;      // the tile IS the colour, as in every other app
-        b.title = t.icon && t.icon !== "Question Mark" ? t.icon : t.name;   // the full name where the tile shortens it
-        const img = document.createElement("img");
-        img.className = "swatch-icon";
-        img.alt = "";
-        img.src = monsterIcon(t.icon || t.name);
-        img.onerror = () => { img.onerror = null; img.src = FALLBACK_ICON; };
-        const span = document.createElement("span");
-        span.textContent = t.name;
-        b.append(img, span);
-        b.addEventListener("click", () => applyTheme(t.hex));
-        grid.appendChild(b);
-      }
-    }
-
-    let saved = DEFAULT_HEX;
-    try { saved = migrateHex(localStorage.getItem(KEY)) || DEFAULT_HEX; } catch (e) { /* private mode */ }
-    if (!byHex.has(saved.toUpperCase())) saved = DEFAULT_HEX;
-    applyTheme(saved);
-    renderSwatches();
-    applyTheme(saved);   // re-run so the freshly drawn swatches get the `sel` marker
-
-    const modal = document.getElementById("themeModal");
-    document.getElementById("themeBtn").onclick = () => modal.classList.remove("hidden");
-    const STAGE_BTN = { theme: "stgTheme", green: "stgGreen", blue: "stgBlue" };
-    function setStage(mode) {
-      stageMode = mode in STAGES ? mode : "theme";
-      try { localStorage.setItem(STAGE_KEY, stageMode); } catch (e) { /* private mode */ }
-      for (const m in STAGE_BTN) document.getElementById(STAGE_BTN[m]).classList.toggle("on", m === stageMode);
-      applyTheme(current);   // re-derives --stage and repaints the scene
-    }
-    for (const m in STAGE_BTN) document.getElementById(STAGE_BTN[m]).onclick = () => setStage(m);
-    setStage(stageMode);
-
-    document.getElementById("themeClose").onclick = () => modal.classList.add("hidden");
-    modal.onclick = (e) => { if (e.target === modal) modal.classList.add("hidden"); };
-  })();
-</script>
-
-
-<script>
-// Once MHFU has swapped in, Chrome still draws each select's text too low, its bottom clipped,
-// until the select is restyled: zooming the page does it, a repaint does not. A font-family round
-// trip restyles them; the serif step is styled but never laid out. Kept out of the module so it is
-// armed before the module's first await.
-if (document.fonts) document.fonts.load('1em MHFU').then(() => {
-  const selects = document.querySelectorAll('select');
-  selects.forEach(s => { s.style.fontFamily = 'serif'; });
-  selects.forEach(s => getComputedStyle(s).fontFamily);
-  selects.forEach(s => { s.style.fontFamily = ''; });
-}, () => {});
-</script>
-
+<!-- the game (docs/game.js), then the shared Hunter tab and the shell (theme, view preferences, modals, accordion),
+     classic scripts, so the theme and the panels are in place before the first paint -->
+<script src="game.js?v=8"></script>
+<script src="base/ui/hunter-tab.js?v=1"></script>
+<script src="base/ui/shell.js?v=1"></script>
 <script type="importmap">
 {"imports":{
   "three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js",
@@ -1154,533 +299,6 @@ if (document.fonts) document.fonts.load('1em MHFU').then(() => {
 }}
 </script>
 
-<script type="module">
-// The MHFU Armor Viewer, basic version. One figure: a hunter in the game's own armour, on the gender's 21-bone
-// player rig, in a simple relaxed pose; the chosen weapon stands beside it. The page shell (panels, modals, theme)
-// is the MH4U Armor Viewer's; this module is MHFU's own and much smaller.
-//
-// Data (scripts/build_viewer.py, from C:/MHFU-Extract/tools/convert_player.py; see each json's `_about`):
-//   armor.json      the game's five armour tables (names, the model each gender draws, who may wear it), every
-//                   player piece, the faces and hairstyles, the rigs
-//   weapons.json    the game's weapon tables, the class of each weapon, every weapon model
-//   materials.json  each material's albedo map and draw state (the PSP's per-mesh blending)
-//   models/<g>      one glb per piece, each skinned to the whole rig, so every piece poses as one
-//
-// Pieces load through render/monster.js loadMonster (the MHFU Monster Viewer's): the glb, its materials from
-// materials.json, a skeleton clone. Nothing here writes user text with innerHTML.
-import * as THREE from 'three';
-import { createStage } from './render/stage.js';
-import { initAssets, loadJson, loader, bust } from './render/assets.js';
-import { allMats, setWire } from './render/material.js';
-import { loadMaterialsDb } from './render/materials-db.js';
-import { loadMonster, releaseMonster, restoreBind } from './render/monster.js';
-
-const errEl = document.getElementById('err');
-const errors = [];
-window.__errors = errors;
-function noteError(msg){ errors.push(String(msg)); errEl.textContent = String(msg); }
-addEventListener('error', e => noteError('ERROR: ' + e.message));
-addEventListener('unhandledrejection', e => noteError('ERROR: ' + ((e.reason && e.reason.message) || e.reason)));
-
-const DATA = await loadJson('armor.json');
-const WEAP = await loadJson('weapons.json');
-await loadMaterialsDb();
-
-const viewport = document.getElementById('viewport');
-const stage = createStage(viewport, { margin: 1.25 });
-const { renderer, scene, camera, controls, world, lights } = stage;
-initAssets(renderer);
-addEventListener('resize', () => stage.fit());
-stage.fit();
-
-// ---- state ------------------------------------------------------------------------------------------
-const SLOTS = DATA.slots;                         // helm, body, arm, wst, leg
-const LS_KEY = 'mhfu-armor-viewer';
-const DEFAULT = () => ({ g: 'f', type: 'all', slots: { helm: 0, body: 0, arm: 0, wst: 0, leg: 0 }, face: 0, hair: 0,
-                         wcls: '', weapon: '', pose: 'relaxed', carry: 'sheathed', stance: '0:01' });
-let state = DEFAULT();
-try { state = Object.assign(state, JSON.parse(localStorage.getItem(LS_KEY) || '{}')); } catch (e) {}
-const save = () => { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} };
-
-// ---- the relaxed pose -------------------------------------------------------------------------------
-// The rig's T-pose has both arms along x (11-14 the +x arm, 15-18 the -x arm; 12 and 16 the upper arms). The
-// game's own motions are not read yet, so the arms come down by hand: rotations about z, by rig bone. three.js
-// names the node "12:12" as "1212".
-const POSE = { 12: [0, 0, -1.22], 13: [0, -0.25, 0], 16: [0, 0, 1.22], 17: [0, 0.25, 0] };
-function applyPose(root){
-  root.traverse(o => {
-    const m = /^(\d+)$/.exec(o.name || '');
-    if (!m) return;
-    const half = m[1].length / 2, i = m[1].slice(0, half);
-    if (m[1].length % 2 || m[1].slice(half) !== i || !(i in POSE)) return;
-    o.rotation.set(...POSE[i]);
-  });
-}
-
-// ---- mounting ---------------------------------------------------------------------------------------
-const mounted = {};                               // name -> { key, obj }
-let mountSeq = 0;
-async function mount(name, key, place){
-  const cur = mounted[name];
-  if (cur && cur.key === key) return;
-  const seq = ++mountSeq;
-  let obj = null;
-  if (key){
-    const rec = name === 'weapon' ? WEAP.models[key] : DATA.pieces[key];
-    if (!rec){ noteError('no model ' + key); }
-    else {
-      obj = await loadMonster({ glb: rec.glb, joints: rec.joints || [] }, { wire: wireOn });
-      if (seq !== mountSeq && mounted[name] && mounted[name].pending !== seq){ /* a later mount of another name is fine */ }
-    }
-  }
-  const old = mounted[name];
-  if (old && old.obj){ world.remove(old.obj); anim.mixers.delete(old.obj); releaseMonster(old.obj); }
-  if (name === 'weapon') dropExtras();
-  if (obj){
-    if (place) place(obj, name === 'weapon' ? WEAP.models[key] : null);
-    else if (anim.clip) applyClip(obj); else if (state.pose !== 'bind') applyPose(obj);
-    world.add(obj);
-  }
-  mounted[name] = { key, obj };
-}
-
-// ---- the game's own motions -------------------------------------------------------------------------
-// armor.json poses[g]: the shared pack (Common) and one pack per weapon class, each a glb of animations on the
-// rig. Every piece carries the whole rig under the same node names, so one clip plays on every piece: a mixer
-// per piece, all at the same time. The hips' travel (bone 2's x/z) is held at the origin so a walk stays in frame.
-const poseGlb = new Map();
-async function poseClip(file, name){
-  if (!poseGlb.has(file)) poseGlb.set(file, loader.loadAsync(bust(file)));
-  const g = await poseGlb.get(file);
-  return THREE.AnimationClip.findByName(g.animations, name);
-}
-const anim = { clip: null, time: 0, playing: true, loop: true, mixers: new Map() };
-function mixerFor(obj){
-  let m = anim.mixers.get(obj);
-  if (!m){ m = new THREE.AnimationMixer(obj); anim.mixers.set(obj, m); }
-  return m;
-}
-const isWeapon = obj => !!(mounted.weapon && mounted.weapon.obj === obj);
-function applyClip(obj){
-  if (!obj || isWeapon(obj)) return;
-  const m = mixerFor(obj);
-  m.stopAllAction();
-  if (anim.clip){ m.clipAction(anim.clip).play(); m.setTime(anim.time); holdHips(obj); }
-  else applyPose(obj);
-}
-function holdHips(obj){
-  const hips = obj.getObjectByName('22');
-  if (hips){ hips.position.x = 0; hips.position.z = 0; }
-}
-function stepAnim(dt){
-  if (!anim.clip) return;
-  if (anim.playing){
-    anim.time += dt;
-    const d = anim.clip.duration;
-    if (anim.time > d) anim.time = anim.loop && d > 0 ? anim.time % d : d;
-  }
-  for (const m of Object.values(mounted)){
-    if (!m.obj || isWeapon(m.obj)) continue;
-    const mx = mixerFor(m.obj);
-    if (!mx.existingAction(anim.clip)) applyClip(m.obj);
-    mx.setTime(anim.time);
-    holdHips(m.obj);
-  }
-  paintTransport();
-}
-// WHAT PLAYS (the 4U viewer's rule): a drawn weapon plays its Stance -- a clip of its class's own pack -- and a
-// sheathed one, or none, the hunter's Pose; the Pose keeps its choice while a stance plays.
-const classPack = cls => { const P = (DATA.poses.f || []).find(x => x.label === cls); return P ? P.id : null; };
-function nowPlaying(){
-  const pack = state.wcls && state.weapon ? classPack(state.wcls) : null;
-  if (pack && state.carry === 'drawn') return { pack, clip: state.stance || '0:01' };
-  if (state.pose === 'relaxed' || state.pose === 'bind') return { still: state.pose };
-  const [p, clip] = state.pose.split('|');
-  return { pack: p, clip };
-}
-// picking a pose sheathes a drawn weapon, as the 4U and MHGU viewers' Pose select does
-async function setPose(value){
-  state.pose = value || 'relaxed';
-  if (state.carry === 'drawn'){ state.carry = 'sheathed'; paintCarry(); }
-  return play();
-}
-let playTicket = 0;
-async function play(){
-  const t = ++playTicket;
-  const now = nowPlaying();
-  if (now.still){
-    anim.clip = null; anim.time = 0;
-    for (const m of Object.values(mounted)) if (m.obj && !isWeapon(m.obj)){
-      const mx = anim.mixers.get(m.obj); if (mx) mx.stopAllAction();
-      restoreBind(m.obj);
-      if (now.still === 'relaxed') applyPose(m.obj);
-    }
-    paintTransport(); save(); return;
-  }
-  const P = (DATA.poses[state.g] || []).find(x => x.id === now.pack);
-  const meta = P && P.clips.find(c => c.clip === now.clip);
-  const clip = meta ? await poseClip(P.file, now.clip) : null;
-  if (t !== playTicket) return;
-  if (!clip){                                     // a saved choice the data no longer has: fall back, never loop
-    if (state.carry !== 'drawn') state.pose = 'relaxed';
-    else if (state.stance !== '0:01') state.stance = '0:01';
-    else { state.carry = 'sheathed'; paintCarry(); }
-    paintPoses(); return play();
-  }
-  anim.clip = clip;
-  // the hunter's poses loop; a stance holds its last frame unless the game loops it (the Loop button overrides)
-  anim.time = 0; anim.playing = true; anim.loop = now.pack === 'co' ? true : !!meta.loop;
-  for (const m of Object.values(mounted)) if (m.obj) applyClip(m.obj);
-  paintTransport(); save();
-}
-function paintPoses(){
-  const sel = $('huntPose'); sel.textContent = '';
-  sel.appendChild(opt('relaxed', 'Relaxed (no motion)'));
-  sel.appendChild(opt('bind', 'Bind pose'));
-  for (const P of DATA.poses[state.g] || []){
-    if (P.id !== 'co') continue;
-    const og = document.createElement('optgroup'); og.label = P.label;
-    for (const c of P.clips) og.appendChild(opt(P.id + '|' + c.clip, 'Motion ' + c.clip + ' (' + c.dur.toFixed(1) + ' s)'));
-    sel.appendChild(og);
-  }
-  if (![...sel.options].some(o => o.value === state.pose)) state.pose = 'relaxed';
-  sel.value = state.pose;
-}
-// the transport (the shell's Animation panel): play / pause, frame steps, scrub, loop. The hunter's motions run at
-// 60 frames a second (the game steps them 2 frames per 30 Hz update), so a frame step is 1/60 s.
-const FRAME = 1 / 60;
-function paintTransport(){
-  const has = !!anim.clip;
-  $('anim').classList.toggle('idle', !has);
-  if (!has){ $('animFrame').textContent = 'no animation playing'; return; }
-  const total = Math.round(anim.clip.duration / FRAME), cur = Math.round(anim.time / FRAME);
-  $('animScrub').max = String(total); $('animScrub').value = String(cur);
-  $('animFrame').textContent = 'frame ' + cur + ' of ' + total + '  (' + (cur * FRAME).toFixed(2) + ' s)';
-  $('animPlay').textContent = anim.playing ? 'Pause' : 'Play';
-  $('animLoop').classList.toggle('on', anim.loop);
-}
-const seek = t => { if (!anim.clip) return; anim.playing = false; anim.time = Math.max(0, Math.min(t, anim.clip.duration)); stepAnim(0); };
-
-const rowOf = (slot, id) => DATA.armor[slot].find(r => r.id === id) || DATA.armor[slot][0];
-function pieceFor(slot){
-  const row = rowOf(slot, state.slots[slot]);
-  return row ? row[state.g] : null;
-}
-// The weapon stands to the hunter's side, its long axis (the model's z) up. A weapon of several parts (a sword
-// and its shield, a lance and its shield, two blades) has one skeleton root per part, all at the model's origin;
-// the parts stand side by side here, by moving each root bone (weapons.json models[].parts: each root and the
-// extent of what it carries, from the converter). three.js names the root node "3:3" as "33".
-function placeWeapon(obj, rec){
-  obj.rotation.set(-Math.PI / 2, 0, 0);
-  obj.position.set(0.85, 0, 0);
-  let x = null;
-  for (const p of (rec && rec.parts) || []){
-    const node = obj.getObjectByName(String(p.root) + String(p.root));
-    if (x === null){ x = p.max[0] + 0.1; continue; }
-    if (node) node.position.x += x - p.min[0];
-    x += p.max[0] - p.min[0] + 0.1;
-  }
-}
-
-// ---- stances ----------------------------------------------------------------------------------------
-// WHERE THE GAME PUTS THE WEAPON (stances/wNN.json, one per class). For each variant of the class (models the
-// game's weapon pass treats alike) and each clip of the class pack, a timeline of states from clip frame f
-// (60 a second); `rest` is the weapon away. A state is the frame's passes -- the game draws the Long Sword's
-// blade in the hand and its scabbard on the back in two passes, so it gets a second copy of the model. Per pass:
-//   m  each part root (the sword, the shield; the bow, the quiver) on hunter joint `joint`:
-//      world = joint's world * T(pos) R(quat) S(scale)
-//   b  bones the pass sets (the bow's fold, a gunlance's or bowgun's working parts): local quat and scale, and
-//      pos where the pass moves it off the model's own offset (null: keep it)
-//   s  the meshes drawn and their materials shown; the others the game hides by zeroing their alpha
-const STANCES = new Map();
-function loadStance(pack){
-  if (!STANCES.has(pack))
-    STANCES.set(pack, loadJson('stances/' + pack + '.json').catch(e => {
-      STANCES.delete(pack); noteError('stances/' + pack + '.json: ' + (e && e.message || e)); return null; }));
-  return STANCES.get(pack);
-}
-const stanceNow = { pack: null, data: null };
-function wantStance(){
-  const pack = state.wcls ? classPack(state.wcls) : null;
-  if (stanceNow.pack === pack) return;
-  stanceNow.pack = pack; stanceNow.data = null;
-  if (pack) loadStance(pack).then(d => { if (stanceNow.pack === pack) stanceNow.data = d; });
-}
-// the second copy of the weapon for a frame with two passes (loaded once per model, hidden when not needed)
-const extras = [];
-let extrasFor = null, extrasLoading = false;
-function dropExtras(){
-  for (const o of extras){ world.remove(o); releaseMonster(o); }
-  extras.length = 0; extrasFor = null;
-}
-async function ensureExtras(n){
-  const W = mounted.weapon;
-  if (!W || !W.obj || extrasLoading) return;
-  if (extrasFor !== W.key) dropExtras();
-  if (extras.length >= n) return;
-  extrasLoading = true;
-  try {
-    const rec = WEAP.models[W.key], key = W.key;
-    while (extras.length < n){
-      const o = await loadMonster({ glb: rec.glb, joints: rec.joints || [] }, { wire: wireOn });
-      if (!mounted.weapon || mounted.weapon.key !== key){ releaseMonster(o); break; }
-      extrasFor = key; extras.push(o); world.add(o);
-    }
-  } finally { extrasLoading = false; }
-}
-function hunterRig(){
-  for (const k of ['leg', 'body', 'wst', 'arm', 'face', 'hair', 'helm']) if (mounted[k] && mounted[k].obj) return mounted[k].obj;
-  return null;
-}
-function stanceState(){
-  const D = stanceNow.data, W = mounted.weapon;
-  if (!D || !W || !W.obj) return null;
-  const vi = D.variants.findIndex(v => v.models.includes(W.key));
-  if (vi < 0) return null;
-  const now = nowPlaying();
-  if (state.carry === 'drawn' && anim.clip && now.pack === D.pack && D.clips[now.clip]){
-    const tl = D.clips[now.clip][vi], f = Math.floor(anim.time * D.fps + 1e-4);
-    let si = tl[0][1];
-    for (const [f0, k] of tl){ if (f0 > f) break; si = k; }
-    return D.states[si];
-  }
-  return D.states[D.rest[vi]];
-}
-const _wm = new THREE.Matrix4(), _wi = new THREE.Matrix4(), _wv = new THREE.Vector3(), _wq = new THREE.Quaternion(),
-      _ws = new THREE.Vector3();
-function applyPass(obj, pass, rig){
-  restoreBind(obj);
-  obj.updateMatrixWorld(true);
-  for (const [r, [joint, pos, q, sc, place, axes]] of Object.entries(pass.m)){
-    const node = obj.getObjectByName(r + r), bone = rig.getObjectByName(String(joint) + String(joint));
-    if (!node || !bone) continue;
-    if (place === undefined){
-      _wm.compose(_wv.fromArray(pos), _wq.fromArray(q), _ws.fromArray(sc));
-      _wm.premultiply(bone.matrixWorld);
-    } else {
-      // turned with `joint`, placed at joint `place` plus pos along joint `axes` (the sheathed Sword & Shield)
-      const P = rig.getObjectByName(String(place) + String(place)), A = rig.getObjectByName(String(axes) + String(axes));
-      if (!P || !A) continue;
-      _wm.compose(_wv.set(0, 0, 0), _wq.fromArray(q), _ws.fromArray(sc));
-      _wm.premultiply(_wi.extractRotation(bone.matrixWorld));
-      _wv.fromArray(pos).applyMatrix4(_wi.extractRotation(A.matrixWorld)).add(_ws.setFromMatrixPosition(P.matrixWorld));
-      _wm.setPosition(_wv);
-    }
-    _wm.premultiply(_wi.copy(node.parent.matrixWorld).invert());
-    _wm.decompose(node.position, node.quaternion, node.scale);
-  }
-  for (const [g, [pos, q, sc]] of Object.entries(pass.b)){
-    const node = obj.getObjectByName(g + g);
-    if (!node) continue;
-    if (pos) node.position.fromArray(pos);
-    node.quaternion.fromArray(q); node.scale.fromArray(sc);
-  }
-  obj.traverse(o => {
-    if (!o.isMesh || !o.userData.fuKey) return;
-    const [mi, mat] = o.userData.fuKey.split('/'), shown = pass.s[mi];
-    o.visible = !!shown && shown.includes(+mat);
-  });
-}
-// every frame, after the hunter's pose: the weapon where the game has it
-function updateWeapon(){
-  const W = mounted.weapon;
-  if (!W || !W.obj || state.carry === 'beside'){ for (const o of extras) o.visible = false; return; }
-  const st = stanceState(), rig = hunterRig();
-  if (!st || !rig){ W.obj.visible = false; for (const o of extras) o.visible = false; return; }
-  W.obj.visible = true;
-  rig.updateMatrixWorld(true);
-  st.forEach((pass, i) => {
-    const o = i ? extras[i - 1] : W.obj;
-    if (o){ o.visible = true; applyPass(o, pass, rig); }
-  });
-  if (st.length > 1 + extras.length) ensureExtras(st.length - 1);
-  for (let i = st.length - 1; i < extras.length; i++) if (i >= 0) extras[i].visible = false;
-}
-const placeFor = () => state.carry === 'beside' ? placeWeapon : () => {};
-
-let busy = Promise.resolve();
-function refresh(){
-  busy = busy.then(async () => {
-    const g = state.g;
-    const helm = state.slots.helm ? pieceFor('helm') : null;
-    // An empty head shows the hairstyle; a helm replaces it (the game's "Nothing equipped" head model is the
-    // hair itself, drawn blended). The face is always drawn.
-    const jobs = [
-      mount('helm', helm),
-      mount('hair', helm ? null : DATA.chars[g].hair[state.hair] || DATA.chars[g].hair[0]),
-      mount('face', DATA.chars[g].face[state.face] || DATA.chars[g].face[0]),
-    ];
-    for (const s of ['body', 'arm', 'wst', 'leg']) jobs.push(mount(s, pieceFor(s)));
-    wantStance();
-    jobs.push(mount('weapon', state.wcls && state.weapon ? state.weapon : null, placeFor()));
-    await Promise.all(jobs);
-    document.getElementById('loading').style.display = 'none';
-    if (!framed){ frameAll(); framed = true; }
-  }).catch(e => noteError('ERROR: ' + (e && e.message || e)));
-  save();
-  return busy;
-}
-
-// ---- the sidebar ------------------------------------------------------------------------------------
-const $ = id => document.getElementById(id);
-const htype = $('htype'), filterEl = $('filter'), genderSel = $('genderSel'), faceSel = $('faceStyle'),
-      hairSel = $('hairStyle'), wclsSel = $('weaponClass'), wSel = $('weaponModel');
-const slotSel = Object.fromEntries(SLOTS.map(s => [s, $('s_' + s)]));
-const opt = (value, text) => { const o = document.createElement('option'); o.value = String(value); o.textContent = text; return o; };
-
-function wears(row){
-  if (row.id === 0) return true;
-  if (!row[state.g]) return false;                          // no model for this gender
-  if (!row.wear.includes(state.g)) return false;
-  return state.type === 'all' || row.wear.includes(state.type);
-}
-function paintSlots(){
-  const q = filterEl.value.trim().toLowerCase();
-  for (const s of SLOTS){
-    const sel = slotSel[s];
-    sel.textContent = '';
-    for (const row of DATA.armor[s]){
-      if (!wears(row)) continue;
-      if (q && row.id !== 0 && row.id !== state.slots[s] && !row.name.toLowerCase().includes(q)) continue;
-      sel.appendChild(opt(row.id, row.id === 0 ? 'Nothing equipped' : row.name));
-    }
-    if (![...sel.options].some(o => +o.value === state.slots[s])) state.slots[s] = 0;
-    sel.value = String(state.slots[s]);
-  }
-}
-function paintHunter(){
-  genderSel.value = state.g;
-  faceSel.textContent = ''; hairSel.textContent = '';
-  DATA.chars[state.g].face.forEach((k, i) => { if (k) faceSel.appendChild(opt(i, 'Face ' + (i + 1))); });
-  DATA.chars[state.g].hair.forEach((k, i) => { if (k) hairSel.appendChild(opt(i, 'Hair ' + (i + 1))); });
-  faceSel.value = String(state.face); hairSel.value = String(state.hair);
-}
-// ONE ENTRY PER MODEL (the 4U viewer's rule): an upgrade line often keeps one model (Carbalite Sword,
-// Carbalite Sword+), so the list is the class's models in table order, each named by every weapon that draws
-// it. The choice is the model key (weNNN).
-function weaponGroups(cls){
-  const groups = new Map();
-  for (const w of WEAP.weapons[cls] || []){
-    if (!groups.has(w.model)) groups.set(w.model, { model: w.model, names: [] });
-    const g = groups.get(w.model);
-    if (!g.names.includes(w.name)) g.names.push(w.name);
-  }
-  return [...groups.values()];
-}
-function paintWeapons(){
-  wclsSel.textContent = '';
-  wclsSel.appendChild(opt('', 'None'));
-  for (const c of WEAP.classes) if ((WEAP.weapons[c] || []).length) wclsSel.appendChild(opt(c, c));
-  wclsSel.value = state.wcls;
-  wSel.textContent = '';
-  const list = state.wcls ? weaponGroups(state.wcls) : [];
-  // a saved weapon id from before the list was by model: its model
-  const old = state.wcls && (WEAP.weapons[state.wcls] || []).find(x => x.id === state.weapon);
-  if (old) state.weapon = old.model;
-  for (const g of list){ const o = opt(g.model, g.names.join(' / ')); o.title = o.textContent; wSel.appendChild(o); }
-  if (list.length && !list.some(g => g.model === state.weapon)) state.weapon = list[0].model;
-  wSel.value = state.weapon;
-  $('weaponModelField').hidden = !list.length;
-  paintCarry();
-}
-// Carry and Stance: the stance list is the class's own pack (clips named as the game stores them, set:slot)
-function paintCarry(){
-  const has = !!(state.wcls && state.weapon);
-  $('weaponDrawnField').hidden = !has;
-  $('weaponDrawn').value = state.carry;
-  const sel = $('weaponStance'); sel.textContent = '';
-  const P = has ? (DATA.poses[state.g] || []).find(x => x.label === state.wcls) : null;
-  for (const c of (P && P.clips) || []) sel.appendChild(opt(c.clip, 'Motion ' + c.clip + ' (' + c.dur.toFixed(1) + ' s)'));
-  if (P && !P.clips.some(c => c.clip === state.stance)) state.stance = P.clips[0] ? P.clips[0].clip : '';
-  sel.value = state.stance;
-  $('weaponStanceField').hidden = !has || state.carry !== 'drawn';
-}
-// the weapon between Beside (laid out by placeWeapon) and on the hunter (placed every frame)
-function replaceWeapon(){
-  const W = mounted.weapon;
-  if (!W || !W.obj) return;
-  restoreBind(W.obj); W.obj.visible = true;
-  W.obj.traverse(o => { if (o.isMesh && o.userData.fuKey) o.visible = true; });
-  if (state.carry === 'beside') placeWeapon(W.obj, WEAP.models[W.key]);
-}
-htype.value = state.type;
-htype.onchange = () => { state.type = htype.value; paintSlots(); refresh(); };
-filterEl.oninput = () => paintSlots();
-for (const s of SLOTS) slotSel[s].onchange = () => { state.slots[s] = +slotSel[s].value || 0; paintSlots(); refresh(); };
-genderSel.onchange = () => { state.g = genderSel.value; paintHunter(); paintSlots(); paintPoses(); framed = false;
-  paintCarry(); refresh().then(play); };
-faceSel.onchange = () => { state.face = +faceSel.value; refresh(); };
-hairSel.onchange = () => { state.hair = +hairSel.value; refresh(); };
-wclsSel.onchange = () => { state.wcls = wclsSel.value; state.weapon = ''; state.stance = '0:01'; paintWeapons();
-  refresh().then(play); };
-wSel.onchange = () => { state.weapon = wSel.value; refresh(); };
-$('weaponDrawn').onchange = () => { state.carry = $('weaponDrawn').value; paintCarry(); replaceWeapon(); play(); };
-$('weaponStance').onchange = () => { state.stance = $('weaponStance').value; state.carry = 'drawn'; paintCarry(); play(); };
-$('huntPose').onchange = () => setPose($('huntPose').value);
-$('animPlay').onclick = () => { anim.playing = !anim.playing; paintTransport(); };
-$('animLoop').onclick = () => { anim.loop = !anim.loop; paintTransport(); };
-$('animFirst').onclick = () => seek(0);
-$('animLast').onclick = () => seek(anim.clip ? anim.clip.duration : 0);
-$('animPrev').onclick = () => seek(anim.time - FRAME);
-$('animNext').onclick = () => seek(anim.time + FRAME);
-$('animScrub').oninput = () => seek(+$('animScrub').value * FRAME);
-$('resetBtn').onclick = () => { const g = state.g; state = DEFAULT(); state.g = g; htype.value = 'all'; filterEl.value = '';
-  paintHunter(); paintSlots(); paintWeapons(); paintPoses(); framed = false; refresh().then(play); };
-
-// ---- panels open/close (the shell's) ----------------------------------------------------------------
-for (const p of document.querySelectorAll('section.panel')){
-  const head = p.querySelector('.panel-head');
-  if (head && !p.hasAttribute('data-keep-open')) head.addEventListener('click', () => {
-    p.dataset.open = p.dataset.open === 'true' ? 'false' : 'true';
-  });
-}
-
-// ---- camera bar -------------------------------------------------------------------------------------
-let framed = false, wireOn = false, spin = 0;
-function frameAll(){
-  const box = new THREE.Box3();
-  world.updateMatrixWorld(true);
-  for (const m of Object.values(mounted)) if (m.obj) box.expandByObject(m.obj, true);
-  if (box.isEmpty()) return;
-  const mid = box.getCenter(new THREE.Vector3()), size = box.getSize(new THREE.Vector3());
-  const r = Math.max(size.y, size.x * 0.8) * stage.margin;
-  const dist = r / (2 * Math.tan(THREE.MathUtils.degToRad(camera.fov / 2)));
-  controls.target.copy(mid);
-  camera.position.set(mid.x + dist * 0.35, mid.y + size.y * 0.08, mid.z + dist * 0.95);
-  camera.near = dist / 100; camera.far = dist * 50; camera.updateProjectionMatrix();
-  controls.update();
-}
-$('fitBtn').onclick = frameAll;
-const SPINS = [0, 1.8, 4, -1.8];
-$('spinBtn').onclick = () => { spin = (spin + 1) % SPINS.length; controls.autoRotate = !!SPINS[spin];
-  controls.autoRotateSpeed = SPINS[spin]; $('spinBtn').classList.toggle('on', !!SPINS[spin]); };
-$('orbitLock').onclick = () => { controls.enableRotate = !controls.enableRotate;
-  controls.screenSpacePanning = true; controls.mouseButtons.LEFT = controls.enableRotate ? THREE.MOUSE.ROTATE : THREE.MOUSE.PAN;
-  controls.enableRotate = true; $('orbitLock').classList.toggle('on', controls.mouseButtons.LEFT === THREE.MOUSE.PAN); };
-$('wireBtn').onclick = () => { wireOn = !wireOn; setWire(allMats, wireOn); $('wireBtn').classList.toggle('on', wireOn); };
-$('shotBtn').onclick = () => {
-  renderer.render(scene, camera);
-  const a = document.createElement('a');
-  a.download = 'MHFU Armor ' + new Date().toISOString().slice(0, 10) + '.png';
-  a.href = renderer.domElement.toDataURL('image/png'); a.click();
-};
-
-// ---- go ---------------------------------------------------------------------------------------------
-paintHunter(); paintSlots(); paintWeapons(); paintPoses();
-await refresh();
-await play();
-const clock = new THREE.Clock();
-renderer.setAnimationLoop(() => {
-  stepAnim(Math.min(clock.getDelta(), 0.1));
-  updateWeapon();
-  controls.update();
-  lights.head.position.copy(camera.position);
-  renderer.render(scene, camera);
-});
-// tick: one frame's pose and weapon update without rendering (checks run with the page hidden, where the loop stops)
-window.__view = { tick: () => { stepAnim(0); updateWeapon(); },
-                  renderer, scene, camera, controls, world, mounted, state, DATA, WEAP, frameAll, refresh, setPose, play,
-                  anim, stanceNow, extras };
-</script>
+<script type="module" src="app.js?v=7"></script>
 </body>
 </html>

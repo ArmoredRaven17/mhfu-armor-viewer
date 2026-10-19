@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generated": "2026-10-17T03:18:21",
+ "generated": "2026-10-19T02:48:19",
  "_about": {
   "weapons": "the game's weapon tables (BOOT.BIN: melee 0x895A0DC, 24-byte records; bows and bowguns after it, 28-byte; model id at +16 -> weNNN). Names: the game's English text. The class is the model's: byte [0x089785A8 + model] (BOOT 0x0885CCD0), in the game's class order. Gun records: 0x08960CAC (item -> model, 0x08851F20)."
  },

@@ -120,6 +120,64 @@ class Shipper:
         return {'glb': dst_rel, 'tris': rec['tris']}
 
 
+def skin_joints(glb):
+    """THE PIECE'S SKIN, joint by joint: the rig joint each skin index binds ("<i>:<i>_s", the leaf), in the skin's own
+    order -- the shared base pairs skeleton bone i with joints[i] (base/render/skeleton.js bonesByGid). A piece's skin
+    holds only the joints its bones ride (the face: 0 and 20), so a list of the whole rig mislabelled every bone after
+    the first it skips."""
+    js, _ = glb_read(glb)
+    names = [n.get('name', '') for n in js['nodes']]
+    out = []
+    for j in js['skins'][0]['joints']:
+        m = re.match(r'^(\d+):(\d+)_s$', names[j])
+        assert m, (glb, names[j])
+        out.append({'gid': int(m.group(2)), 'leaf': True})
+    return out
+
+
+def hair_mat(file):
+    """THE MATERIAL THE HAIR COLOUR GOES INTO, for a head-slot model (a hairstyle or a helm): 0x088CEAB8 writes the
+    hunter's hair colour (player data +0x4BC, hunter +0x4E4) into ENTRY 0 of mesh 0's material list of the head slot's
+    model -- diffuse 0.65 x H, ambient H / 2 -- as the armour colour goes into entry 1 (dyeMat). -> its PMO material."""
+    import fu
+    d = open(os.path.join(EXTRACT, 'data', 'f%04d.bin' % file), 'rb').read()
+    n = struct.unpack_from('<I', d)[0]
+    for i in range(n):
+        off, sz = struct.unpack_from('<2I', d, 4 + 8 * i)
+        if d[off:off + 4] == b'pmo\0':
+            p = fu.Pmo(d[off:off + sz])
+            m0 = p.meshes[0] if p.meshes else None
+            if not m0 or not m0['nremap']:
+                return None
+            return p.remap[m0['first_remap']] if p.remap else m0['first_remap']
+    return None
+
+
+INNER_TABLES = {'leg': 0x089B6784, 'body': 0x089B680C, 'arm': 0x089B6894}   # per gender a pointer to 32 s16 models
+TONE_TABLES = 0x089B66FC                                                      # per gender a pointer to 32 u8, by face
+
+
+def inner_wear(ship):
+    """THE CLOTHING UNDER AN EMPTY SLOT, READ 2026-10-19. 0x088D6388: an empty (model 0) legs / chest / arms slot draws
+    table[gender][clothing * 4 + tone], where clothing is the character's CLOTHING choice (the equipment set's +0x42 =
+    player +0x4B5, character creation's page 2: 0-7) and tone = TONE[gender][face] (0x08851FEC: the set's gender +0x40
+    and face +0x43) -- each clothing type in four variants by the face's skin. Gender 0 is male. -> (inner, tone):
+    inner[g][slot] = 32 piece keys, tone[g] = 32 indices; every model shipped."""
+    import allegrex
+    boot = allegrex.boot()
+    at = lambda va: va - allegrex.VBASE + allegrex.FBASE
+    inner, tone = {}, {}
+    for gi, g in enumerate('mf'):
+        inner[g] = {}
+        for slot, tab in INNER_TABLES.items():
+            ptr = struct.unpack_from('<I', boot, at(tab) + 4 * gi)[0]
+            models = struct.unpack_from('<32h', boot, at(ptr))
+            inner[g][slot] = [ship(g, slot, m) for m in models]
+        ptr = struct.unpack_from('<I', boot, at(TONE_TABLES) + 4 * gi)[0]
+        tone[g] = list(boot[at(ptr):at(ptr) + 32])
+    return inner, tone
+
+
 def weapon_tables():
     boot = open(os.path.join(EXTRACT, 'boot', 'BOOT.BIN'), 'rb').read()
     at = lambda va: va - VBASE + FBASE
@@ -158,7 +216,10 @@ def main():
             return None
         out = sh.ship(os.path.join(CONV, 'player', g, key + '.glb'), rec, os.path.join(CONV, 'player', 'tex'),
                       f'models/{g}/{key}.glb', f'pl/{key}')
-        pieces[key] = dict(out, joints=[{'gid': i, 'leaf': True} for i in range(len(man['rigs'][g]))])
+        pieces[key] = dict(out, joints=skin_joints(os.path.join(CONV, 'player', g, key + '.glb')),
+                           dyeMat=rec.get('dyeMat'))
+        if kind in ('hair', 'head'):
+            pieces[key]['hairMat'] = hair_mat(rec['file'])
         return key
 
     armor = {}
@@ -167,7 +228,7 @@ def main():
         for r in man['armor'][slot]:
             if not r['name'] or r['name'].lower() == 'dummy':
                 continue
-            row = {'id': r['id'], 'name': r['name'], 'rar': r['rar'],
+            row = {'id': r['id'], 'name': r['name'], 'rar': r['rar'], 'col': r.get('col', 0),
                    'wear': ''.join(c for bit, c in ((1, 'm'), (2, 'f'), (4, 'b'), (8, 'g')) if r['who'] & bit)}
             for g in 'mf':
                 mdl = r[g]
@@ -177,6 +238,7 @@ def main():
     chars = {g: {'face': [piece(g, 'face', i) for i in range(32)],
                  'hair': [piece(g, 'head', i) for i in range(27)]} for g in 'mf'}
     rigs = {g: [{'i': b['i'], 'parent': b['parent'], 'pos': b['pos']} for b in man['rigs'][g]] for g in 'mf'}
+    inner, tone = inner_wear(lambda g, slot, n: piece(g, SLOT_FILE[slot], n))
 
     weapons, models = {c: [] for c in CLASSES}, {}
     for w in weapon_tables():
@@ -220,16 +282,23 @@ def main():
                    'armor': "the game's five armour tables (BOOT.BIN, pointer table at file 0x176b48; 0x28-byte "
                             "records): `m`/`f` the piece each gender draws (record +0 / +2 model -> "
                             "<g>_<hair|body|arm|wst|reg><model>), `wear` record +4 (m, f, b Blademaster, g "
-                            "Gunner), `rar` +5 + 1. Names: the game's English text. Model 0 is the clothing "
+                            "Gunner), `rar` +5 + 1, `col` +0x13 the piece's colour mode (0 none, 1 a fixed grey, 2 S-Series, "
+                            "3 X/Z-Series; pieces[].dyeMat is the material the game colours). Names: the game's English text. Model 0 is the clothing "
                             "drawn under an empty slot.",
                    'chars': '32 faces and 27 hairstyles per gender (f_face / f_head files).',
+                   'inner': "the clothing drawn in an EMPTY legs / chest / arms slot (0x088D6388): inner[g][slot][clothing x 4 "
+                            "+ tone[g][face]] (BOOT s16 tables 0x089B6784 legs, 0x089B680C chest, 0x089B6894 arms; the tone "
+                            "u8 tables 0x089B66BC male / 0x089B66DC female by face, 0x08851FEC); clothing = the character's "
+                            "CLOTHING choice (player +0x4B5, 0-7). An empty waist draws record 0's model; an empty head the "
+                            "hairstyle.",
                    'rigs': 'the 21-bone player rig of each gender; every piece is skinned to it.',
                    'poses': "the hunter's motions: f0081 (Common) and f3397-f3407 (one per weapon class, in the "
                             "game's class order, BOOT.BIN u16 table at 0x1b4c18), on the rig, clips named "
                             "'<set>:<slot>' as the game stores them (no names in the data); 60 fps (the game steps a "
                             "motion 2 frames per 30 Hz update)."},
                'genders': ['m', 'f'], 'slots': SLOTS, 'armor': armor, 'pieces': pieces, 'chars': chars,
-               'rigs': rigs, 'poses': poses}, open(os.path.join(DOCS, 'armor.json'), 'w'), indent=1)
+               'rigs': rigs, 'poses': poses, 'inner': inner, 'tone': tone},
+              open(os.path.join(DOCS, 'armor.json'), 'w'), indent=1)
     json.dump({'version': 1, 'generated': now,
                '_about': {'weapons': "the game's weapon tables (BOOT.BIN: melee 0x895A0DC, 24-byte records; bows "
                                      "and bowguns after it, 28-byte; model id at +16 -> weNNN). Names: the game's "

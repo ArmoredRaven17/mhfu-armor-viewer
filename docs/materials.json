@@ -3096,6 +3096,192 @@
   "models/f/f_head024.glb": "pl/f_head024",
   "models/f/f_head025.glb": "pl/f_head025",
   "models/f/f_head026.glb": "pl/f_head026",
+  "models/m/m_reg162.glb": "pl/m_reg162",
+  "models/m/m_reg163.glb": "pl/m_reg163",
+  "models/m/m_reg164.glb": "pl/m_reg164",
+  "models/m/m_reg165.glb": "pl/m_reg165",
+  "models/m/m_reg166.glb": "pl/m_reg166",
+  "models/m/m_reg167.glb": "pl/m_reg167",
+  "models/m/m_reg168.glb": "pl/m_reg168",
+  "models/m/m_reg169.glb": "pl/m_reg169",
+  "models/m/m_reg013.glb": "pl/m_reg013",
+  "models/m/m_reg195.glb": "pl/m_reg195",
+  "models/m/m_reg196.glb": "pl/m_reg196",
+  "models/m/m_reg193.glb": "pl/m_reg193",
+  "models/m/m_reg194.glb": "pl/m_reg194",
+  "models/m/m_reg014.glb": "pl/m_reg014",
+  "models/m/m_reg015.glb": "pl/m_reg015",
+  "models/m/m_reg224.glb": "pl/m_reg224",
+  "models/m/m_reg223.glb": "pl/m_reg223",
+  "models/m/m_reg222.glb": "pl/m_reg222",
+  "models/m/m_reg221.glb": "pl/m_reg221",
+  "models/m/m_reg228.glb": "pl/m_reg228",
+  "models/m/m_reg227.glb": "pl/m_reg227",
+  "models/m/m_reg226.glb": "pl/m_reg226",
+  "models/m/m_reg225.glb": "pl/m_reg225",
+  "models/m/m_reg232.glb": "pl/m_reg232",
+  "models/m/m_reg231.glb": "pl/m_reg231",
+  "models/m/m_reg230.glb": "pl/m_reg230",
+  "models/m/m_reg229.glb": "pl/m_reg229",
+  "models/m/m_reg236.glb": "pl/m_reg236",
+  "models/m/m_reg235.glb": "pl/m_reg235",
+  "models/m/m_reg234.glb": "pl/m_reg234",
+  "models/m/m_reg233.glb": "pl/m_reg233",
+  "models/m/m_body189.glb": "pl/m_body189",
+  "models/m/m_body190.glb": "pl/m_body190",
+  "models/m/m_body191.glb": "pl/m_body191",
+  "models/m/m_body192.glb": "pl/m_body192",
+  "models/m/m_body193.glb": "pl/m_body193",
+  "models/m/m_body194.glb": "pl/m_body194",
+  "models/m/m_body195.glb": "pl/m_body195",
+  "models/m/m_body196.glb": "pl/m_body196",
+  "models/m/m_body016.glb": "pl/m_body016",
+  "models/m/m_body222.glb": "pl/m_body222",
+  "models/m/m_body223.glb": "pl/m_body223",
+  "models/m/m_body220.glb": "pl/m_body220",
+  "models/m/m_body221.glb": "pl/m_body221",
+  "models/m/m_body017.glb": "pl/m_body017",
+  "models/m/m_body018.glb": "pl/m_body018",
+  "models/m/m_body254.glb": "pl/m_body254",
+  "models/m/m_body253.glb": "pl/m_body253",
+  "models/m/m_body252.glb": "pl/m_body252",
+  "models/m/m_body251.glb": "pl/m_body251",
+  "models/m/m_body258.glb": "pl/m_body258",
+  "models/m/m_body257.glb": "pl/m_body257",
+  "models/m/m_body256.glb": "pl/m_body256",
+  "models/m/m_body255.glb": "pl/m_body255",
+  "models/m/m_body262.glb": "pl/m_body262",
+  "models/m/m_body261.glb": "pl/m_body261",
+  "models/m/m_body260.glb": "pl/m_body260",
+  "models/m/m_body259.glb": "pl/m_body259",
+  "models/m/m_body266.glb": "pl/m_body266",
+  "models/m/m_body265.glb": "pl/m_body265",
+  "models/m/m_body264.glb": "pl/m_body264",
+  "models/m/m_body263.glb": "pl/m_body263",
+  "models/m/m_arm185.glb": "pl/m_arm185",
+  "models/m/m_arm186.glb": "pl/m_arm186",
+  "models/m/m_arm187.glb": "pl/m_arm187",
+  "models/m/m_arm188.glb": "pl/m_arm188",
+  "models/m/m_arm189.glb": "pl/m_arm189",
+  "models/m/m_arm190.glb": "pl/m_arm190",
+  "models/m/m_arm191.glb": "pl/m_arm191",
+  "models/m/m_arm192.glb": "pl/m_arm192",
+  "models/m/m_arm016.glb": "pl/m_arm016",
+  "models/m/m_arm217.glb": "pl/m_arm217",
+  "models/m/m_arm218.glb": "pl/m_arm218",
+  "models/m/m_arm215.glb": "pl/m_arm215",
+  "models/m/m_arm216.glb": "pl/m_arm216",
+  "models/m/m_arm017.glb": "pl/m_arm017",
+  "models/m/m_arm018.glb": "pl/m_arm018",
+  "models/m/m_arm246.glb": "pl/m_arm246",
+  "models/m/m_arm245.glb": "pl/m_arm245",
+  "models/m/m_arm244.glb": "pl/m_arm244",
+  "models/m/m_arm243.glb": "pl/m_arm243",
+  "models/m/m_arm250.glb": "pl/m_arm250",
+  "models/m/m_arm249.glb": "pl/m_arm249",
+  "models/m/m_arm248.glb": "pl/m_arm248",
+  "models/m/m_arm247.glb": "pl/m_arm247",
+  "models/m/m_arm254.glb": "pl/m_arm254",
+  "models/m/m_arm253.glb": "pl/m_arm253",
+  "models/m/m_arm252.glb": "pl/m_arm252",
+  "models/m/m_arm251.glb": "pl/m_arm251",
+  "models/m/m_arm258.glb": "pl/m_arm258",
+  "models/m/m_arm257.glb": "pl/m_arm257",
+  "models/m/m_arm256.glb": "pl/m_arm256",
+  "models/m/m_arm255.glb": "pl/m_arm255",
+  "models/f/f_reg163.glb": "pl/f_reg163",
+  "models/f/f_reg164.glb": "pl/f_reg164",
+  "models/f/f_reg165.glb": "pl/f_reg165",
+  "models/f/f_reg166.glb": "pl/f_reg166",
+  "models/f/f_reg167.glb": "pl/f_reg167",
+  "models/f/f_reg168.glb": "pl/f_reg168",
+  "models/f/f_reg169.glb": "pl/f_reg169",
+  "models/f/f_reg170.glb": "pl/f_reg170",
+  "models/f/f_reg011.glb": "pl/f_reg011",
+  "models/f/f_reg196.glb": "pl/f_reg196",
+  "models/f/f_reg197.glb": "pl/f_reg197",
+  "models/f/f_reg194.glb": "pl/f_reg194",
+  "models/f/f_reg195.glb": "pl/f_reg195",
+  "models/f/f_reg012.glb": "pl/f_reg012",
+  "models/f/f_reg013.glb": "pl/f_reg013",
+  "models/f/f_reg224.glb": "pl/f_reg224",
+  "models/f/f_reg223.glb": "pl/f_reg223",
+  "models/f/f_reg222.glb": "pl/f_reg222",
+  "models/f/f_reg221.glb": "pl/f_reg221",
+  "models/f/f_reg228.glb": "pl/f_reg228",
+  "models/f/f_reg227.glb": "pl/f_reg227",
+  "models/f/f_reg226.glb": "pl/f_reg226",
+  "models/f/f_reg225.glb": "pl/f_reg225",
+  "models/f/f_reg232.glb": "pl/f_reg232",
+  "models/f/f_reg231.glb": "pl/f_reg231",
+  "models/f/f_reg230.glb": "pl/f_reg230",
+  "models/f/f_reg229.glb": "pl/f_reg229",
+  "models/f/f_reg236.glb": "pl/f_reg236",
+  "models/f/f_reg235.glb": "pl/f_reg235",
+  "models/f/f_reg234.glb": "pl/f_reg234",
+  "models/f/f_reg233.glb": "pl/f_reg233",
+  "models/f/f_body188.glb": "pl/f_body188",
+  "models/f/f_body189.glb": "pl/f_body189",
+  "models/f/f_body190.glb": "pl/f_body190",
+  "models/f/f_body191.glb": "pl/f_body191",
+  "models/f/f_body192.glb": "pl/f_body192",
+  "models/f/f_body193.glb": "pl/f_body193",
+  "models/f/f_body194.glb": "pl/f_body194",
+  "models/f/f_body195.glb": "pl/f_body195",
+  "models/f/f_body012.glb": "pl/f_body012",
+  "models/f/f_body221.glb": "pl/f_body221",
+  "models/f/f_body222.glb": "pl/f_body222",
+  "models/f/f_body219.glb": "pl/f_body219",
+  "models/f/f_body220.glb": "pl/f_body220",
+  "models/f/f_body013.glb": "pl/f_body013",
+  "models/f/f_body014.glb": "pl/f_body014",
+  "models/f/f_body252.glb": "pl/f_body252",
+  "models/f/f_body251.glb": "pl/f_body251",
+  "models/f/f_body250.glb": "pl/f_body250",
+  "models/f/f_body249.glb": "pl/f_body249",
+  "models/f/f_body256.glb": "pl/f_body256",
+  "models/f/f_body255.glb": "pl/f_body255",
+  "models/f/f_body254.glb": "pl/f_body254",
+  "models/f/f_body253.glb": "pl/f_body253",
+  "models/f/f_body260.glb": "pl/f_body260",
+  "models/f/f_body259.glb": "pl/f_body259",
+  "models/f/f_body258.glb": "pl/f_body258",
+  "models/f/f_body257.glb": "pl/f_body257",
+  "models/f/f_body264.glb": "pl/f_body264",
+  "models/f/f_body263.glb": "pl/f_body263",
+  "models/f/f_body262.glb": "pl/f_body262",
+  "models/f/f_body261.glb": "pl/f_body261",
+  "models/f/f_arm185.glb": "pl/f_arm185",
+  "models/f/f_arm186.glb": "pl/f_arm186",
+  "models/f/f_arm187.glb": "pl/f_arm187",
+  "models/f/f_arm188.glb": "pl/f_arm188",
+  "models/f/f_arm189.glb": "pl/f_arm189",
+  "models/f/f_arm190.glb": "pl/f_arm190",
+  "models/f/f_arm191.glb": "pl/f_arm191",
+  "models/f/f_arm192.glb": "pl/f_arm192",
+  "models/f/f_arm012.glb": "pl/f_arm012",
+  "models/f/f_arm217.glb": "pl/f_arm217",
+  "models/f/f_arm218.glb": "pl/f_arm218",
+  "models/f/f_arm215.glb": "pl/f_arm215",
+  "models/f/f_arm216.glb": "pl/f_arm216",
+  "models/f/f_arm013.glb": "pl/f_arm013",
+  "models/f/f_arm014.glb": "pl/f_arm014",
+  "models/f/f_arm245.glb": "pl/f_arm245",
+  "models/f/f_arm244.glb": "pl/f_arm244",
+  "models/f/f_arm243.glb": "pl/f_arm243",
+  "models/f/f_arm242.glb": "pl/f_arm242",
+  "models/f/f_arm249.glb": "pl/f_arm249",
+  "models/f/f_arm248.glb": "pl/f_arm248",
+  "models/f/f_arm247.glb": "pl/f_arm247",
+  "models/f/f_arm246.glb": "pl/f_arm246",
+  "models/f/f_arm253.glb": "pl/f_arm253",
+  "models/f/f_arm252.glb": "pl/f_arm252",
+  "models/f/f_arm251.glb": "pl/f_arm251",
+  "models/f/f_arm250.glb": "pl/f_arm250",
+  "models/f/f_arm257.glb": "pl/f_arm257",
+  "models/f/f_arm256.glb": "pl/f_arm256",
+  "models/f/f_arm255.glb": "pl/f_arm255",
+  "models/f/f_arm254.glb": "pl/f_arm254",
   "models/weapons/we010.glb": "we/we010",
   "models/weapons/we009.glb": "we/we009",
   "models/weapons/we324.glb": "we/we324",
@@ -75146,6 +75332,2926 @@
       "albedo": 1
      },
      "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg162": {
+   "tex": [
+    "tex/80ee525aea986b16.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg163": {
+   "tex": [
+    "tex/90804546374b9156.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg164": {
+   "tex": [
+    "tex/73f3357c73085201.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg165": {
+   "tex": [
+    "tex/f5f580f79334f0aa.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg166": {
+   "tex": [
+    "tex/e4bf5ce889ef5674.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg167": {
+   "tex": [
+    "tex/8528a4f22be2a8c7.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg168": {
+   "tex": [
+    "tex/cf11b03b11916150.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg169": {
+   "tex": [
+    "tex/01d5a48d086f1504.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg013": {
+   "tex": [
+    "tex/5ca451e90e61be71.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg195": {
+   "tex": [
+    "tex/7bfdecad61c1c821.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg196": {
+   "tex": [
+    "tex/825d919a6d7e8547.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg193": {
+   "tex": [
+    "tex/61c33341ffa7a635.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg194": {
+   "tex": [
+    "tex/871b524ef04060fa.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg014": {
+   "tex": [
+    "tex/52d378a6350f6eed.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg015": {
+   "tex": [
+    "tex/f0a4be87a38debf7.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg224": {
+   "tex": [
+    "tex/6f8bd0cf585a2518.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg223": {
+   "tex": [
+    "tex/0876efcdbaff7402.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg222": {
+   "tex": [
+    "tex/032f5ecc1a023c4e.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg221": {
+   "tex": [
+    "tex/fd27f7ecbe7c9b16.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_reg228": {
+   "tex": [
+    "tex/8b1f3b2c91328dfe.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg227": {
+   "tex": [
+    "tex/dc4c9bd35ba8c723.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg226": {
+   "tex": [
+    "tex/bb6f01dbb7fa3914.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg225": {
+   "tex": [
+    "tex/88dc10849ca1cf4e.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg232": {
+   "tex": [
+    "tex/1ebf9d25a85f8688.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg231": {
+   "tex": [
+    "tex/4ce92f8080d51e9a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg230": {
+   "tex": [
+    "tex/dd3f932f388243d6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg229": {
+   "tex": [
+    "tex/327b68c734c7e46a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg236": {
+   "tex": [
+    "tex/60081aa1a6a07a54.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg235": {
+   "tex": [
+    "tex/532589c0a26d1bf5.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg234": {
+   "tex": [
+    "tex/da4e5fd69d5e1d7f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_reg233": {
+   "tex": [
+    "tex/d39761fbfe477e42.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body189": {
+   "tex": [
+    "tex/3a0581303420381f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body190": {
+   "tex": [
+    "tex/2a72c226eb467c6f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body191": {
+   "tex": [
+    "tex/e65b2a15403a3cf8.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body192": {
+   "tex": [
+    "tex/d5e704d877d903c7.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body193": {
+   "tex": [
+    "tex/48e30bda83814d90.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body194": {
+   "tex": [
+    "tex/3397f9918508c7c5.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body195": {
+   "tex": [
+    "tex/524ad8f8115e5bcc.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body196": {
+   "tex": [
+    "tex/55f4e22e364740bb.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body016": {
+   "tex": [
+    "tex/c70cff207e4abd58.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body222": {
+   "tex": [
+    "tex/2f41edac7780bbef.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body223": {
+   "tex": [
+    "tex/ba4ffbe9796e2599.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body220": {
+   "tex": [
+    "tex/3af6accff1ec34a6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body221": {
+   "tex": [
+    "tex/6b95aa5303ba7081.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body017": {
+   "tex": [
+    "tex/b24fad2fae46687a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body018": {
+   "tex": [
+    "tex/7c59045d65141e2a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body254": {
+   "tex": [
+    "tex/b001bb2332ad777a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_body253": {
+   "tex": [
+    "tex/e5ddd934319e5e66.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_body252": {
+   "tex": [
+    "tex/94ea93050b8d01fe.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_body251": {
+   "tex": [
+    "tex/c01bd74fb598098d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_body258": {
+   "tex": [
+    "tex/a8e3fe87141aab11.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body257": {
+   "tex": [
+    "tex/372d9e661e961d18.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body256": {
+   "tex": [
+    "tex/6a7a83ed472ef64b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body255": {
+   "tex": [
+    "tex/2fcb7b579f1f93d8.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body262": {
+   "tex": [
+    "tex/946f608c1141095c.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body261": {
+   "tex": [
+    "tex/4c5b36baabdc3928.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body260": {
+   "tex": [
+    "tex/da4e39bfcf6dcd80.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body259": {
+   "tex": [
+    "tex/f59de6794259e622.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body266": {
+   "tex": [
+    "tex/77a4d03290650d0b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body265": {
+   "tex": [
+    "tex/69005313dec88628.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body264": {
+   "tex": [
+    "tex/d2aaf874581b5cee.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_body263": {
+   "tex": [
+    "tex/a403a16969eb2bb4.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm185": {
+   "tex": [
+    "tex/0be73f5a5098b9e9.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm186": {
+   "tex": [
+    "tex/d73127d82c5462c8.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm187": {
+   "tex": [
+    "tex/d12ce101545442e0.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm188": {
+   "tex": [
+    "tex/2963cb8855b1cb3d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm189": {
+   "tex": [
+    "tex/584feba678fb65e5.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm190": {
+   "tex": [
+    "tex/ccf750ead59f2c55.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm191": {
+   "tex": [
+    "tex/094255d561f9de73.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm192": {
+   "tex": [
+    "tex/66d4ae80cbc61f81.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm016": {
+   "tex": [
+    "tex/1fb42b815c03acba.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm217": {
+   "tex": [
+    "tex/2329dcff02009d07.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm218": {
+   "tex": [
+    "tex/c26589544668c310.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm215": {
+   "tex": [
+    "tex/b02278a1bdc01510.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm216": {
+   "tex": [
+    "tex/e3bd8e22e46e14bd.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm017": {
+   "tex": [
+    "tex/988306943db02cb0.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm018": {
+   "tex": [
+    "tex/491d1ef2984da597.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm246": {
+   "tex": [
+    "tex/13e5d325157b0881.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm245": {
+   "tex": [
+    "tex/c76697003f2bef9c.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm244": {
+   "tex": [
+    "tex/7bbf84c30d03bc48.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm243": {
+   "tex": [
+    "tex/039d270047cfde15.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm250": {
+   "tex": [
+    "tex/f1cdfdb11e957f4c.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm249": {
+   "tex": [
+    "tex/c6b7b1fe4e6f8ead.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm248": {
+   "tex": [
+    "tex/54476768e977e1a3.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm247": {
+   "tex": [
+    "tex/3b206cb18fbeb472.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm254": {
+   "tex": [
+    "tex/aec1bab3c314aa6d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm253": {
+   "tex": [
+    "tex/4cf1b2f04e70c4b6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm252": {
+   "tex": [
+    "tex/e2c7acdb491c1489.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm251": {
+   "tex": [
+    "tex/8f7feccd2522293b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/m_arm258": {
+   "tex": [
+    "tex/866d62d2ac2ac027.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm257": {
+   "tex": [
+    "tex/736fd8b2d7009ae4.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm256": {
+   "tex": [
+    "tex/d6836933708705d2.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/m_arm255": {
+   "tex": [
+    "tex/463ed929c31d9302.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg163": {
+   "tex": [
+    "tex/2b68741066e52dc2.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg164": {
+   "tex": [
+    "tex/e735f5f23a10af64.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg165": {
+   "tex": [
+    "tex/5c87a388088930dd.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg166": {
+   "tex": [
+    "tex/f91ce85c15bc97dc.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg167": {
+   "tex": [
+    "tex/c70a9ca0a8310c57.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg168": {
+   "tex": [
+    "tex/baae755de7cad75a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg169": {
+   "tex": [
+    "tex/7ee9b780cd9b7b2e.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg170": {
+   "tex": [
+    "tex/bc057ea7d889cbae.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg011": {
+   "tex": [
+    "tex/6ff78c503e16c863.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg196": {
+   "tex": [
+    "tex/26a5be99a21c9a14.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg197": {
+   "tex": [
+    "tex/85377f7b32a8b47d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg194": {
+   "tex": [
+    "tex/92913452f709c0ab.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg195": {
+   "tex": [
+    "tex/2481c83ee24fe8c8.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg012": {
+   "tex": [
+    "tex/6d38b8cb684cb87d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg013": {
+   "tex": [
+    "tex/2875a2046cedba6b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_reg224": {
+   "tex": [
+    "tex/6eb4b7628b89f201.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg223": {
+   "tex": [
+    "tex/e5bafdaf26d2054f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg222": {
+   "tex": [
+    "tex/d1462a11ee766c16.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg221": {
+   "tex": [
+    "tex/737e5dbc14dc1657.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg228": {
+   "tex": [
+    "tex/c9e31f80effff285.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg227": {
+   "tex": [
+    "tex/cbbb7ac3a9611953.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg226": {
+   "tex": [
+    "tex/bde4f30dbaff55f3.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg225": {
+   "tex": [
+    "tex/82adb0d6285dc411.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg232": {
+   "tex": [
+    "tex/c7736303b6a0a262.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg231": {
+   "tex": [
+    "tex/00097a7becaf36ef.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg230": {
+   "tex": [
+    "tex/135bf1a105fec2c0.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg229": {
+   "tex": [
+    "tex/a46b25f05b5204e4.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg236": {
+   "tex": [
+    "tex/67d6c765db06287b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg235": {
+   "tex": [
+    "tex/161b0a8336026db1.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg234": {
+   "tex": [
+    "tex/d97b9fc8fc6497ef.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_reg233": {
+   "tex": [
+    "tex/327b9c39794da411.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body188": {
+   "tex": [
+    "tex/118679627232a8bd.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body189": {
+   "tex": [
+    "tex/2e90fea393f65ae3.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body190": {
+   "tex": [
+    "tex/b550a6ae93bf37b9.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body191": {
+   "tex": [
+    "tex/6aa9321de8b80db5.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m03": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body192": {
+   "tex": [
+    "tex/9a590e59607b9d22.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body193": {
+   "tex": [
+    "tex/a3526c2896042660.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body194": {
+   "tex": [
+    "tex/b74a5525564c060f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body195": {
+   "tex": [
+    "tex/22b6c9848805acff.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body012": {
+   "tex": [
+    "tex/2bbd79aee59e5faa.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body221": {
+   "tex": [
+    "tex/21017c7e0f6f3f11.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body222": {
+   "tex": [
+    "tex/4bd19d65f629e00d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body219": {
+   "tex": [
+    "tex/dd17986bde95ad11.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body220": {
+   "tex": [
+    "tex/33018830f1bdcaa6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body013": {
+   "tex": [
+    "tex/3561466b3365822b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body014": {
+   "tex": [
+    "tex/7900691bb69ec385.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body252": {
+   "tex": [
+    "tex/988078b2dcfd3fd0.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_body251": {
+   "tex": [
+    "tex/57c9f470907c8ced.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_body250": {
+   "tex": [
+    "tex/063f0742943f7554.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_body249": {
+   "tex": [
+    "tex/55589fb84d529313.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_body256": {
+   "tex": [
+    "tex/804e11ded09c4aa3.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body255": {
+   "tex": [
+    "tex/3d115f7d4cc23770.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body254": {
+   "tex": [
+    "tex/0865bab6bd3ed129.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body253": {
+   "tex": [
+    "tex/3e321b33a0fa618b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body260": {
+   "tex": [
+    "tex/0c9bcf7ddb759e68.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body259": {
+   "tex": [
+    "tex/47a6863f393cbfd8.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body258": {
+   "tex": [
+    "tex/cf672e2de7dfc0aa.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body257": {
+   "tex": [
+    "tex/7af1be01e89c848f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body264": {
+   "tex": [
+    "tex/0fde4c159c7898bd.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body263": {
+   "tex": [
+    "tex/c5b071258a6450de.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body262": {
+   "tex": [
+    "tex/5f5f8340a7ae0feb.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_body261": {
+   "tex": [
+    "tex/4d8753af841a3f24.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm185": {
+   "tex": [
+    "tex/4f93ea0281236950.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm186": {
+   "tex": [
+    "tex/3357ac9ff24fb445.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm187": {
+   "tex": [
+    "tex/d2fbf4afa4e85179.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm188": {
+   "tex": [
+    "tex/ba2d8bb32a9cd8e6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm189": {
+   "tex": [
+    "tex/9cc675e64ec5204d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm190": {
+   "tex": [
+    "tex/a7dedeccc576bba8.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm191": {
+   "tex": [
+    "tex/87f11079511b2424.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm192": {
+   "tex": [
+    "tex/bae5b5e4893119b6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m01": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    },
+    "m02": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm012": {
+   "tex": [
+    "tex/fadf8ed02f03ce10.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm217": {
+   "tex": [
+    "tex/4259073d9defae51.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm218": {
+   "tex": [
+    "tex/bde634bf9170261f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm215": {
+   "tex": [
+    "tex/84a3e37e88b8edf5.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm216": {
+   "tex": [
+    "tex/80d563d83a220f4f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm013": {
+   "tex": [
+    "tex/7c6f37e5af385b3d.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm014": {
+   "tex": [
+    "tex/a0326744e57cc35b.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm245": {
+   "tex": [
+    "tex/050016987cc0ebff.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm244": {
+   "tex": [
+    "tex/82c77c15fff3b027.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm243": {
+   "tex": [
+    "tex/94d86962ca8d62f3.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm242": {
+   "tex": [
+    "tex/fdf29d0647dbd0a1.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm249": {
+   "tex": [
+    "tex/321ce25cb32dd070.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm248": {
+   "tex": [
+    "tex/0b75175773b948c6.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm247": {
+   "tex": [
+    "tex/4684f008a20b3d79.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm246": {
+   "tex": [
+    "tex/b98ff3df1531cbfb.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm253": {
+   "tex": [
+    "tex/39c74fecf5a06798.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm252": {
+   "tex": [
+    "tex/733ea818f0afa43a.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm251": {
+   "tex": [
+    "tex/f7e5f30308193082.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm250": {
+   "tex": [
+    "tex/fe79d80020ee50e3.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     },
+     "fb": "00100000"
+    }
+   }
+  },
+  "pl/f_arm257": {
+   "tex": [
+    "tex/7979701a7c3d5d5f.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm256": {
+   "tex": [
+    "tex/7472391546b21de9.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm255": {
+   "tex": [
+    "tex/60c17297097636a0.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
+    }
+   }
+  },
+  "pl/f_arm254": {
+   "tex": [
+    "tex/9d45674347040e73.webp"
+   ],
+   "mats": {
+    "m00": {
+     "s": 0,
+     "t": {
+      "albedo": 1
+     }
     }
    }
   },

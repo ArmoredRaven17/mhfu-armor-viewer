@@ -5,34 +5,43 @@ Guidance for Claude Code when working in this repository.
 ## What this is
 
 A static single-page web app: a hunter in MHFU armor, every piece swappable, with a weapon on the hunter.
-A **basic version** (Raven, 2026-10-16: "Keep it basic for now, focus on armors and weapons").
 
-No build step for the app, no framework. `docs/index.html` holds markup, styles and logic;
-`docs/render/*.js` is the render core (ES modules, three.js 0.169 from jsdelivr), copied from the MHFU
-Monster Viewer. Serve `docs/` with `dev/serve.py` (port 5624 in the quest randomizer's launch.json).
+No build step for the app, no framework. Since Phase 1.6 of the shared viewer base (2026-10-19; the plan:
+`C:\Coding Repos\VIEWER-BASE-PLAN.md`) the page is GU's layout, ported from the MH4U Armor Viewer:
+`docs/index.html` is markup only, `docs/base/` is the shared base (pulled, never edited here:
+`python dev/sync-base.py --pull --source "C:\Coding Repos\mhgu-armor-viewer\docsase"`, `--check`;
+`docs/base/README.md` is its contract), `docs/game.js` and `docs/adapter.js` are MHFU's values and data for it,
+`docs/app.js` is MHFU's main module and `docs/render/piece.js` builds one model. Serve `docs/` with
+`dev/serve.py` (port 5624 in the quest randomizer's launch.json).
 
 ## How it is put together
 
-- **The page shell is the MH4U Armor Viewer's** (panels, modals, theme script). Its Hunters, Colors,
-  Pigment, Animation, Lighting, Camera and Effects panels and several fields are in the markup but
-  `hidden`: their logic lived in the 4U main module, which is replaced. The main module (the last
-  `<script type="module">`) is MHFU's own and small.
-- **Pieces load through render/monster.js `loadMonster`** (the monster viewer's): glb, materials from
-  materials.json by glTF material name, skeleton clone.
-- **One rig per gender.** Every piece glb carries the gender's whole 21-bone rig (nodes "<i>:<i>", "_s"
-  leaves), so `applyPose` (index.html `POSE`, rotations by rig bone) poses every piece the same.
-  Rig: 0-2 root/hips, 3-5 / 6-8 legs, 9-10 spine, 11-14 the +x arm, 15-18 the -x arm, 19-20 neck/head.
+- **Every value is MHFU's own read, or left out.** What is not read (Hair Color, Clothing, Guild Info, bowgun
+  parts, a colour board, the GE colour blend) is listed in game.js and on the task board, never filled with
+  another game's.
+- **Pieces** load through render/piece.js on the base's render modules: glb, materials from materials.json by
+  glTF material name, skeleton clone; every mesh keeps its "<PMO mesh>/<PMO material>" key (`fuKey`).
+- **One rig per gender**, 21 bones (nodes "<i>:<i>", "_s" leaves): 0-2 root/travel/hips, 3-5 / 6-8 legs, 9-10
+  spine, 11-14 the +x arm, 15-18 the -x arm, 19-20 neck/head. A piece's SKIN holds only the joints its bones
+  ride, and armor.json `joints` lists them in skin order (build_viewer.py `skin_joints`): the base pairs skin
+  bone i with joints[i].
+- **Motions** play through the base's PoseDriver (app.js `FuPoseDriver`): the proxy is the motion pack's own
+  rig (no piece is skinned to all 21 joints), and the travel on bone 1 is held at its rest so the figure stays
+  in frame. 60 fps (the game steps a motion 2 frames per 30 Hz update). The Pose list is Common; a class's pack
+  is the Weapon panel's Stance. A clip's loop is the game's flag unless the Loop button says otherwise.
 - **Head rule:** an empty head draws the hairstyle (`f_head` files); a helm replaces it; the face is always
   drawn. The game's "Nothing equipped" head model (`hair000`) is the hair drawn blended and is not used.
-- **Weapons** keep their own skeleton (one root per part). Carry: Sheathed (the weapon away, the Pose
-  plays), Drawn (the Stance -- a clip of the class pack -- plays) or Beside (`placeWeapon`, parts side by
-  side). On the hunter, `updateWeapon` runs every frame after the pose: `stances/wNN.json` gives, per
-  variant and clip frame, passes of {m: part root on hunter joint k as T R S, b: bone locals the game
-  sets, s: meshes/materials shown}. Two passes (the Long Sword's blade and scabbard) get a second copy
-  of the model (`extras`). The data is the game's own routines run under emulation, not hand-placed:
-  don't tune offsets here; fix tools/weapon_emu.py or build_stances.py in the extract.
-- **Motions** are 60 fps (the game steps a motion 2 frames per 30 Hz update). The Pose list is Common
-  only; a class's pack is the Weapon panel's Stance (the 4U viewer's rule).
+  An empty chest, arms, waist or legs draws record 0's model (the clothing).
+- **Armor colour** (record +0x13, armor.json `col`): 2 S-Series and 3 X/Z-Series take the pigment row's
+  colour or the game's Rainbow; 1 is drawn in the fixed grey 0x80 the game writes; 0 takes none. The colour
+  goes into the one material the game colours (pieces[].dyeMat) as a multiply (render/piece.js `applyDye`).
+- **Weapons** keep their own skeleton (one root per part) and are no figure of the pose driver. Carry:
+  Sheathed (the weapon away, the Pose plays) or Drawn (the Stance plays). `updateWeapon` runs every frame after
+  the pose: `stances/wNN.json` gives, per variant and clip frame, passes of {m: part root on hunter joint k as
+  T R S, b: bone locals the game sets, s: meshes/materials shown}. Two passes (the Long Sword's blade and
+  scabbard) get a second copy of the model (`extras`). The data is the game's own routines run under
+  emulation, not hand-placed: don't tune offsets here; fix tools/weapon_emu.py or build_stances.py in the
+  extract. The port reproduces the pre-base page's placement to 1e-4 (checked 2026-10-19, all 11 classes).
 
 ## Data pipeline
 
