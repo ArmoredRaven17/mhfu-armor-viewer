@@ -208,6 +208,42 @@ def plate_icons():
     return cells
 
 
+HEAD_SUFFIX = {'S', 'U', 'X', 'Z', 'D', 'G', 'Goku', 'Haku', 'Ten', 'Shin', '+'}
+
+
+def head_filter_types(rows):
+    """THE HEAD LIST'S TYPE FILTER (Raven, 2026-10-19: "in game they are always considered both" -- "However, for the
+    sake of filtering we split them", "while providing the option to treat them as both like in game"). MHFU marks every
+    head piece Blademaster AND Gunner (record +4), and no field of the record says which set it belongs to. So the split
+    is THIS VIEWER'S rule, not the game's: heads whose names differ only in the head word (Rathalos Helm X / Rathalos Cap
+    X; the rank words S U X Z D G Goku Haku Ten Shin and + kept) are a pair, and the one with the higher defence (record
+    +0x0C) is the Blademaster piece -- the rule names 302 of 302 chest pieces, 280 of 280 legs and 285 of 288 arms as the
+    game's own flags do. A head with no such pair stays Both (it shows under either). -> {record id: 'b' | 'g' | 'bg'}."""
+    import allegrex
+    from convert_player import ARMOR_PTRS
+    boot = allegrex.boot()
+    head = struct.unpack_from('<5I', boot, ARMOR_PTRS)[1]
+    def key(name):
+        w = name.replace('+', ' +').split()
+        suf = [x for x in w if x in HEAD_SUFFIX]; core = [x for x in w if x not in HEAD_SUFFIX]
+        return (' '.join(core[:-1]) if len(core) > 1 else (core[0] if core else name), ' '.join(suf))
+    groups = {}
+    for r in rows:
+        if not r['id'] or not r['name'] or r['name'].lower() == 'dummy':
+            continue
+        defence = boot[head - VBASE + FBASE + r['id'] * 0x28 + 0x0C]
+        groups.setdefault(key(r['name']), []).append((r['id'], defence))
+    out = {}
+    for g in groups.values():
+        if len(g) == 2 and g[0][1] != g[1][1]:
+            hi, lo = sorted(g, key=lambda x: -x[1])
+            out[hi[0]], out[lo[0]] = 'b', 'g'
+        else:
+            for rid, _ in g:
+                out[rid] = 'bg'
+    return out
+
+
 def weapon_tables():
     boot = open(os.path.join(EXTRACT, 'boot', 'BOOT.BIN'), 'rb').read()
     at = lambda va: va - VBASE + FBASE
@@ -264,6 +300,10 @@ def main():
                 mdl = r[g]
                 row[g] = None if mdl < 0 else piece(g, SLOT_FILE[slot], mdl)
             rows.append(row)
+        if slot == 'helm':                    # the viewer's own Blademaster / Gunner split (head_filter_types)
+            ft = head_filter_types(rows)
+            for row in rows:
+                row['ftype'] = ft.get(row['id'], 'bg')
         armor[slot] = rows
     chars = {g: {'face': [piece(g, 'face', i) for i in range(32)],
                  'hair': [piece(g, 'head', i) for i in range(27)]} for g in 'mf'}

@@ -81,7 +81,11 @@ export function armorOptions(slot, type){
     if (!groups.has(r[g])) groups.set(r[g], { id: r.id, model: r[g], rare: r.rar, ids: [], names: [] });
     const e = groups.get(r[g]);
     e.ids.push(r.id);
-    if (type !== 'all' && r.wear.indexOf(type) < 0) continue;
+    // the Type filter: the game's flags (record +4); on the Head, the viewer's split (armor.json `ftype`, build_viewer.py
+    // head_filter_types -- every MHFU head is both in game; Settings -> "Treat Head Armors as Blademaster/Gunner" asks
+    // armor-panel.js for 'all' here, the game's own both)
+    const fits = slot === 'helm' && r.ftype ? r.ftype : r.wear;
+    if (type !== 'all' && fits.indexOf(type) < 0) continue;
     if (e.names.indexOf(r.name) < 0) e.names.push(r.name);
   }
   const out = [];

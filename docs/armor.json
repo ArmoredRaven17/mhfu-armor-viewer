@@ -28,7 +28,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 1,
@@ -37,7 +38,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair015",
-    "f": "f_hair017"
+    "f": "f_hair017",
+    "ftype": "bg"
    },
    {
     "id": 2,
@@ -46,7 +48,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair016",
-    "f": "f_hair018"
+    "f": "f_hair018",
+    "ftype": "bg"
    },
    {
     "id": 3,
@@ -55,7 +58,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair010",
-    "f": "f_hair010"
+    "f": "f_hair010",
+    "ftype": "b"
    },
    {
     "id": 4,
@@ -64,7 +68,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair027",
-    "f": "f_hair027"
+    "f": "f_hair027",
+    "ftype": "g"
    },
    {
     "id": 5,
@@ -73,7 +78,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair018",
-    "f": "f_hair014"
+    "f": "f_hair014",
+    "ftype": "b"
    },
    {
     "id": 6,
@@ -82,7 +88,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair052",
-    "f": "f_hair052"
+    "f": "f_hair052",
+    "ftype": "g"
    },
    {
     "id": 7,
@@ -91,7 +98,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair013",
-    "f": "f_hair013"
+    "f": "f_hair013",
+    "ftype": "bg"
    },
    {
     "id": 8,
@@ -100,7 +108,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair011",
-    "f": "f_hair012"
+    "f": "f_hair012",
+    "ftype": "bg"
    },
    {
     "id": 9,
@@ -109,7 +118,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair033",
-    "f": "f_hair031"
+    "f": "f_hair031",
+    "ftype": "b"
    },
    {
     "id": 10,
@@ -118,7 +128,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair030",
-    "f": "f_hair028"
+    "f": "f_hair028",
+    "ftype": "g"
    },
    {
     "id": 11,
@@ -127,7 +138,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair026",
-    "f": "f_hair023"
+    "f": "f_hair023",
+    "ftype": "b"
    },
    {
     "id": 12,
@@ -136,7 +148,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair017",
-    "f": "f_hair024"
+    "f": "f_hair024",
+    "ftype": "g"
    },
    {
     "id": 13,
@@ -145,7 +158,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair040",
-    "f": "f_hair042"
+    "f": "f_hair042",
+    "ftype": "b"
    },
    {
     "id": 14,
@@ -154,7 +168,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair041",
-    "f": "f_hair043"
+    "f": "f_hair043",
+    "ftype": "g"
    },
    {
     "id": 15,
@@ -163,7 +178,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair048",
-    "f": "f_hair048"
+    "f": "f_hair048",
+    "ftype": "b"
    },
    {
     "id": 16,
@@ -172,7 +188,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair049",
-    "f": "f_hair049"
+    "f": "f_hair049",
+    "ftype": "g"
    },
    {
     "id": 17,
@@ -181,7 +198,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair019",
-    "f": "f_hair015"
+    "f": "f_hair015",
+    "ftype": "bg"
    },
    {
     "id": 18,
@@ -190,7 +208,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair044",
-    "f": "f_hair044"
+    "f": "f_hair044",
+    "ftype": "bg"
    },
    {
     "id": 19,
@@ -199,7 +218,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair039",
-    "f": "f_hair039"
+    "f": "f_hair039",
+    "ftype": "bg"
    },
    {
     "id": 20,
@@ -208,7 +228,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair045",
-    "f": "f_hair045"
+    "f": "f_hair045",
+    "ftype": "bg"
    },
    {
     "id": 21,
@@ -217,7 +238,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair020",
-    "f": "f_hair019"
+    "f": "f_hair019",
+    "ftype": "b"
    },
    {
     "id": 22,
@@ -226,7 +248,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair023",
-    "f": "f_hair020"
+    "f": "f_hair020",
+    "ftype": "g"
    },
    {
     "id": 23,
@@ -235,7 +258,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair032",
-    "f": "f_hair035"
+    "f": "f_hair035",
+    "ftype": "b"
    },
    {
     "id": 24,
@@ -244,7 +268,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair034",
-    "f": "f_hair036"
+    "f": "f_hair036",
+    "ftype": "g"
    },
    {
     "id": 25,
@@ -253,7 +278,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair012",
-    "f": "f_hair011"
+    "f": "f_hair011",
+    "ftype": "b"
    },
    {
     "id": 26,
@@ -262,7 +288,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair014",
-    "f": "f_hair016"
+    "f": "f_hair016",
+    "ftype": "g"
    },
    {
     "id": 27,
@@ -271,7 +298,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair024",
-    "f": "f_hair025"
+    "f": "f_hair025",
+    "ftype": "b"
    },
    {
     "id": 28,
@@ -280,7 +308,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair025",
-    "f": "f_hair026"
+    "f": "f_hair026",
+    "ftype": "g"
    },
    {
     "id": 29,
@@ -289,7 +318,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair021",
-    "f": "f_hair021"
+    "f": "f_hair021",
+    "ftype": "b"
    },
    {
     "id": 30,
@@ -298,7 +328,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair022",
-    "f": "f_hair022"
+    "f": "f_hair022",
+    "ftype": "g"
    },
    {
     "id": 31,
@@ -307,7 +338,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair037",
-    "f": "f_hair037"
+    "f": "f_hair037",
+    "ftype": "b"
    },
    {
     "id": 32,
@@ -316,7 +348,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair038",
-    "f": "f_hair038"
+    "f": "f_hair038",
+    "ftype": "g"
    },
    {
     "id": 33,
@@ -325,7 +358,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair031",
-    "f": "f_hair216"
+    "f": "f_hair216",
+    "ftype": "b"
    },
    {
     "id": 34,
@@ -334,7 +368,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair172",
-    "f": "f_hair172"
+    "f": "f_hair172",
+    "ftype": "b"
    },
    {
     "id": 35,
@@ -343,7 +378,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair173",
-    "f": "f_hair173"
+    "f": "f_hair173",
+    "ftype": "g"
    },
    {
     "id": 36,
@@ -352,7 +388,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair028",
-    "f": "f_hair029"
+    "f": "f_hair029",
+    "ftype": "b"
    },
    {
     "id": 37,
@@ -361,7 +398,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair029",
-    "f": "f_hair030"
+    "f": "f_hair030",
+    "ftype": "g"
    },
    {
     "id": 38,
@@ -370,7 +408,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair046",
-    "f": "f_hair046"
+    "f": "f_hair046",
+    "ftype": "b"
    },
    {
     "id": 39,
@@ -379,7 +418,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair047",
-    "f": "f_hair047"
+    "f": "f_hair047",
+    "ftype": "g"
    },
    {
     "id": 40,
@@ -388,7 +428,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair042",
-    "f": "f_hair040"
+    "f": "f_hair040",
+    "ftype": "b"
    },
    {
     "id": 41,
@@ -397,7 +438,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair043",
-    "f": "f_hair041"
+    "f": "f_hair041",
+    "ftype": "g"
    },
    {
     "id": 42,
@@ -406,7 +448,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair070",
-    "f": "f_hair070"
+    "f": "f_hair070",
+    "ftype": "bg"
    },
    {
     "id": 43,
@@ -415,7 +458,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair056",
-    "f": "f_hair057"
+    "f": "f_hair057",
+    "ftype": "bg"
    },
    {
     "id": 44,
@@ -424,7 +468,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair201",
-    "f": "f_hair201"
+    "f": "f_hair201",
+    "ftype": "bg"
    },
    {
     "id": 45,
@@ -433,7 +478,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair200",
-    "f": "f_hair200"
+    "f": "f_hair200",
+    "ftype": "bg"
    },
    {
     "id": 46,
@@ -442,7 +488,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair202",
-    "f": "f_hair202"
+    "f": "f_hair202",
+    "ftype": "bg"
    },
    {
     "id": 47,
@@ -451,7 +498,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair204",
-    "f": "f_hair204"
+    "f": "f_hair204",
+    "ftype": "b"
    },
    {
     "id": 48,
@@ -460,7 +508,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair203",
-    "f": "f_hair203"
+    "f": "f_hair203",
+    "ftype": "bg"
    },
    {
     "id": 49,
@@ -469,7 +518,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair055",
-    "f": "f_hair055"
+    "f": "f_hair055",
+    "ftype": "bg"
    },
    {
     "id": 50,
@@ -478,7 +528,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair163",
-    "f": "f_hair163"
+    "f": "f_hair163",
+    "ftype": "bg"
    },
    {
     "id": 51,
@@ -487,7 +538,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair164",
-    "f": "f_hair164"
+    "f": "f_hair164",
+    "ftype": "bg"
    },
    {
     "id": 52,
@@ -496,7 +548,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair058",
-    "f": "f_hair058"
+    "f": "f_hair058",
+    "ftype": "bg"
    },
    {
     "id": 53,
@@ -505,7 +558,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 54,
@@ -514,7 +568,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 55,
@@ -523,7 +578,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 56,
@@ -532,7 +588,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 57,
@@ -541,7 +598,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair059",
-    "f": "f_hair059"
+    "f": "f_hair059",
+    "ftype": "bg"
    },
    {
     "id": 58,
@@ -550,7 +608,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair060",
-    "f": "f_hair060"
+    "f": "f_hair060",
+    "ftype": "bg"
    },
    {
     "id": 59,
@@ -559,7 +618,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair053",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 60,
@@ -568,7 +628,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair054",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 61,
@@ -577,7 +638,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair053"
+    "f": "f_hair053",
+    "ftype": "bg"
    },
    {
     "id": 62,
@@ -586,7 +648,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair054"
+    "f": "f_hair054",
+    "ftype": "bg"
    },
    {
     "id": 63,
@@ -595,7 +658,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair057",
-    "f": "f_hair056"
+    "f": "f_hair056",
+    "ftype": "bg"
    },
    {
     "id": 64,
@@ -604,7 +668,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair169",
-    "f": "f_hair169"
+    "f": "f_hair169",
+    "ftype": "b"
    },
    {
     "id": 65,
@@ -613,7 +678,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair170",
-    "f": "f_hair170"
+    "f": "f_hair170",
+    "ftype": "g"
    },
    {
     "id": 66,
@@ -622,7 +688,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair171",
-    "f": "f_hair171"
+    "f": "f_hair171",
+    "ftype": "bg"
    },
    {
     "id": 67,
@@ -631,7 +698,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair035",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 68,
@@ -640,7 +708,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair036",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "g"
    },
    {
     "id": 69,
@@ -649,7 +718,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair033"
+    "f": "f_hair033",
+    "ftype": "bg"
    },
    {
     "id": 70,
@@ -658,7 +728,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair034"
+    "f": "f_hair034",
+    "ftype": "bg"
    },
    {
     "id": 71,
@@ -667,7 +738,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair050",
-    "f": "f_hair050"
+    "f": "f_hair050",
+    "ftype": "bg"
    },
    {
     "id": 72,
@@ -676,7 +748,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair051",
-    "f": "f_hair051"
+    "f": "f_hair051",
+    "ftype": "bg"
    },
    {
     "id": 73,
@@ -685,7 +758,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair061",
-    "f": "f_hair061"
+    "f": "f_hair061",
+    "ftype": "bg"
    },
    {
     "id": 74,
@@ -694,7 +768,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair146",
-    "f": "f_hair146"
+    "f": "f_hair146",
+    "ftype": "bg"
    },
    {
     "id": 75,
@@ -703,7 +778,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair063",
-    "f": "f_hair063"
+    "f": "f_hair063",
+    "ftype": "b"
    },
    {
     "id": 76,
@@ -712,7 +788,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair064",
-    "f": "f_hair064"
+    "f": "f_hair064",
+    "ftype": "g"
    },
    {
     "id": 77,
@@ -721,7 +798,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair071",
-    "f": "f_hair071"
+    "f": "f_hair071",
+    "ftype": "b"
    },
    {
     "id": 78,
@@ -730,7 +808,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair072",
-    "f": "f_hair072"
+    "f": "f_hair072",
+    "ftype": "g"
    },
    {
     "id": 79,
@@ -739,7 +818,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair065",
-    "f": "f_hair065"
+    "f": "f_hair065",
+    "ftype": "b"
    },
    {
     "id": 80,
@@ -748,7 +828,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair066",
-    "f": "f_hair066"
+    "f": "f_hair066",
+    "ftype": "g"
    },
    {
     "id": 81,
@@ -757,7 +838,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair073",
-    "f": "f_hair073"
+    "f": "f_hair073",
+    "ftype": "b"
    },
    {
     "id": 82,
@@ -766,7 +848,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair074",
-    "f": "f_hair074"
+    "f": "f_hair074",
+    "ftype": "g"
    },
    {
     "id": 83,
@@ -775,7 +858,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair147",
-    "f": "f_hair147"
+    "f": "f_hair147",
+    "ftype": "b"
    },
    {
     "id": 84,
@@ -784,7 +868,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair148",
-    "f": "f_hair148"
+    "f": "f_hair148",
+    "ftype": "g"
    },
    {
     "id": 85,
@@ -793,7 +878,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair149",
-    "f": "f_hair149"
+    "f": "f_hair149",
+    "ftype": "b"
    },
    {
     "id": 86,
@@ -802,7 +888,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair150",
-    "f": "f_hair150"
+    "f": "f_hair150",
+    "ftype": "g"
    },
    {
     "id": 87,
@@ -811,7 +898,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair075",
-    "f": "f_hair075"
+    "f": "f_hair075",
+    "ftype": "b"
    },
    {
     "id": 88,
@@ -820,7 +908,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair076",
-    "f": "f_hair076"
+    "f": "f_hair076",
+    "ftype": "g"
    },
    {
     "id": 89,
@@ -829,7 +918,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair153",
-    "f": "f_hair153"
+    "f": "f_hair153",
+    "ftype": "b"
    },
    {
     "id": 90,
@@ -838,7 +928,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair154",
-    "f": "f_hair154"
+    "f": "f_hair154",
+    "ftype": "g"
    },
    {
     "id": 91,
@@ -847,7 +938,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair151",
-    "f": "f_hair151"
+    "f": "f_hair151",
+    "ftype": "b"
    },
    {
     "id": 92,
@@ -856,7 +948,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair152",
-    "f": "f_hair152"
+    "f": "f_hair152",
+    "ftype": "g"
    },
    {
     "id": 93,
@@ -865,7 +958,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair078",
-    "f": "f_hair078"
+    "f": "f_hair078",
+    "ftype": "b"
    },
    {
     "id": 94,
@@ -874,7 +968,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair079",
-    "f": "f_hair079"
+    "f": "f_hair079",
+    "ftype": "g"
    },
    {
     "id": 95,
@@ -883,7 +978,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair080",
-    "f": "f_hair080"
+    "f": "f_hair080",
+    "ftype": "b"
    },
    {
     "id": 96,
@@ -892,7 +988,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair081",
-    "f": "f_hair081"
+    "f": "f_hair081",
+    "ftype": "g"
    },
    {
     "id": 97,
@@ -901,7 +998,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair062",
-    "f": "f_hair062"
+    "f": "f_hair062",
+    "ftype": "b"
    },
    {
     "id": 98,
@@ -910,7 +1008,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair069",
-    "f": "f_hair069"
+    "f": "f_hair069",
+    "ftype": "g"
    },
    {
     "id": 99,
@@ -919,7 +1018,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair090",
-    "f": "f_hair090"
+    "f": "f_hair090",
+    "ftype": "b"
    },
    {
     "id": 100,
@@ -928,7 +1028,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair091",
-    "f": "f_hair091"
+    "f": "f_hair091",
+    "ftype": "g"
    },
    {
     "id": 101,
@@ -937,7 +1038,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair096",
-    "f": "f_hair096"
+    "f": "f_hair096",
+    "ftype": "b"
    },
    {
     "id": 102,
@@ -946,7 +1048,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair097",
-    "f": "f_hair097"
+    "f": "f_hair097",
+    "ftype": "g"
    },
    {
     "id": 103,
@@ -955,7 +1058,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair092",
-    "f": "f_hair092"
+    "f": "f_hair092",
+    "ftype": "b"
    },
    {
     "id": 104,
@@ -964,7 +1068,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair093",
-    "f": "f_hair093"
+    "f": "f_hair093",
+    "ftype": "g"
    },
    {
     "id": 105,
@@ -973,7 +1078,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair174",
-    "f": "f_hair174"
+    "f": "f_hair174",
+    "ftype": "b"
    },
    {
     "id": 106,
@@ -982,7 +1088,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair175",
-    "f": "f_hair175"
+    "f": "f_hair175",
+    "ftype": "g"
    },
    {
     "id": 107,
@@ -991,7 +1098,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair086",
-    "f": "f_hair086"
+    "f": "f_hair086",
+    "ftype": "b"
    },
    {
     "id": 108,
@@ -1000,7 +1108,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair087",
-    "f": "f_hair087"
+    "f": "f_hair087",
+    "ftype": "g"
    },
    {
     "id": 109,
@@ -1009,7 +1118,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair088",
-    "f": "f_hair088"
+    "f": "f_hair088",
+    "ftype": "b"
    },
    {
     "id": 110,
@@ -1018,7 +1128,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair089",
-    "f": "f_hair089"
+    "f": "f_hair089",
+    "ftype": "g"
    },
    {
     "id": 111,
@@ -1027,7 +1138,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair094",
-    "f": "f_hair094"
+    "f": "f_hair094",
+    "ftype": "b"
    },
    {
     "id": 112,
@@ -1036,7 +1148,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair095",
-    "f": "f_hair095"
+    "f": "f_hair095",
+    "ftype": "g"
    },
    {
     "id": 113,
@@ -1045,7 +1158,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair155",
-    "f": "f_hair155"
+    "f": "f_hair155",
+    "ftype": "bg"
    },
    {
     "id": 114,
@@ -1054,7 +1168,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair156",
-    "f": "f_hair156"
+    "f": "f_hair156",
+    "ftype": "bg"
    },
    {
     "id": 115,
@@ -1063,7 +1178,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair157",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 116,
@@ -1072,7 +1188,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair158",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 117,
@@ -1081,7 +1198,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair157"
+    "f": "f_hair157",
+    "ftype": "bg"
    },
    {
     "id": 118,
@@ -1090,7 +1208,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair158"
+    "f": "f_hair158",
+    "ftype": "bg"
    },
    {
     "id": 119,
@@ -1099,7 +1218,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair098",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 120,
@@ -1108,7 +1228,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair099",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "b"
    },
    {
     "id": 121,
@@ -1117,7 +1238,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair098"
+    "f": "f_hair098",
+    "ftype": "bg"
    },
    {
     "id": 122,
@@ -1126,7 +1248,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair099"
+    "f": "f_hair099",
+    "ftype": "bg"
    },
    {
     "id": 123,
@@ -1135,7 +1258,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair067",
-    "f": "f_hair067"
+    "f": "f_hair067",
+    "ftype": "b"
    },
    {
     "id": 124,
@@ -1144,7 +1268,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair068",
-    "f": "f_hair068"
+    "f": "f_hair068",
+    "ftype": "g"
    },
    {
     "id": 125,
@@ -1153,7 +1278,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair084",
-    "f": "f_hair084"
+    "f": "f_hair084",
+    "ftype": "b"
    },
    {
     "id": 126,
@@ -1162,7 +1288,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair085",
-    "f": "f_hair085"
+    "f": "f_hair085",
+    "ftype": "g"
    },
    {
     "id": 127,
@@ -1171,7 +1298,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair082",
-    "f": "f_hair082"
+    "f": "f_hair082",
+    "ftype": "b"
    },
    {
     "id": 128,
@@ -1180,7 +1308,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair083",
-    "f": "f_hair083"
+    "f": "f_hair083",
+    "ftype": "g"
    },
    {
     "id": 129,
@@ -1189,7 +1318,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair128",
-    "f": "f_hair136"
+    "f": "f_hair136",
+    "ftype": "bg"
    },
    {
     "id": 130,
@@ -1198,7 +1328,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair129",
-    "f": "f_hair137"
+    "f": "f_hair137",
+    "ftype": "bg"
    },
    {
     "id": 131,
@@ -1207,7 +1338,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair130",
-    "f": "f_hair130"
+    "f": "f_hair130",
+    "ftype": "b"
    },
    {
     "id": 132,
@@ -1216,7 +1348,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair131",
-    "f": "f_hair131"
+    "f": "f_hair131",
+    "ftype": "g"
    },
    {
     "id": 133,
@@ -1225,7 +1358,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair136",
-    "f": "f_hair128"
+    "f": "f_hair128",
+    "ftype": "b"
    },
    {
     "id": 134,
@@ -1234,7 +1368,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair137",
-    "f": "f_hair129"
+    "f": "f_hair129",
+    "ftype": "g"
    },
    {
     "id": 135,
@@ -1243,7 +1378,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair113",
-    "f": "f_hair113"
+    "f": "f_hair113",
+    "ftype": "b"
    },
    {
     "id": 136,
@@ -1252,7 +1388,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair114",
-    "f": "f_hair114"
+    "f": "f_hair114",
+    "ftype": "g"
    },
    {
     "id": 137,
@@ -1261,7 +1398,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair132",
-    "f": "f_hair132"
+    "f": "f_hair132",
+    "ftype": "b"
    },
    {
     "id": 138,
@@ -1270,7 +1408,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair133",
-    "f": "f_hair133"
+    "f": "f_hair133",
+    "ftype": "g"
    },
    {
     "id": 139,
@@ -1279,7 +1418,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair142",
-    "f": "f_hair142"
+    "f": "f_hair142",
+    "ftype": "b"
    },
    {
     "id": 140,
@@ -1288,7 +1428,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair143",
-    "f": "f_hair143"
+    "f": "f_hair143",
+    "ftype": "g"
    },
    {
     "id": 141,
@@ -1297,7 +1438,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair140",
-    "f": "f_hair140"
+    "f": "f_hair140",
+    "ftype": "b"
    },
    {
     "id": 142,
@@ -1306,7 +1448,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair141",
-    "f": "f_hair141"
+    "f": "f_hair141",
+    "ftype": "g"
    },
    {
     "id": 143,
@@ -1315,7 +1458,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair007",
-    "f": "f_hair007"
+    "f": "f_hair007",
+    "ftype": "b"
    },
    {
     "id": 144,
@@ -1324,7 +1468,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair008",
-    "f": "f_hair008"
+    "f": "f_hair008",
+    "ftype": "g"
    },
    {
     "id": 145,
@@ -1333,7 +1478,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair115",
-    "f": "f_hair115"
+    "f": "f_hair115",
+    "ftype": "b"
    },
    {
     "id": 146,
@@ -1342,7 +1488,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair116",
-    "f": "f_hair116"
+    "f": "f_hair116",
+    "ftype": "g"
    },
    {
     "id": 147,
@@ -1351,7 +1498,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair205",
-    "f": "f_hair205"
+    "f": "f_hair205",
+    "ftype": "b"
    },
    {
     "id": 148,
@@ -1360,7 +1508,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair206",
-    "f": "f_hair206"
+    "f": "f_hair206",
+    "ftype": "g"
    },
    {
     "id": 149,
@@ -1369,7 +1518,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair117",
-    "f": "f_hair117"
+    "f": "f_hair117",
+    "ftype": "b"
    },
    {
     "id": 150,
@@ -1378,7 +1528,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair118",
-    "f": "f_hair118"
+    "f": "f_hair118",
+    "ftype": "g"
    },
    {
     "id": 151,
@@ -1387,7 +1538,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair005",
-    "f": "f_hair005"
+    "f": "f_hair005",
+    "ftype": "b"
    },
    {
     "id": 152,
@@ -1396,7 +1548,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair006",
-    "f": "f_hair006"
+    "f": "f_hair006",
+    "ftype": "g"
    },
    {
     "id": 153,
@@ -1405,7 +1558,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair111",
-    "f": "f_hair111"
+    "f": "f_hair111",
+    "ftype": "b"
    },
    {
     "id": 154,
@@ -1414,7 +1568,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair112",
-    "f": "f_hair112"
+    "f": "f_hair112",
+    "ftype": "g"
    },
    {
     "id": 155,
@@ -1423,7 +1578,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair101",
-    "f": "f_hair101"
+    "f": "f_hair101",
+    "ftype": "b"
    },
    {
     "id": 156,
@@ -1432,7 +1588,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair102",
-    "f": "f_hair102"
+    "f": "f_hair102",
+    "ftype": "g"
    },
    {
     "id": 157,
@@ -1441,7 +1598,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair120",
-    "f": "f_hair121"
+    "f": "f_hair121",
+    "ftype": "b"
    },
    {
     "id": 158,
@@ -1450,7 +1608,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair121",
-    "f": "f_hair120"
+    "f": "f_hair120",
+    "ftype": "g"
    },
    {
     "id": 159,
@@ -1459,7 +1618,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair003",
-    "f": "f_hair003"
+    "f": "f_hair003",
+    "ftype": "b"
    },
    {
     "id": 160,
@@ -1468,7 +1628,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair004",
-    "f": "f_hair004"
+    "f": "f_hair004",
+    "ftype": "g"
    },
    {
     "id": 161,
@@ -1477,7 +1638,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair009",
-    "f": "f_hair009"
+    "f": "f_hair009",
+    "ftype": "b"
    },
    {
     "id": 162,
@@ -1486,7 +1648,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair077",
-    "f": "f_hair077"
+    "f": "f_hair077",
+    "ftype": "g"
    },
    {
     "id": 163,
@@ -1495,7 +1658,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair176",
-    "f": "f_hair176"
+    "f": "f_hair176",
+    "ftype": "b"
    },
    {
     "id": 164,
@@ -1504,7 +1668,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair177",
-    "f": "f_hair177"
+    "f": "f_hair177",
+    "ftype": "g"
    },
    {
     "id": 165,
@@ -1513,7 +1678,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair138",
-    "f": "f_hair138"
+    "f": "f_hair138",
+    "ftype": "b"
    },
    {
     "id": 166,
@@ -1522,7 +1688,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair139",
-    "f": "f_hair139"
+    "f": "f_hair139",
+    "ftype": "g"
    },
    {
     "id": 167,
@@ -1531,7 +1698,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair105",
-    "f": "f_hair105"
+    "f": "f_hair105",
+    "ftype": "b"
    },
    {
     "id": 168,
@@ -1540,7 +1708,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair106",
-    "f": "f_hair106"
+    "f": "f_hair106",
+    "ftype": "g"
    },
    {
     "id": 169,
@@ -1549,7 +1718,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair103",
-    "f": "f_hair103"
+    "f": "f_hair103",
+    "ftype": "b"
    },
    {
     "id": 170,
@@ -1558,7 +1728,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair104",
-    "f": "f_hair104"
+    "f": "f_hair104",
+    "ftype": "g"
    },
    {
     "id": 171,
@@ -1567,7 +1738,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair109",
-    "f": "f_hair109"
+    "f": "f_hair109",
+    "ftype": "bg"
    },
    {
     "id": 172,
@@ -1576,7 +1748,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair110",
-    "f": "f_hair110"
+    "f": "f_hair110",
+    "ftype": "bg"
    },
    {
     "id": 173,
@@ -1585,7 +1758,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair134",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 174,
@@ -1594,7 +1768,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair135",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 175,
@@ -1603,7 +1778,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair134"
+    "f": "f_hair134",
+    "ftype": "bg"
    },
    {
     "id": 176,
@@ -1612,7 +1788,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair135"
+    "f": "f_hair135",
+    "ftype": "bg"
    },
    {
     "id": 177,
@@ -1621,7 +1798,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair107",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 178,
@@ -1630,7 +1808,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair108",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 179,
@@ -1639,7 +1818,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair107"
+    "f": "f_hair107",
+    "ftype": "bg"
    },
    {
     "id": 180,
@@ -1648,7 +1828,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair108"
+    "f": "f_hair108",
+    "ftype": "bg"
    },
    {
     "id": 181,
@@ -1657,7 +1838,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair144",
-    "f": "f_hair144"
+    "f": "f_hair144",
+    "ftype": "bg"
    },
    {
     "id": 182,
@@ -1666,7 +1848,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair145",
-    "f": "f_hair145"
+    "f": "f_hair145",
+    "ftype": "bg"
    },
    {
     "id": 183,
@@ -1675,7 +1858,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair186",
-    "f": "f_hair186"
+    "f": "f_hair186",
+    "ftype": "b"
    },
    {
     "id": 184,
@@ -1684,7 +1868,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair187",
-    "f": "f_hair187"
+    "f": "f_hair187",
+    "ftype": "g"
    },
    {
     "id": 185,
@@ -1693,7 +1878,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair192",
-    "f": "f_hair192"
+    "f": "f_hair192",
+    "ftype": "b"
    },
    {
     "id": 186,
@@ -1702,7 +1888,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair193",
-    "f": "f_hair193"
+    "f": "f_hair193",
+    "ftype": "g"
    },
    {
     "id": 187,
@@ -1711,7 +1898,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair159",
-    "f": "f_hair159"
+    "f": "f_hair159",
+    "ftype": "b"
    },
    {
     "id": 188,
@@ -1720,7 +1908,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair160",
-    "f": "f_hair160"
+    "f": "f_hair160",
+    "ftype": "g"
    },
    {
     "id": 189,
@@ -1729,7 +1918,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair196",
-    "f": "f_hair196"
+    "f": "f_hair196",
+    "ftype": "b"
    },
    {
     "id": 190,
@@ -1738,7 +1928,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair197",
-    "f": "f_hair197"
+    "f": "f_hair197",
+    "ftype": "g"
    },
    {
     "id": 191,
@@ -1747,7 +1938,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair198",
-    "f": "f_hair198"
+    "f": "f_hair198",
+    "ftype": "b"
    },
    {
     "id": 192,
@@ -1756,7 +1948,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair199",
-    "f": "f_hair199"
+    "f": "f_hair199",
+    "ftype": "g"
    },
    {
     "id": 193,
@@ -1765,7 +1958,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair167",
-    "f": "f_hair167"
+    "f": "f_hair167",
+    "ftype": "b"
    },
    {
     "id": 194,
@@ -1774,7 +1968,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair168",
-    "f": "f_hair168"
+    "f": "f_hair168",
+    "ftype": "g"
    },
    {
     "id": 195,
@@ -1783,7 +1978,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair184",
-    "f": "f_hair184"
+    "f": "f_hair184",
+    "ftype": "b"
    },
    {
     "id": 196,
@@ -1792,7 +1988,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair185",
-    "f": "f_hair185"
+    "f": "f_hair185",
+    "ftype": "g"
    },
    {
     "id": 197,
@@ -1801,7 +1998,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair190",
-    "f": "f_hair190"
+    "f": "f_hair190",
+    "ftype": "b"
    },
    {
     "id": 198,
@@ -1810,7 +2008,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair191",
-    "f": "f_hair191"
+    "f": "f_hair191",
+    "ftype": "g"
    },
    {
     "id": 199,
@@ -1819,7 +2018,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair001",
-    "f": "f_hair001"
+    "f": "f_hair001",
+    "ftype": "b"
    },
    {
     "id": 200,
@@ -1828,7 +2028,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair002",
-    "f": "f_hair002"
+    "f": "f_hair002",
+    "ftype": "g"
    },
    {
     "id": 201,
@@ -1837,7 +2038,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair188",
-    "f": "f_hair188"
+    "f": "f_hair188",
+    "ftype": "b"
    },
    {
     "id": 202,
@@ -1846,7 +2048,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair189",
-    "f": "f_hair189"
+    "f": "f_hair189",
+    "ftype": "g"
    },
    {
     "id": 203,
@@ -1855,7 +2058,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair194",
-    "f": "f_hair194"
+    "f": "f_hair194",
+    "ftype": "b"
    },
    {
     "id": 204,
@@ -1864,7 +2068,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair195",
-    "f": "f_hair195"
+    "f": "f_hair195",
+    "ftype": "g"
    },
    {
     "id": 205,
@@ -1873,7 +2078,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair161",
-    "f": "f_hair161"
+    "f": "f_hair161",
+    "ftype": "b"
    },
    {
     "id": 206,
@@ -1882,7 +2088,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair162",
-    "f": "f_hair162"
+    "f": "f_hair162",
+    "ftype": "g"
    },
    {
     "id": 207,
@@ -1891,7 +2098,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair100",
-    "f": "f_hair100"
+    "f": "f_hair100",
+    "ftype": "bg"
    },
    {
     "id": 208,
@@ -1900,7 +2108,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair100",
-    "f": "f_hair100"
+    "f": "f_hair100",
+    "ftype": "bg"
    },
    {
     "id": 209,
@@ -1909,7 +2118,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair119",
-    "f": "f_hair119"
+    "f": "f_hair119",
+    "ftype": "b"
    },
    {
     "id": 210,
@@ -1918,7 +2128,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair119",
-    "f": "f_hair119"
+    "f": "f_hair119",
+    "ftype": "g"
    },
    {
     "id": 211,
@@ -1927,7 +2138,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair122",
-    "f": "f_hair122"
+    "f": "f_hair122",
+    "ftype": "b"
    },
    {
     "id": 212,
@@ -1936,7 +2148,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair123",
-    "f": "f_hair123"
+    "f": "f_hair123",
+    "ftype": "g"
    },
    {
     "id": 213,
@@ -1945,7 +2158,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair165",
-    "f": "f_hair165"
+    "f": "f_hair165",
+    "ftype": "bg"
    },
    {
     "id": 214,
@@ -1954,7 +2168,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair166",
-    "f": "f_hair166"
+    "f": "f_hair166",
+    "ftype": "bg"
    },
    {
     "id": 215,
@@ -1963,7 +2178,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair180",
-    "f": "f_hair180"
+    "f": "f_hair180",
+    "ftype": "b"
    },
    {
     "id": 216,
@@ -1972,7 +2188,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair181",
-    "f": "f_hair181"
+    "f": "f_hair181",
+    "ftype": "g"
    },
    {
     "id": 217,
@@ -1981,7 +2198,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair126",
-    "f": "f_hair126"
+    "f": "f_hair126",
+    "ftype": "bg"
    },
    {
     "id": 218,
@@ -1990,7 +2208,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair127",
-    "f": "f_hair127"
+    "f": "f_hair127",
+    "ftype": "bg"
    },
    {
     "id": 219,
@@ -1999,7 +2218,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair178",
-    "f": "f_hair178"
+    "f": "f_hair178",
+    "ftype": "b"
    },
    {
     "id": 220,
@@ -2008,7 +2228,8 @@
     "col": 1,
     "wear": "mfbg",
     "m": "m_hair179",
-    "f": "f_hair179"
+    "f": "f_hair179",
+    "ftype": "g"
    },
    {
     "id": 221,
@@ -2017,7 +2238,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair125",
-    "f": "f_hair124"
+    "f": "f_hair124",
+    "ftype": "bg"
    },
    {
     "id": 222,
@@ -2026,7 +2248,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair124",
-    "f": "f_hair125"
+    "f": "f_hair125",
+    "ftype": "bg"
    },
    {
     "id": 223,
@@ -2035,7 +2258,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair182",
-    "f": "f_hair182"
+    "f": "f_hair182",
+    "ftype": "bg"
    },
    {
     "id": 224,
@@ -2044,7 +2268,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair183",
-    "f": "f_hair183"
+    "f": "f_hair183",
+    "ftype": "bg"
    },
    {
     "id": 225,
@@ -2053,7 +2278,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair207",
-    "f": "f_hair207"
+    "f": "f_hair207",
+    "ftype": "b"
    },
    {
     "id": 226,
@@ -2062,7 +2288,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair208",
-    "f": "f_hair208"
+    "f": "f_hair208",
+    "ftype": "g"
    },
    {
     "id": 227,
@@ -2071,7 +2298,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair209",
-    "f": "f_hair209"
+    "f": "f_hair209",
+    "ftype": "bg"
    },
    {
     "id": 228,
@@ -2080,7 +2308,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair210",
-    "f": "f_hair210"
+    "f": "f_hair210",
+    "ftype": "bg"
    },
    {
     "id": 229,
@@ -2089,7 +2318,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair211",
-    "f": "f_hair211"
+    "f": "f_hair211",
+    "ftype": "bg"
    },
    {
     "id": 230,
@@ -2098,7 +2328,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair212",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 231,
@@ -2107,7 +2338,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair213",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 232,
@@ -2116,7 +2348,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair212"
+    "f": "f_hair212",
+    "ftype": "bg"
    },
    {
     "id": 233,
@@ -2125,7 +2358,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair213"
+    "f": "f_hair213",
+    "ftype": "bg"
    },
    {
     "id": 234,
@@ -2134,7 +2368,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 235,
@@ -2143,7 +2378,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair214",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 236,
@@ -2152,7 +2388,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair215",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 237,
@@ -2161,7 +2398,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair214"
+    "f": "f_hair214",
+    "ftype": "bg"
    },
    {
     "id": 238,
@@ -2170,7 +2408,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair215"
+    "f": "f_hair215",
+    "ftype": "bg"
    },
    {
     "id": 239,
@@ -2179,7 +2418,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair216",
-    "f": "f_hair032"
+    "f": "f_hair032",
+    "ftype": "g"
    },
    {
     "id": 240,
@@ -2188,7 +2428,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 241,
@@ -2197,7 +2438,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 242,
@@ -2206,7 +2448,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 243,
@@ -2215,7 +2458,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 244,
@@ -2224,7 +2468,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 245,
@@ -2233,7 +2478,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 246,
@@ -2242,7 +2488,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 247,
@@ -2251,7 +2498,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 248,
@@ -2260,7 +2508,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 249,
@@ -2269,7 +2518,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 252,
@@ -2278,7 +2528,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair223",
-    "f": "f_hair223"
+    "f": "f_hair223",
+    "ftype": "bg"
    },
    {
     "id": 253,
@@ -2287,7 +2538,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair232",
-    "f": "f_hair232"
+    "f": "f_hair232",
+    "ftype": "bg"
    },
    {
     "id": 254,
@@ -2296,7 +2548,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair065",
-    "f": "f_hair065"
+    "f": "f_hair065",
+    "ftype": "bg"
    },
    {
     "id": 255,
@@ -2305,7 +2558,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair066",
-    "f": "f_hair066"
+    "f": "f_hair066",
+    "ftype": "bg"
    },
    {
     "id": 256,
@@ -2314,7 +2568,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair202",
-    "f": "f_hair202"
+    "f": "f_hair202",
+    "ftype": "bg"
    },
    {
     "id": 257,
@@ -2323,7 +2578,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair202",
-    "f": "f_hair202"
+    "f": "f_hair202",
+    "ftype": "bg"
    },
    {
     "id": 258,
@@ -2332,7 +2588,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair202",
-    "f": "f_hair202"
+    "f": "f_hair202",
+    "ftype": "bg"
    },
    {
     "id": 259,
@@ -2341,7 +2598,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair204",
-    "f": "f_hair204"
+    "f": "f_hair204",
+    "ftype": "g"
    },
    {
     "id": 260,
@@ -2350,7 +2608,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair204",
-    "f": "f_hair204"
+    "f": "f_hair204",
+    "ftype": "b"
    },
    {
     "id": 261,
@@ -2359,7 +2618,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair204",
-    "f": "f_hair204"
+    "f": "f_hair204",
+    "ftype": "g"
    },
    {
     "id": 262,
@@ -2368,7 +2628,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair203",
-    "f": "f_hair203"
+    "f": "f_hair203",
+    "ftype": "bg"
    },
    {
     "id": 263,
@@ -2377,7 +2638,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair219",
-    "f": "f_hair219"
+    "f": "f_hair219",
+    "ftype": "b"
    },
    {
     "id": 264,
@@ -2386,7 +2648,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair220",
-    "f": "f_hair220"
+    "f": "f_hair220",
+    "ftype": "g"
    },
    {
     "id": 265,
@@ -2395,7 +2658,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair221",
-    "f": "f_hair221"
+    "f": "f_hair221",
+    "ftype": "b"
    },
    {
     "id": 266,
@@ -2404,7 +2668,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair222",
-    "f": "f_hair222"
+    "f": "f_hair222",
+    "ftype": "g"
    },
    {
     "id": 267,
@@ -2413,7 +2678,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair221",
-    "f": "f_hair221"
+    "f": "f_hair221",
+    "ftype": "b"
    },
    {
     "id": 268,
@@ -2422,7 +2688,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair222",
-    "f": "f_hair222"
+    "f": "f_hair222",
+    "ftype": "g"
    },
    {
     "id": 269,
@@ -2431,7 +2698,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair078",
-    "f": "f_hair078"
+    "f": "f_hair078",
+    "ftype": "b"
    },
    {
     "id": 270,
@@ -2440,7 +2708,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair079",
-    "f": "f_hair079"
+    "f": "f_hair079",
+    "ftype": "g"
    },
    {
     "id": 271,
@@ -2449,7 +2718,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair092",
-    "f": "f_hair092"
+    "f": "f_hair092",
+    "ftype": "b"
    },
    {
     "id": 272,
@@ -2458,7 +2728,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair093",
-    "f": "f_hair093"
+    "f": "f_hair093",
+    "ftype": "g"
    },
    {
     "id": 273,
@@ -2467,7 +2738,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair090",
-    "f": "f_hair090"
+    "f": "f_hair090",
+    "ftype": "b"
    },
    {
     "id": 274,
@@ -2476,7 +2748,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair091",
-    "f": "f_hair091"
+    "f": "f_hair091",
+    "ftype": "g"
    },
    {
     "id": 275,
@@ -2485,7 +2758,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair228",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "b"
    },
    {
     "id": 276,
@@ -2494,7 +2768,8 @@
     "col": 0,
     "wear": "mbg",
     "m": "m_hair228",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "g"
    },
    {
     "id": 277,
@@ -2503,7 +2778,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair228"
+    "f": "f_hair228",
+    "ftype": "b"
    },
    {
     "id": 278,
@@ -2512,7 +2788,8 @@
     "col": 0,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair228"
+    "f": "f_hair228",
+    "ftype": "g"
    },
    {
     "id": 279,
@@ -2521,7 +2798,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair233",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "b"
    },
    {
     "id": 280,
@@ -2530,7 +2808,8 @@
     "col": 2,
     "wear": "mbg",
     "m": "m_hair233",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "g"
    },
    {
     "id": 281,
@@ -2539,7 +2818,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair233"
+    "f": "f_hair233",
+    "ftype": "b"
    },
    {
     "id": 282,
@@ -2548,7 +2828,8 @@
     "col": 2,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair233"
+    "f": "f_hair233",
+    "ftype": "g"
    },
    {
     "id": 283,
@@ -2557,7 +2838,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair122",
-    "f": "f_hair122"
+    "f": "f_hair122",
+    "ftype": "b"
    },
    {
     "id": 284,
@@ -2566,7 +2848,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair123",
-    "f": "f_hair123"
+    "f": "f_hair123",
+    "ftype": "g"
    },
    {
     "id": 285,
@@ -2575,7 +2858,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair224",
-    "f": "f_hair224"
+    "f": "f_hair224",
+    "ftype": "b"
    },
    {
     "id": 286,
@@ -2584,7 +2868,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair225",
-    "f": "f_hair225"
+    "f": "f_hair225",
+    "ftype": "g"
    },
    {
     "id": 287,
@@ -2593,7 +2878,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair226",
-    "f": "f_hair226"
+    "f": "f_hair226",
+    "ftype": "b"
    },
    {
     "id": 288,
@@ -2602,7 +2888,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair227",
-    "f": "f_hair227"
+    "f": "f_hair227",
+    "ftype": "g"
    },
    {
     "id": 289,
@@ -2611,7 +2898,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair229",
-    "f": "f_hair229"
+    "f": "f_hair229",
+    "ftype": "b"
    },
    {
     "id": 290,
@@ -2620,7 +2908,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair229",
-    "f": "f_hair229"
+    "f": "f_hair229",
+    "ftype": "g"
    },
    {
     "id": 291,
@@ -2629,7 +2918,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair234",
-    "f": "f_hair234"
+    "f": "f_hair234",
+    "ftype": "b"
    },
    {
     "id": 292,
@@ -2638,7 +2928,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair234",
-    "f": "f_hair234"
+    "f": "f_hair234",
+    "ftype": "g"
    },
    {
     "id": 293,
@@ -2647,7 +2938,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair086",
-    "f": "f_hair086"
+    "f": "f_hair086",
+    "ftype": "b"
    },
    {
     "id": 294,
@@ -2656,7 +2948,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair087",
-    "f": "f_hair087"
+    "f": "f_hair087",
+    "ftype": "g"
    },
    {
     "id": 295,
@@ -2665,7 +2958,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair094",
-    "f": "f_hair094"
+    "f": "f_hair094",
+    "ftype": "b"
    },
    {
     "id": 296,
@@ -2674,7 +2968,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair095",
-    "f": "f_hair095"
+    "f": "f_hair095",
+    "ftype": "g"
    },
    {
     "id": 297,
@@ -2683,7 +2978,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair165",
-    "f": "f_hair165"
+    "f": "f_hair165",
+    "ftype": "bg"
    },
    {
     "id": 298,
@@ -2692,7 +2988,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair166",
-    "f": "f_hair166"
+    "f": "f_hair166",
+    "ftype": "bg"
    },
    {
     "id": 299,
@@ -2701,7 +2998,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair178",
-    "f": "f_hair178"
+    "f": "f_hair178",
+    "ftype": "b"
    },
    {
     "id": 300,
@@ -2710,7 +3008,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair179",
-    "f": "f_hair179"
+    "f": "f_hair179",
+    "ftype": "g"
    },
    {
     "id": 301,
@@ -2719,7 +3018,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair062",
-    "f": "f_hair062"
+    "f": "f_hair062",
+    "ftype": "b"
    },
    {
     "id": 302,
@@ -2728,7 +3028,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair069",
-    "f": "f_hair069"
+    "f": "f_hair069",
+    "ftype": "g"
    },
    {
     "id": 303,
@@ -2737,7 +3038,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair096",
-    "f": "f_hair096"
+    "f": "f_hair096",
+    "ftype": "b"
    },
    {
     "id": 304,
@@ -2746,7 +3048,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair097",
-    "f": "f_hair097"
+    "f": "f_hair097",
+    "ftype": "g"
    },
    {
     "id": 305,
@@ -2755,7 +3058,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair126",
-    "f": "f_hair126"
+    "f": "f_hair126",
+    "ftype": "bg"
    },
    {
     "id": 306,
@@ -2764,7 +3068,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair127",
-    "f": "f_hair127"
+    "f": "f_hair127",
+    "ftype": "bg"
    },
    {
     "id": 307,
@@ -2773,7 +3078,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair230",
-    "f": "f_hair230"
+    "f": "f_hair230",
+    "ftype": "b"
    },
    {
     "id": 308,
@@ -2782,7 +3088,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair231",
-    "f": "f_hair231"
+    "f": "f_hair231",
+    "ftype": "g"
    },
    {
     "id": 309,
@@ -2791,7 +3098,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 310,
@@ -2800,7 +3108,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 311,
@@ -2809,7 +3118,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 316,
@@ -2818,7 +3128,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair306",
-    "f": "f_hair305"
+    "f": "f_hair305",
+    "ftype": "b"
    },
    {
     "id": 317,
@@ -2827,7 +3138,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair307",
-    "f": "f_hair306"
+    "f": "f_hair306",
+    "ftype": "g"
    },
    {
     "id": 318,
@@ -2836,7 +3148,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair308",
-    "f": "f_hair307"
+    "f": "f_hair307",
+    "ftype": "b"
    },
    {
     "id": 319,
@@ -2845,7 +3158,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair309",
-    "f": "f_hair308"
+    "f": "f_hair308",
+    "ftype": "g"
    },
    {
     "id": 320,
@@ -2854,7 +3168,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair243",
-    "f": "f_hair242"
+    "f": "f_hair242",
+    "ftype": "b"
    },
    {
     "id": 321,
@@ -2863,7 +3178,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair244",
-    "f": "f_hair243"
+    "f": "f_hair243",
+    "ftype": "g"
    },
    {
     "id": 322,
@@ -2872,7 +3188,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair245",
-    "f": "f_hair244"
+    "f": "f_hair244",
+    "ftype": "b"
    },
    {
     "id": 323,
@@ -2881,7 +3198,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair246",
-    "f": "f_hair245"
+    "f": "f_hair245",
+    "ftype": "g"
    },
    {
     "id": 324,
@@ -2890,7 +3208,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair247",
-    "f": "f_hair246"
+    "f": "f_hair246",
+    "ftype": "b"
    },
    {
     "id": 325,
@@ -2899,7 +3218,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair248",
-    "f": "f_hair247"
+    "f": "f_hair247",
+    "ftype": "g"
    },
    {
     "id": 326,
@@ -2908,7 +3228,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair249",
-    "f": "f_hair248"
+    "f": "f_hair248",
+    "ftype": "b"
    },
    {
     "id": 327,
@@ -2917,7 +3238,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair250",
-    "f": "f_hair249"
+    "f": "f_hair249",
+    "ftype": "g"
    },
    {
     "id": 328,
@@ -2926,7 +3248,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair251",
-    "f": "f_hair250"
+    "f": "f_hair250",
+    "ftype": "b"
    },
    {
     "id": 329,
@@ -2935,7 +3258,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair252",
-    "f": "f_hair251"
+    "f": "f_hair251",
+    "ftype": "g"
    },
    {
     "id": 330,
@@ -2944,7 +3268,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair253",
-    "f": "f_hair252"
+    "f": "f_hair252",
+    "ftype": "b"
    },
    {
     "id": 331,
@@ -2953,7 +3278,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair254",
-    "f": "f_hair253"
+    "f": "f_hair253",
+    "ftype": "g"
    },
    {
     "id": 332,
@@ -2962,7 +3288,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair255",
-    "f": "f_hair254"
+    "f": "f_hair254",
+    "ftype": "b"
    },
    {
     "id": 333,
@@ -2971,7 +3298,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair256",
-    "f": "f_hair255"
+    "f": "f_hair255",
+    "ftype": "g"
    },
    {
     "id": 334,
@@ -2980,7 +3308,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair257",
-    "f": "f_hair256"
+    "f": "f_hair256",
+    "ftype": "b"
    },
    {
     "id": 335,
@@ -2989,7 +3318,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair258",
-    "f": "f_hair257"
+    "f": "f_hair257",
+    "ftype": "g"
    },
    {
     "id": 336,
@@ -2998,7 +3328,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair259",
-    "f": "f_hair258"
+    "f": "f_hair258",
+    "ftype": "b"
    },
    {
     "id": 337,
@@ -3007,7 +3338,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair260",
-    "f": "f_hair259"
+    "f": "f_hair259",
+    "ftype": "g"
    },
    {
     "id": 338,
@@ -3016,7 +3348,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair261",
-    "f": "f_hair260"
+    "f": "f_hair260",
+    "ftype": "b"
    },
    {
     "id": 339,
@@ -3025,7 +3358,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair262",
-    "f": "f_hair261"
+    "f": "f_hair261",
+    "ftype": "g"
    },
    {
     "id": 340,
@@ -3034,7 +3368,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair263",
-    "f": "f_hair262"
+    "f": "f_hair262",
+    "ftype": "b"
    },
    {
     "id": 341,
@@ -3043,7 +3378,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair264",
-    "f": "f_hair263"
+    "f": "f_hair263",
+    "ftype": "g"
    },
    {
     "id": 342,
@@ -3052,7 +3388,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair265",
-    "f": "f_hair264"
+    "f": "f_hair264",
+    "ftype": "b"
    },
    {
     "id": 343,
@@ -3061,7 +3398,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair266",
-    "f": "f_hair265"
+    "f": "f_hair265",
+    "ftype": "g"
    },
    {
     "id": 344,
@@ -3070,7 +3408,8 @@
     "col": 3,
     "wear": "mbg",
     "m": "m_hair267",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 345,
@@ -3079,7 +3418,8 @@
     "col": 3,
     "wear": "mbg",
     "m": "m_hair268",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 346,
@@ -3088,7 +3428,8 @@
     "col": 3,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair266"
+    "f": "f_hair266",
+    "ftype": "bg"
    },
    {
     "id": 347,
@@ -3097,7 +3438,8 @@
     "col": 3,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair267"
+    "f": "f_hair267",
+    "ftype": "bg"
    },
    {
     "id": 348,
@@ -3106,7 +3448,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair269",
-    "f": "f_hair268"
+    "f": "f_hair268",
+    "ftype": "b"
    },
    {
     "id": 349,
@@ -3115,7 +3458,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair270",
-    "f": "f_hair269"
+    "f": "f_hair269",
+    "ftype": "g"
    },
    {
     "id": 350,
@@ -3124,7 +3468,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair271",
-    "f": "f_hair270"
+    "f": "f_hair270",
+    "ftype": "b"
    },
    {
     "id": 351,
@@ -3133,7 +3478,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair272",
-    "f": "f_hair271"
+    "f": "f_hair271",
+    "ftype": "g"
    },
    {
     "id": 352,
@@ -3142,7 +3488,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair273",
-    "f": "f_hair272"
+    "f": "f_hair272",
+    "ftype": "b"
    },
    {
     "id": 353,
@@ -3151,7 +3498,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair274",
-    "f": "f_hair273"
+    "f": "f_hair273",
+    "ftype": "g"
    },
    {
     "id": 354,
@@ -3160,7 +3508,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair275",
-    "f": "f_hair274"
+    "f": "f_hair274",
+    "ftype": "b"
    },
    {
     "id": 355,
@@ -3169,7 +3518,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair276",
-    "f": "f_hair275"
+    "f": "f_hair275",
+    "ftype": "g"
    },
    {
     "id": 356,
@@ -3178,7 +3528,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair277",
-    "f": "f_hair276"
+    "f": "f_hair276",
+    "ftype": "b"
    },
    {
     "id": 357,
@@ -3187,7 +3538,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair278",
-    "f": "f_hair277"
+    "f": "f_hair277",
+    "ftype": "g"
    },
    {
     "id": 358,
@@ -3196,7 +3548,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair279",
-    "f": "f_hair278"
+    "f": "f_hair278",
+    "ftype": "bg"
    },
    {
     "id": 359,
@@ -3205,7 +3558,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair280",
-    "f": "f_hair279"
+    "f": "f_hair279",
+    "ftype": "bg"
    },
    {
     "id": 360,
@@ -3214,7 +3568,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair281",
-    "f": "f_hair280"
+    "f": "f_hair280",
+    "ftype": "bg"
    },
    {
     "id": 361,
@@ -3223,7 +3578,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair282",
-    "f": "f_hair281"
+    "f": "f_hair281",
+    "ftype": "bg"
    },
    {
     "id": 362,
@@ -3232,7 +3588,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair283",
-    "f": "f_hair282"
+    "f": "f_hair282",
+    "ftype": "b"
    },
    {
     "id": 363,
@@ -3241,7 +3598,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair283",
-    "f": "f_hair282"
+    "f": "f_hair282",
+    "ftype": "g"
    },
    {
     "id": 364,
@@ -3250,7 +3608,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair285",
-    "f": "f_hair284"
+    "f": "f_hair284",
+    "ftype": "b"
    },
    {
     "id": 365,
@@ -3259,7 +3618,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair286",
-    "f": "f_hair285"
+    "f": "f_hair285",
+    "ftype": "g"
    },
    {
     "id": 366,
@@ -3268,7 +3628,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair287",
-    "f": "f_hair286"
+    "f": "f_hair286",
+    "ftype": "bg"
    },
    {
     "id": 367,
@@ -3277,7 +3638,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair288",
-    "f": "f_hair287"
+    "f": "f_hair287",
+    "ftype": "bg"
    },
    {
     "id": 368,
@@ -3286,7 +3648,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair289",
-    "f": "f_hair288"
+    "f": "f_hair288",
+    "ftype": "b"
    },
    {
     "id": 369,
@@ -3295,7 +3658,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair290",
-    "f": "f_hair289"
+    "f": "f_hair289",
+    "ftype": "g"
    },
    {
     "id": 370,
@@ -3304,7 +3668,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair291",
-    "f": "f_hair290"
+    "f": "f_hair290",
+    "ftype": "bg"
    },
    {
     "id": 371,
@@ -3313,7 +3678,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair292",
-    "f": "f_hair291"
+    "f": "f_hair291",
+    "ftype": "bg"
    },
    {
     "id": 372,
@@ -3322,7 +3688,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair293",
-    "f": "f_hair292"
+    "f": "f_hair292",
+    "ftype": "b"
    },
    {
     "id": 373,
@@ -3331,7 +3698,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair294",
-    "f": "f_hair293"
+    "f": "f_hair293",
+    "ftype": "g"
    },
    {
     "id": 374,
@@ -3340,7 +3708,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair295",
-    "f": "f_hair294"
+    "f": "f_hair294",
+    "ftype": "b"
    },
    {
     "id": 375,
@@ -3349,7 +3718,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair296",
-    "f": "f_hair295"
+    "f": "f_hair295",
+    "ftype": "g"
    },
    {
     "id": 376,
@@ -3358,7 +3728,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair297",
-    "f": "f_hair296"
+    "f": "f_hair296",
+    "ftype": "b"
    },
    {
     "id": 377,
@@ -3367,7 +3738,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair297",
-    "f": "f_hair296"
+    "f": "f_hair296",
+    "ftype": "g"
    },
    {
     "id": 378,
@@ -3376,7 +3748,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair298",
-    "f": "f_hair297"
+    "f": "f_hair297",
+    "ftype": "bg"
    },
    {
     "id": 379,
@@ -3385,7 +3758,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair298",
-    "f": "f_hair297"
+    "f": "f_hair297",
+    "ftype": "bg"
    },
    {
     "id": 380,
@@ -3394,7 +3768,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair299",
-    "f": "f_hair298"
+    "f": "f_hair298",
+    "ftype": "b"
    },
    {
     "id": 381,
@@ -3403,7 +3778,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair299",
-    "f": "f_hair298"
+    "f": "f_hair298",
+    "ftype": "g"
    },
    {
     "id": 382,
@@ -3412,7 +3788,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 383,
@@ -3421,7 +3798,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair241",
-    "f": "f_hair240"
+    "f": "f_hair240",
+    "ftype": "b"
    },
    {
     "id": 384,
@@ -3430,7 +3808,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair242",
-    "f": "f_hair283"
+    "f": "f_hair283",
+    "ftype": "g"
    },
    {
     "id": 385,
@@ -3439,7 +3818,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair243",
-    "f": "f_hair242"
+    "f": "f_hair242",
+    "ftype": "b"
    },
    {
     "id": 386,
@@ -3448,7 +3828,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair244",
-    "f": "f_hair243"
+    "f": "f_hair243",
+    "ftype": "g"
    },
    {
     "id": 387,
@@ -3457,7 +3838,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair302",
-    "f": "f_hair301"
+    "f": "f_hair301",
+    "ftype": "b"
    },
    {
     "id": 388,
@@ -3466,7 +3848,8 @@
     "col": 2,
     "wear": "mfbg",
     "m": "m_hair303",
-    "f": "f_hair302"
+    "f": "f_hair302",
+    "ftype": "g"
    },
    {
     "id": 389,
@@ -3475,7 +3858,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair088",
-    "f": "f_hair088"
+    "f": "f_hair088",
+    "ftype": "b"
    },
    {
     "id": 390,
@@ -3484,7 +3868,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair089",
-    "f": "f_hair089"
+    "f": "f_hair089",
+    "ftype": "g"
    },
    {
     "id": 391,
@@ -3493,7 +3878,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair205",
-    "f": "f_hair205"
+    "f": "f_hair205",
+    "ftype": "b"
    },
    {
     "id": 392,
@@ -3502,7 +3888,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair206",
-    "f": "f_hair206"
+    "f": "f_hair206",
+    "ftype": "g"
    },
    {
     "id": 393,
@@ -3511,7 +3898,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair167",
-    "f": "f_hair167"
+    "f": "f_hair167",
+    "ftype": "b"
    },
    {
     "id": 394,
@@ -3520,7 +3908,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair168",
-    "f": "f_hair168"
+    "f": "f_hair168",
+    "ftype": "g"
    },
    {
     "id": 395,
@@ -3529,7 +3918,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair005",
-    "f": "f_hair005"
+    "f": "f_hair005",
+    "ftype": "b"
    },
    {
     "id": 396,
@@ -3538,7 +3928,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair006",
-    "f": "f_hair006"
+    "f": "f_hair006",
+    "ftype": "g"
    },
    {
     "id": 397,
@@ -3547,7 +3938,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair120",
-    "f": "f_hair121"
+    "f": "f_hair121",
+    "ftype": "b"
    },
    {
     "id": 398,
@@ -3556,7 +3948,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair121",
-    "f": "f_hair120"
+    "f": "f_hair120",
+    "ftype": "g"
    },
    {
     "id": 399,
@@ -3565,7 +3958,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair159",
-    "f": "f_hair159"
+    "f": "f_hair159",
+    "ftype": "b"
    },
    {
     "id": 400,
@@ -3574,7 +3968,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair160",
-    "f": "f_hair160"
+    "f": "f_hair160",
+    "ftype": "g"
    },
    {
     "id": 401,
@@ -3583,7 +3978,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair009",
-    "f": "f_hair009"
+    "f": "f_hair009",
+    "ftype": "b"
    },
    {
     "id": 402,
@@ -3592,7 +3988,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair077",
-    "f": "f_hair077"
+    "f": "f_hair077",
+    "ftype": "g"
    },
    {
     "id": 403,
@@ -3601,7 +3998,8 @@
     "col": 3,
     "wear": "mbg",
     "m": "m_hair233",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "b"
    },
    {
     "id": 404,
@@ -3610,7 +4008,8 @@
     "col": 3,
     "wear": "mbg",
     "m": "m_hair233",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "g"
    },
    {
     "id": 405,
@@ -3619,7 +4018,8 @@
     "col": 3,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair233"
+    "f": "f_hair233",
+    "ftype": "b"
    },
    {
     "id": 406,
@@ -3628,7 +4028,8 @@
     "col": 3,
     "wear": "fbg",
     "m": "m_hair000",
-    "f": "f_hair233"
+    "f": "f_hair233",
+    "ftype": "g"
    },
    {
     "id": 407,
@@ -3637,7 +4038,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair001",
-    "f": "f_hair001"
+    "f": "f_hair001",
+    "ftype": "b"
    },
    {
     "id": 408,
@@ -3646,7 +4048,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair002",
-    "f": "f_hair002"
+    "f": "f_hair002",
+    "ftype": "g"
    },
    {
     "id": 409,
@@ -3655,7 +4058,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair105",
-    "f": "f_hair105"
+    "f": "f_hair105",
+    "ftype": "b"
    },
    {
     "id": 410,
@@ -3664,7 +4068,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair106",
-    "f": "f_hair106"
+    "f": "f_hair106",
+    "ftype": "g"
    },
    {
     "id": 411,
@@ -3673,7 +4078,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair161",
-    "f": "f_hair161"
+    "f": "f_hair161",
+    "ftype": "b"
    },
    {
     "id": 412,
@@ -3682,7 +4088,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair162",
-    "f": "f_hair162"
+    "f": "f_hair162",
+    "ftype": "g"
    },
    {
     "id": 413,
@@ -3691,7 +4098,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair101",
-    "f": "f_hair101"
+    "f": "f_hair101",
+    "ftype": "b"
    },
    {
     "id": 414,
@@ -3700,7 +4108,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair102",
-    "f": "f_hair102"
+    "f": "f_hair102",
+    "ftype": "g"
    },
    {
     "id": 415,
@@ -3709,7 +4118,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair003",
-    "f": "f_hair003"
+    "f": "f_hair003",
+    "ftype": "b"
    },
    {
     "id": 416,
@@ -3718,7 +4128,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair004",
-    "f": "f_hair004"
+    "f": "f_hair004",
+    "ftype": "g"
    },
    {
     "id": 417,
@@ -3727,7 +4138,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair312",
-    "f": "f_hair311"
+    "f": "f_hair311",
+    "ftype": "b"
    },
    {
     "id": 418,
@@ -3736,7 +4148,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair313",
-    "f": "f_hair312"
+    "f": "f_hair312",
+    "ftype": "g"
    },
    {
     "id": 419,
@@ -3745,7 +4158,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair138",
-    "f": "f_hair138"
+    "f": "f_hair138",
+    "ftype": "b"
    },
    {
     "id": 420,
@@ -3754,7 +4168,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair139",
-    "f": "f_hair139"
+    "f": "f_hair139",
+    "ftype": "g"
    },
    {
     "id": 421,
@@ -3763,7 +4178,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair103",
-    "f": "f_hair103"
+    "f": "f_hair103",
+    "ftype": "b"
    },
    {
     "id": 422,
@@ -3772,7 +4188,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair104",
-    "f": "f_hair104"
+    "f": "f_hair104",
+    "ftype": "g"
    },
    {
     "id": 423,
@@ -3781,7 +4198,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair300",
-    "f": "f_hair299"
+    "f": "f_hair299",
+    "ftype": "b"
    },
    {
     "id": 424,
@@ -3790,7 +4208,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair301",
-    "f": "f_hair300"
+    "f": "f_hair300",
+    "ftype": "g"
    },
    {
     "id": 425,
@@ -3799,7 +4218,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair310",
-    "f": "f_hair309"
+    "f": "f_hair309",
+    "ftype": "bg"
    },
    {
     "id": 426,
@@ -3808,7 +4228,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair311",
-    "f": "f_hair310"
+    "f": "f_hair310",
+    "ftype": "bg"
    },
    {
     "id": 427,
@@ -3817,7 +4238,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair304",
-    "f": "f_hair303"
+    "f": "f_hair303",
+    "ftype": "b"
    },
    {
     "id": 428,
@@ -3826,7 +4248,8 @@
     "col": 3,
     "wear": "mfbg",
     "m": "m_hair305",
-    "f": "f_hair304"
+    "f": "f_hair304",
+    "ftype": "g"
    },
    {
     "id": 429,
@@ -3835,7 +4258,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair237",
-    "f": "f_hair236"
+    "f": "f_hair236",
+    "ftype": "b"
    },
    {
     "id": 430,
@@ -3844,7 +4268,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair238",
-    "f": "f_hair237"
+    "f": "f_hair237",
+    "ftype": "g"
    },
    {
     "id": 431,
@@ -3853,7 +4278,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair239",
-    "f": "f_hair238"
+    "f": "f_hair238",
+    "ftype": "b"
    },
    {
     "id": 432,
@@ -3862,7 +4288,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair240",
-    "f": "f_hair239"
+    "f": "f_hair239",
+    "ftype": "g"
    },
    {
     "id": 433,
@@ -3871,7 +4298,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 434,
@@ -3880,7 +4308,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    },
    {
     "id": 435,
@@ -3889,7 +4318,8 @@
     "col": 0,
     "wear": "mfbg",
     "m": "m_hair000",
-    "f": "f_hair000"
+    "f": "f_hair000",
+    "ftype": "bg"
    }
   ],
   "body": [

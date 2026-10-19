@@ -105,6 +105,9 @@ window.VIEWER_GAME = {
     { kind: 'select', input: 'genderSel', label: 'Gender', options: [['f', 'Female'], ['m', 'Male']] },
     { kind: 'select', input: 'clothing', label: 'Clothing', title: 'What an empty chest, arms or legs slot shows' },
     { kind: 'select', input: 'faceStyle', label: 'Face' },
+    // MHFU has no skin tone choice: each face carries its own (the game's tone table 0x089B66BC / 0x089B66DC, which also
+    // picks the clothing's skin, docs/app.js modelFor); a note says so where a Skin Tone row would be (app.js fills it)
+    { kind: 'box', id: 'faceNote' },
     { kind: 'select', input: 'hairStyle', label: 'Hairstyle' },
     { kind: 'colour', input: 'hairColor', label: 'Hair Color', title: 'The hair colour: any RGB colour, as the game saves it' },
     { kind: 'select', input: 'pose', label: 'Pose', options: [['', 'Bind Pose']] },

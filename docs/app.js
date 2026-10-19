@@ -29,7 +29,7 @@ import { PoseDriver } from './base/render/pose.js';
 import { playerBone } from './base/render/skeleton.js';
 import { createFloorGrid } from './base/render/grid.js';
 import { loadPiece, paintPiece, dyeRegs, hairRegs, flatRegs, releasePiece, restoreBind } from './render/piece.js';
-import * as adapter from './adapter.js?v=3';
+import * as adapter from './adapter.js?v=4';
 import { createLightingPanel } from './base/ui/lighting-panel.js';
 import { createEffectsPanel } from './base/ui/effects-panel.js';
 import { createGuildPanel } from './base/ui/guild-panel.js';
@@ -609,6 +609,13 @@ const hunterPanel = createHunterPanel(GAME, {
   setClothing: async () => { state.cloth = +document.getElementById('clothing').value || 0; await refresh(); },
   onPoseChange: v => onPoseChange(v),
 });
+// THE FACE NOTE (game.js hunterRows 'faceNote'): MHFU sets skin tone by the face, so there is no Skin Tone row
+{
+  const note = document.createElement('p');
+  note.className = 'hint';
+  note.textContent = 'The face type also sets the skin tone (MHFU has no separate skin tone option).';
+  document.getElementById('faceNote').appendChild(note);
+}
 // the Hunter panel's selects from the hunter's state
 function paintHunterRows(){
   document.getElementById('genderSel').value = state.g;
